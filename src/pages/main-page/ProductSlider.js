@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import { navigate } from 'gatsby'
 
 // Components
 import Card from '../../components/Card'
@@ -17,45 +19,42 @@ const ProductList = styled.div`
 `
 
 const ProductSlider = () => {
-    const onClick = () => {
-        console.log('on handle click')
+    const { allFurnitureJson } = useStaticQuery(
+        graphql`
+            query {
+                allFurnitureJson {
+                    nodes {
+                        id
+                        image
+                        title
+                        description
+                        reference
+                        price
+                    }
+                }
+            }
+        `
+    )
+
+    const onClick = e => {
+        console.log('on handle click', e)
+        navigate(`/product?id=${e}`)
     }
     return (
         <Section>
             <ProductList>
-                <Card
-                    imageSources="d4.jpg"
-                    imageAlt="d4.jpg"
-                    title="Двуспальная кровать DAKOTA"
-                    content="Материал покрытия: велюр, ортопедическая рамка, большая
-                    ниша для вещей, скрытые пластиковые ножки, цвет и размер
-                    на выбор"
-                    reference="БЕСПЛАТНАЯ ДОСТАВКА В ПОДАРОК!"
-                    price="15 500"
-                    onHandleClick={onClick}
-                />
-                <Card
-                    imageSources="ODRI_DELUXE_VELOUR007.jpg"
-                    imageAlt="ODRI_DELUXE_VELOUR007.jpg"
-                    title="Двуспальная кровать EMILIA"
-                    content="Материал покрытия: велюр, ортопедическая рамка, большая
-                    ниша для вещей, скрытые пластиковые ножки, цвет и размер
-                    на выбор"
-                    reference="БЕСПЛАТНАЯ ДОСТАВКА В ПОДАРОК!"
-                    price="14 900"
-                    onHandleClick={onClick}
-                />
-                <Card
-                    imageSources="IMG_2930.jpg"
-                    imageAlt="IMG_2930.jpg"
-                    title="Двуспальная кровать BRIDGET"
-                    content="Материал покрытия: велюр, ортопедическая рамка, большая
-                    ниша для вещей, скрытые пластиковые ножки, цвет и размер
-                    на выбор"
-                    reference="БЕСПЛАТНАЯ ДОСТАВКА В ПОДАРОК!"
-                    price="18 000"
-                    onHandleClick={onClick}
-                />
+                {allFurnitureJson.nodes.map(item => (
+                    <Card
+                        key={item.id}
+                        imageSources={item.image}
+                        imageAlt={item.title}
+                        title={item.title}
+                        content={item.content}
+                        reference={item.reference}
+                        price={item.price}
+                        onHandleClick={() => onClick(item.id)}
+                    />
+                ))}
             </ProductList>
         </Section>
     )
