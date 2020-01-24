@@ -8,18 +8,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 // Components
 import Header from './header'
 import Footer from './Footer'
 import './layout.css'
 
-const Main = styled.main`
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 0 1.0875rem 1.45rem;
-`
+// const Container = styled.main`
+//     margin: 0 auto;
+//     max-width: 960px;
+//     padding: 0 1.0875rem 1.45rem;
+// `
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <Main>{children}</Main>
+            <main>{children}</main>
             <Footer />
         </>
     )
