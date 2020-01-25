@@ -3,15 +3,9 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
-import ReactSelect from '../components/ReactSelect'
+import MainForm from '../components/MainForm'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-]
 
 const Grid = styled.div`
     display: grid;
@@ -22,25 +16,8 @@ const Grid = styled.div`
     padding: 0 1.0875rem 1.45rem;
 `
 
-const Button = styled.button`
-    padding: 16px 30px;
-    border: solid 2px #000000;
-    background: #000000;
-    color: white;
-    cursor: pointer;
-    transition: all 300ms;
-    &:hover {
-        background: white;
-        color: black;
-    }
-`
-
 const ProductPage = ({ location }) => {
     const urlParams = new URLSearchParams(location.search)
-
-    const [values, setValues] = React.useState({
-        couchSize: '',
-    })
 
     const { allFurnitureJson } = useStaticQuery(
         graphql`
@@ -62,11 +39,6 @@ const ProductPage = ({ location }) => {
     const data = allFurnitureJson.nodes.find(
         item => item.id === urlParams.get('id')
     )
-
-    const handleSelect = selectedOption => {
-        console.log(selectedOption)
-        // setValues({ ...values, [prop]: event.target.value });
-    }
 
     return (
         <Layout>
@@ -117,18 +89,8 @@ const ProductPage = ({ location }) => {
                                 от <span>17 200 грн</span>
                             </div>
                             <hr />
-                            <div className="product-select">
-                                <ReactSelect
-                                    handleChange={handleSelect}
-                                    options={options}
-                                />
-                            </div>
-                            <div className="product-full-price">
-                                Итого: <span>0грн</span>
-                            </div>
-                            <div className="product-submit">
-                                <Button>Отправить заказ</Button>
-                            </div>
+                            {/* Main form */}
+                            <MainForm />
                         </div>
                     </Grid>
                 </>
