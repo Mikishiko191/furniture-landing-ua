@@ -8,12 +8,16 @@ import SEO from '../components/seo'
 // Main Page components
 import MainContainer from './main-page/MainSection'
 import ProductSlider from './main-page/ProductSlider'
+import HowLongWeAre from './main-page/HowLongWeAre'
+import MapSection from './main-page/MapSection'
 
 const IndexPage = () => (
     <Layout>
         <SEO title="Home" />
         <MainContainer />
         <ProductSlider />
+        <HowLongWeAre />
+        <MapSection />
         {/* <h1>Furniture project</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>

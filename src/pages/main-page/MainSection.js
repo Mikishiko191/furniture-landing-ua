@@ -51,7 +51,7 @@ const MainContainer = ({ className }) => {
     const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
-                mobileImage: file(relativePath: { eq: "logo.png" }) {
+                mobileImage: file(relativePath: { eq: "main_page.jpg" }) {
                     childImageSharp {
                         fluid(maxWidth: 490, quality: 100) {
                             ...GatsbyImageSharpFluid_withWebp

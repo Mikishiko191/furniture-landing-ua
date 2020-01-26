@@ -29,6 +29,10 @@ const options = [
 ]
 
 const MainForm = () => {
+    const [priceValue, setPrice] = React.useState({
+        price: 0,
+    })
+
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -36,10 +40,25 @@ const MainForm = () => {
             couchSize: '',
             color: '',
         },
+        // validationSchema={},
         onSubmit: values => {
             console.log(values)
         },
     })
+
+    React.useEffect(() => {
+        if (formik.values.couchSize) {
+            setPrice({
+                price: formik.values.couchSize.value,
+            })
+        }
+        if (formik.values.color) {
+            setPrice({
+                price:
+                    formik.values.color.value + formik.values.couchSize.value,
+            })
+        }
+    }, [formik.values.couchSize, formik.values.color])
 
     return (
         <div className="main-form">
@@ -86,7 +105,7 @@ const MainForm = () => {
                 />
 
                 <div className="product-full-price">
-                    Итого: <span>0 грн</span>
+                    Итого: <span>{priceValue.price} грн</span>
                 </div>
                 <div className="product-submit">
                     <Button type="submit">Отправить заказ</Button>
