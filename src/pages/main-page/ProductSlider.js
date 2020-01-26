@@ -49,7 +49,7 @@ const ProductSlider = () => {
                         imageSources={item.image}
                         imageAlt={item.title}
                         title={item.title}
-                        content={item.content}
+                        content={item.description}
                         reference={item.reference}
                         price={item.price}
                         onHandleClick={() => onClick(item.id)}

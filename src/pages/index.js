@@ -10,6 +10,7 @@ import MainContainer from './main-page/MainSection'
 import ProductSlider from './main-page/ProductSlider'
 import HowLongWeAre from './main-page/HowLongWeAre'
 import MapSection from './main-page/MapSection'
+import WeHaveForYouSomething from './main-page/weHaveForYouSomething'
 
 const IndexPage = () => (
     <Layout>
@@ -18,6 +19,7 @@ const IndexPage = () => (
         <ProductSlider />
         <HowLongWeAre />
         <MapSection />
+        <WeHaveForYouSomething />
         {/* <h1>Furniture project</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
