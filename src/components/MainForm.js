@@ -170,10 +170,10 @@ const MainForm = () => {
     return (
         <div className="main-form">
             <form
+                netlify
                 name="userOrder"
                 method="POST"
                 action="/success"
-                netlify
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 ref={userOrderForm}
