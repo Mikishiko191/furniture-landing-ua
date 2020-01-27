@@ -171,7 +171,7 @@ const MainForm = () => {
         <div className="main-form">
             <form
                 name="userOrder"
-                method="post"
+                method="POST"
                 action="/success/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
@@ -180,6 +180,13 @@ const MainForm = () => {
                 className="product-select-form"
             >
                 <Grid>
+                    <input type="hidden" name="form-name" value="userOrder" />
+                    <p hidden>
+                        <label>
+                            Don’t fill this out: <input name="bot-field" />
+                        </label>
+                    </p>
+
                     <ReactSelect
                         label="РАЗМЕР КРОВАТИ:"
                         options={options}
