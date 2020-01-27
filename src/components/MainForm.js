@@ -170,7 +170,7 @@ const MainForm = () => {
     return (
         <div className="main-form">
             <form
-                netlify
+                netlify="true"
                 name="userOrder"
                 method="POST"
                 action="/success"
