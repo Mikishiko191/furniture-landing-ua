@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 import * as Yup from 'yup'
 
 // Components
@@ -68,6 +69,8 @@ const encode = data => {
 }
 
 const MainForm = () => {
+    const userOrderForm = React.useRef(null)
+
     const [priceValue, setPrice] = React.useState({
         price: 0,
     })
@@ -92,15 +95,39 @@ const MainForm = () => {
                 mattressSize: values.mattressSize.value,
             }
 
+            const form = userOrderForm.current
+            console.log(form)
             fetch('/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: encode({ 'form-name': 'userOrder', ...schema }),
+                body: encode({
+                    'form-name': form.getAttribute('name'),
+                    ...schema,
+                }),
             })
-                .then(() => alert('Success!'))
-                .catch(error => alert(error))
+                .then(response => {
+                    console.log('====================================')
+                    console.log(`${JSON.stringify(response, null, 2)}`)
+                    console.log('====================================')
+                    navigate(form.getAttribute('action'))
+                })
+                .catch(error => {
+                    console.log('====================================')
+                    console.log(`error in submiting the form data:${error}`)
+                    console.log('====================================')
+                })
+
+            // fetch('/', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/x-www-form-urlencoded',
+            //     },
+            //     body: encode({ 'form-name': 'userOrder', ...schema }),
+            // })
+            //     .then(() => alert('Success!'))
+            //     .catch(error => alert(error))
         },
     })
 
@@ -142,12 +169,13 @@ const MainForm = () => {
 
     return (
         <div className="main-form">
-            <form name="userOrder" netlify>
-                <input type="text" name="firstName" />
-                <input type="text" name="phone" />
-                <button type="submit">Send</button>
-            </form>
             <form
+                name="userOrder"
+                method="post"
+                action="/success/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                ref={userOrderForm}
                 onSubmit={formik.handleSubmit}
                 className="product-select-form"
             >
