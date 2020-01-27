@@ -6,7 +6,7 @@ const settings = {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: true,
+    // autoplay: true,
     speed: 8000,
     autoplaySpeed: 2000,
     pauseOnHover: true,

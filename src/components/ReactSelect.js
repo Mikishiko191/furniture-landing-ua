@@ -10,6 +10,8 @@ const ReactSelect = ({
     options,
     error,
     touched,
+    isDisabled,
+    placeholder,
 }) => {
     const handleChange = value => {
         // this is going to call setFieldValue and manually update values of the selectName
@@ -22,7 +24,7 @@ const ReactSelect = ({
     }
 
     return (
-        <div style={{ margin: '1rem 0' }}>
+        <div style={{ marginBottom: 10 }}>
             <label htmlFor="color" style={{ fontSize: 20 }}>
                 {label}
             </label>
@@ -31,6 +33,10 @@ const ReactSelect = ({
                 onChange={handleChange}
                 onBlur={handleBlur}
                 options={options}
+                isDisabled={isDisabled}
+                placeholder={
+                    <span className="floating-label">{placeholder}</span>
+                }
                 styles={{
                     dropdownIndicator: (base, state) => ({
                         ...base,
