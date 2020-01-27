@@ -172,7 +172,8 @@ const MainForm = () => {
             <form
                 name="userOrder"
                 method="POST"
-                action="/success/"
+                action="/success"
+                netlify
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 ref={userOrderForm}
