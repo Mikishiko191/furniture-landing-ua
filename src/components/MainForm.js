@@ -97,7 +97,7 @@ const MainForm = () => {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: encode({ 'form-name': 'contact', ...schema }),
+                body: encode({ 'form-name': 'userOrder', ...schema }),
             })
                 .then(() => alert('Success!'))
                 .catch(error => alert(error))
@@ -139,8 +139,6 @@ const MainForm = () => {
         formik.values.mattress,
         formik.values.mattressSize,
     ])
-
-    console.log(formik.errors)
 
     return (
         <div className="main-form">
