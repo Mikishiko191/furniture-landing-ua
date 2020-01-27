@@ -142,6 +142,11 @@ const MainForm = () => {
 
     return (
         <div className="main-form">
+            <form name="userOrder" netlify>
+                <input type="text" name="firstName" />
+                <input type="text" name="phone" />
+                <button type="submit">Send</button>
+            </form>
             <form
                 onSubmit={formik.handleSubmit}
                 className="product-select-form"

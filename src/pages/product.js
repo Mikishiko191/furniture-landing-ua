@@ -90,19 +90,7 @@ const ProductPage = ({ location }) => {
                             </div>
                             <hr />
                             {/* Main form */}
-                            <form
-                                name="userOrder"
-                                netlify
-                                netlify-honeypot="bot-field"
-                                hidden
-                            >
-                                <input type="text" name="firstName" />
-                                <input type="text" name="phone" />
-                                <input type="number" name="couchSize" />
-                                <input type="number" name="color" />
-                                <input type="number" name="mattress" />
-                                <input type="number" name="mattressSize" />
-                            </form>
+
                             <MainForm />
                         </div>
                     </Grid>
