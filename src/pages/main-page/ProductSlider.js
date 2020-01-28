@@ -18,7 +18,7 @@ const ProductList = styled.div`
     grid-column-gap: 12px;
 `
 
-const ProductSlider = () => {
+const ProductSlider = ({ productSectionRef }) => {
     const { allFurnitureJson } = useStaticQuery(
         graphql`
             query {
@@ -41,7 +41,7 @@ const ProductSlider = () => {
         navigate(`/product?id=${e}`)
     }
     return (
-        <Section>
+        <Section ref={productSectionRef}>
             <ProductList>
                 {allFurnitureJson.nodes.map(item => (
                     <Card

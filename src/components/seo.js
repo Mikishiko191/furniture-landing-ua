@@ -70,6 +70,10 @@ function SEO({ description, lang, meta, title }) {
             ].concat(meta)}
         >
             <link
+                href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+                rel="stylesheet"
+            ></link>
+            <link
                 rel="stylesheet"
                 type="text/css"
                 charset="UTF-8"

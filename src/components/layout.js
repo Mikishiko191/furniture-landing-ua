@@ -8,19 +8,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-// import styled from 'styled-components'
 
 // Components
 import Header from './header'
 import Footer from './Footer'
 import './layout.css'
 import Modal from './Modal'
-
-// const Container = styled.main`
-//     margin: 0 auto;
-//     max-width: 960px;
-//     padding: 0 1.0875rem 1.45rem;
-// `
+import ScrollToTop from './ScrollToTop'
 
 const Layout = ({ children }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false)
@@ -54,6 +48,7 @@ const Layout = ({ children }) => {
                 onHandelCloseModal={onHandelCloseModal}
             />
             <Footer />
+            <ScrollToTop />
         </>
     )
 }

@@ -15,7 +15,7 @@ const Shadow = styled.div`
 
 const MainContent = styled.div`
     position: relative;
-    z-index: 10;
+    z-index: 1;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -47,7 +47,7 @@ const MainContent = styled.div`
     }
 `
 
-const MainContainer = ({ className }) => {
+const MainContainer = ({ className, scrollToElement }) => {
     const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
@@ -85,6 +85,7 @@ const MainContainer = ({ className }) => {
             className={className}
             fluid={sources}
             backgroundColor={`#040e18`}
+            // style={{ zIndex: -1 }}
         >
             <Shadow />
             <MainContent>
@@ -99,7 +100,7 @@ const MainContainer = ({ className }) => {
                 <p>— Контроль качества</p>
                 <p>— Доставка бесплатная</p>
                 <div className="button">
-                    <button>Подробнее</button>
+                    <button onClick={scrollToElement}>Подробнее</button>
                 </div>
             </MainContent>
         </BackgroundImage>
@@ -113,7 +114,7 @@ const StyledMainContainer = styled(MainContainer)`
     background-position: bottom center;
     background-repeat: repeat-y;
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
 `
 
 export default StyledMainContainer

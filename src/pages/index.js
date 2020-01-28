@@ -12,22 +12,30 @@ import HowLongWeAre from './main-page/HowLongWeAre'
 import MapSection from './main-page/MapSection'
 import WeHaveForYouSomething from './main-page/weHaveForYouSomething'
 
-const IndexPage = () => (
-    <Layout>
-        <SEO title="Home" />
-        <MainContainer />
-        <ProductSlider />
-        <HowLongWeAre />
-        <MapSection />
-        <WeHaveForYouSomething />
-        {/* <h1>Furniture project</h1>
+const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+
+const IndexPage = () => {
+    const productSectionRef = React.useRef(null)
+    const scrollToElement = () => {
+        scrollToRef(productSectionRef)
+    }
+    return (
+        <Layout>
+            <SEO title="Home" />
+            <MainContainer scrollToElement={scrollToElement} />
+            <ProductSlider productSectionRef={productSectionRef} />
+            <HowLongWeAre />
+            <MapSection />
+            <WeHaveForYouSomething />
+            {/* <h1>Furniture project</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
             <Image alt="Gatsby in Space" filename="gatsby-astronaut.png" />
         </div> */}
-        {/* <Link to="/page-2/">Go to page 2</Link> */}
-    </Layout>
-)
+            {/* <Link to="/page-2/">Go to page 2</Link> */}
+        </Layout>
+    )
+}
 
 export default IndexPage
