@@ -1,6 +1,8 @@
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import React from 'react'
+
+// Components
 import Image from './image'
 
 const HeaderStyleComponent = styled.header`
@@ -52,7 +54,7 @@ const Button = styled.button`
     }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ onHandleOpenModal }) => (
     <HeaderStyleComponent>
         <div className="logo" style={{ width: 300 }}>
             <Link to="/">
@@ -65,7 +67,7 @@ const Header = ({ siteTitle }) => (
                 <p>+38 (099) 777-67-80</p>
             </div>
             <div>
-                <Button>Оформить заказ</Button>
+                <Button onClick={onHandleOpenModal}>Оформить заказ</Button>
             </div>
         </Flex>
     </HeaderStyleComponent>

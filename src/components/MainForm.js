@@ -77,8 +77,8 @@ const encode = data => {
         .join('&')
 }
 
-const MainForm = () => {
-    const userOrderForm = React.useRef(null)
+const MainForm = ({ isModal }) => {
+    // const userOrderForm = React.useRef(null)
 
     const [priceValue, setPrice] = React.useState({
         price: 0,
@@ -88,6 +88,7 @@ const MainForm = () => {
         initialValues: {
             firstName: '',
             phone: '',
+            couchModel: '',
             couchSize: '',
             color: '',
             mattress: '',
@@ -104,29 +105,29 @@ const MainForm = () => {
                 mattressSize: values.mattressSize.value,
             }
 
-            const form = userOrderForm.current
-            console.log(form)
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: encode({
-                    'form-name': form.getAttribute('name'),
-                    ...schema,
-                }),
-            })
-                .then(response => {
-                    console.log('====================================')
-                    console.log(`${JSON.stringify(response, null, 2)}`)
-                    console.log('====================================')
-                    navigate(form.getAttribute('action'))
-                })
-                .catch(error => {
-                    console.log('====================================')
-                    console.log(`error in submiting the form data:${error}`)
-                    console.log('====================================')
-                })
+            // const form = userOrderForm.current
+            console.log(schema)
+            // fetch('/', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/x-www-form-urlencoded',
+            //     },
+            //     body: encode({
+            //         'form-name': form.getAttribute('name'),
+            //         ...schema,
+            //     }),
+            // })
+            //     .then(response => {
+            //         console.log('====================================')
+            //         console.log(`${JSON.stringify(response, null, 2)}`)
+            //         console.log('====================================')
+            //         navigate(form.getAttribute('action'))
+            //     })
+            //     .catch(error => {
+            //         console.log('====================================')
+            //         console.log(`error in submiting the form data:${error}`)
+            //         console.log('====================================')
+            //     })
 
             // fetch('/', {
             //     method: 'POST',
@@ -179,24 +180,30 @@ const MainForm = () => {
     return (
         <div className="main-form">
             <form
-                netlify="true"
-                name="userOrder"
-                method="POST"
-                action="/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                ref={userOrderForm}
+                // netlify="true"
+                // name="userOrder"
+                // method="POST"
+                // action="/success"
+                // data-netlify="true"
+                // data-netlify-honeypot="bot-field"
+                // ref={userOrderForm}
                 onSubmit={formik.handleSubmit}
                 className="product-select-form"
             >
+                {isModal && (
+                    <ReactSelect
+                        label="КРОВАТЬ:"
+                        options={options}
+                        selectName="couchModel"
+                        value={formik.values.couchModel}
+                        onChange={formik.setFieldValue}
+                        onBlur={formik.setFieldTouched}
+                        error={formik.errors.couchModel}
+                        touched={formik.touched.couchModel}
+                        placeholder="Выберите модель "
+                    />
+                )}
                 <Grid>
-                    <input type="hidden" name="form-name" value="userOrder" />
-                    <p hidden>
-                        <label>
-                            Don’t fill this out: <input name="bot-field" />
-                        </label>
-                    </p>
-
                     <ReactSelect
                         label="РАЗМЕР КРОВАТИ:"
                         options={options}

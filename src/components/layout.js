@@ -14,6 +14,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Footer from './Footer'
 import './layout.css'
+import Modal from './Modal'
 
 // const Container = styled.main`
 //     margin: 0 auto;
@@ -22,6 +23,7 @@ import './layout.css'
 // `
 
 const Layout = ({ children }) => {
+    const [modalIsOpen, setIsOpen] = React.useState(false)
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -32,10 +34,25 @@ const Layout = ({ children }) => {
         }
     `)
 
+    const onHandleOpenModal = () => {
+        setIsOpen(true)
+    }
+
+    const onHandelCloseModal = () => {
+        setIsOpen(false)
+    }
+
     return (
         <>
-            <Header siteTitle={data.site.siteMetadata.title} />
+            <Header
+                siteTitle={data.site.siteMetadata.title}
+                onHandleOpenModal={onHandleOpenModal}
+            />
             <main>{children}</main>
+            <Modal
+                modalIsOpen={modalIsOpen}
+                onHandelCloseModal={onHandelCloseModal}
+            />
             <Footer />
         </>
     )
