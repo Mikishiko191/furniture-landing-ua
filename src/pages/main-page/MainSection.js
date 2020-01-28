@@ -85,7 +85,7 @@ const MainContainer = ({ className, scrollToElement }) => {
             className={className}
             fluid={sources}
             backgroundColor={`#040e18`}
-            // style={{ zIndex: -1 }}
+            style={{ zIndex: 3 }}
         >
             <Shadow />
             <MainContent>
@@ -99,7 +99,7 @@ const MainContainer = ({ className, scrollToElement }) => {
                 <p>— Импортный механизм</p>
                 <p>— Контроль качества</p>
                 <p>— Доставка бесплатная</p>
-                <div className="button">
+                <div className="button" style={{ zIndex: 9 }}>
                     <button onClick={scrollToElement}>Подробнее</button>
                 </div>
             </MainContent>

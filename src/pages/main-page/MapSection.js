@@ -17,6 +17,7 @@ const Grid = styled.div`
 
         .col {
             padding: 30px;
+            cursor: pointer;
             p {
                 margin: 0;
                 padding: 5px 0;
@@ -28,134 +29,74 @@ const Grid = styled.div`
     }
 `
 
+const lists = [
+    {
+        id: 1,
+        shop: '«BARIN HOUSE»',
+        address: 'ул. 135-а Садовая 3 (район Осокорки)',
+        workingHours: 'ПН-СБ 10:00 - 20:00, ВС - выходной',
+        phone: '+38 (097) 403-82-28',
+        lat: 50.390243,
+        lng: 30.604721,
+    },
+    {
+        id: 2,
+        shop: '«Б-52»',
+        address: 'ул. Братиславская 52 (Левый берег)',
+        workingHours: 'ПН-СБ 10:00 - 20:00, ВС 10:00 - 19:00',
+        phone: '+38 (067) 586-55-77',
+        lat: 50.491302,
+        lng: 30.610433,
+    },
+]
+
 const MapSection = () => {
+    const [state, setState] = React.useState()
+    const onHandleSelect = list => {
+        setState(list)
+    }
     return (
         <Grid>
             <div className="scroll">
-                <div className="col">
-                    <p style={{ color: '#000000' }}>
-                        Магазин{' '}
-                        <span style={{ fontSize: 28 }}>«BARIN HOUSE»</span>
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Адрес:
-                        </span>{' '}
-                        ул. 135-а Садовая 3 (район Осокорки)
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Режим работы:
-                        </span>
-                        ПН-СБ 10:00 - 20:00, ВС - выходной
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Телефон:
-                        </span>{' '}
-                        +38 (097) 403-82-28
-                    </p>
-                </div>
-
-                <div className="col">
-                    <p style={{ color: '#000000' }}>
-                        Магазин{' '}
-                        <span style={{ fontSize: 28 }}>«BARIN HOUSE»</span>
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Адрес:
-                        </span>{' '}
-                        ул. 135-а Садовая 3 (район Осокорки)
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Режим работы:
-                        </span>
-                        ПН-СБ 10:00 - 20:00, ВС - выходной
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Телефон:
-                        </span>{' '}
-                        +38 (097) 403-82-28
-                    </p>
-                </div>
-                <div className="col">
-                    <p style={{ color: '#000000' }}>
-                        Магазин{' '}
-                        <span style={{ fontSize: 28 }}>«BARIN HOUSE»</span>
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Адрес:
-                        </span>{' '}
-                        ул. 135-а Садовая 3 (район Осокорки)
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Режим работы:
-                        </span>
-                        ПН-СБ 10:00 - 20:00, ВС - выходной
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Телефон:
-                        </span>{' '}
-                        +38 (097) 403-82-28
-                    </p>
-                </div>
-                <div className="col">
-                    <p style={{ color: '#000000' }}>
-                        Магазин{' '}
-                        <span style={{ fontSize: 28 }}>«BARIN HOUSE»</span>
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Адрес:
-                        </span>{' '}
-                        ул. 135-а Садовая 3 (район Осокорки)
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Режим работы:
-                        </span>
-                        ПН-СБ 10:00 - 20:00, ВС - выходной
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Телефон:
-                        </span>{' '}
-                        +38 (097) 403-82-28
-                    </p>
-                </div>
-                <div className="col">
-                    <p style={{ color: '#000000' }}>
-                        Магазин{' '}
-                        <span style={{ fontSize: 28 }}>«BARIN HOUSE»</span>
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Адрес:
-                        </span>{' '}
-                        ул. 135-а Садовая 3 (район Осокорки)
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Режим работы:
-                        </span>
-                        ПН-СБ 10:00 - 20:00, ВС - выходной
-                    </p>
-                    <p>
-                        <span style={{ color: '#6f6f75', paddingRight: 15 }}>
-                            Телефон:
-                        </span>{' '}
-                        +38 (097) 403-82-28
-                    </p>
-                </div>
+                {lists.map(list => (
+                    <div
+                        className="col"
+                        key={list.id}
+                        onClick={() => onHandleSelect(list)}
+                    >
+                        <p style={{ color: '#000000' }}>
+                            Магазин{' '}
+                            <span style={{ fontSize: 28 }}>{list.shop}</span>
+                        </p>
+                        <p>
+                            <span
+                                style={{ color: '#6f6f75', paddingRight: 15 }}
+                            >
+                                Адрес:
+                            </span>{' '}
+                            {list.address}
+                        </p>
+                        <p>
+                            <span
+                                style={{ color: '#6f6f75', paddingRight: 15 }}
+                            >
+                                Режим работы:
+                            </span>
+                            {list.workingHours}
+                        </p>
+                        <p>
+                            <span
+                                style={{ color: '#6f6f75', paddingRight: 15 }}
+                            >
+                                Телефон:
+                            </span>{' '}
+                            {list.phone}
+                        </p>
+                    </div>
+                ))}
             </div>
             <div style={{ height: '50vh' }}>
-                <GoogleMap />
+                <GoogleMap list={state} />
             </div>
         </Grid>
     )

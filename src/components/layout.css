@@ -9,6 +9,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.ReactModal__Overlay {
+    z-index: 99;
+}
+
 article,
 aside,
 details,

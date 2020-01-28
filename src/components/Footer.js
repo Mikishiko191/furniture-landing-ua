@@ -10,7 +10,9 @@ const Grid = styled.div`
 
 const Footer = () => {
     return (
-        <footer style={{ background: '#000000' }}>
+        <footer
+            style={{ background: '#000000', position: 'relative', zIndex: -5 }}
+        >
             <Grid>
                 <div>
                     <h5>НУЖНА КОНСЛУЛЬТАЦИЯ МЕНЕДЖЕРА</h5>
