@@ -1,5 +1,28 @@
 import React from 'react'
-import Select from 'react-select'
+import Select, { components } from 'react-select'
+
+const Option = props => {
+    const hasImage = props.options.some(item => item.img)
+    return (
+        <components.Option {...props}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                {hasImage && (
+                    <div
+                        style={{
+                            width: 30,
+                            height: 30,
+                            background: 'pink',
+                            marginRight: 10,
+                        }}
+                    >
+                        {props.data.img}
+                    </div>
+                )}
+                <div>{props.data.label}</div>
+            </div>
+        </components.Option>
+    )
+}
 
 const ReactSelect = ({
     selectName,
@@ -34,6 +57,9 @@ const ReactSelect = ({
                 onBlur={handleBlur}
                 options={options}
                 isDisabled={isDisabled}
+                components={{
+                    Option,
+                }}
                 placeholder={
                     <span className="floating-label">{placeholder}</span>
                 }

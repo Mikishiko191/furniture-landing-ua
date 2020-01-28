@@ -60,6 +60,15 @@ const options = [
     { value: 1234, label: 'Kittens' },
 ]
 
+const colorOptions = [
+    { value: 12, label: 'MT Velour DELUXE 1', img: '#!' },
+    { value: 33, label: 'MT Velour DELUXE 2', img: '#!' },
+    { value: 45, label: 'MT Velour DELUXE 3', img: '#!' },
+    { value: 100, label: 'MT Velour DELUXE 4', img: '#!' },
+    { value: 333, label: 'MT Velour DELUXE 5', img: '#!' },
+    { value: 1234, label: 'MT Velour DELUXE 6', img: '#!' },
+]
+
 const encode = data => {
     return Object.keys(data)
         .map(
@@ -202,7 +211,7 @@ const MainForm = () => {
 
                     <ReactSelect
                         label="ЦВЕТ ОБИВКИ:"
-                        options={options}
+                        options={colorOptions}
                         selectName="color"
                         value={formik.values.color}
                         onChange={formik.setFieldValue}

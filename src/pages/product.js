@@ -6,17 +6,19 @@ import { graphql, useStaticQuery } from 'gatsby'
 import MainForm from '../components/MainForm'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import ProductShowCase from '../components/ProductShowCase'
 
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 70px;
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: 1600px;
     padding: 0 1.0875rem 1.45rem;
 `
 
 const ProductPage = ({ location }) => {
+    const [imageValue, setImage] = React.useState()
     const urlParams = new URLSearchParams(location.search)
 
     const { allFurnitureJson } = useStaticQuery(
@@ -40,6 +42,10 @@ const ProductPage = ({ location }) => {
         item => item.id === urlParams.get('id')
     )
 
+    const onHandleChangeImage = img => {
+        setImage(img)
+    }
+
     return (
         <Layout>
             {!data ? (
@@ -48,7 +54,12 @@ const ProductPage = ({ location }) => {
                 <>
                     <SEO title="Product title" />
                     <Grid>
-                        <div>slider</div>
+                        <div className="showcase">
+                            <ProductShowCase
+                                onHandleChange={onHandleChangeImage}
+                                imageValue={imageValue}
+                            />
+                        </div>
                         <div className="product-description">
                             <h2>{data.title}</h2>
                             <ul>
