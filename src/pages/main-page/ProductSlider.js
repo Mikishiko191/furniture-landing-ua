@@ -37,7 +37,6 @@ const ProductSlider = ({ productSectionRef }) => {
     )
 
     const onClick = e => {
-        console.log('on handle click', e)
         navigate(`/product?id=${e}`)
     }
     return (

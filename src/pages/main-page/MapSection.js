@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
 import GoogleMap from '../../components/GoogleMap'
@@ -18,6 +19,7 @@ const Grid = styled.div`
         .col {
             padding: 30px;
             cursor: pointer;
+            transition: all 600ms;
             p {
                 margin: 0;
                 padding: 5px 0;
@@ -25,40 +27,42 @@ const Grid = styled.div`
             &:nth-child(odd) {
                 background: #e6e6e6;
             }
+            &:hover {
+                box-shadow: 0 2px 10px 0 #8e8e93;
+                transform: translate3d(0, -3px, 0);
+            }
         }
     }
 `
 
-const lists = [
-    {
-        id: 1,
-        shop: '«BARIN HOUSE»',
-        address: 'ул. 135-а Садовая 3 (район Осокорки)',
-        workingHours: 'ПН-СБ 10:00 - 20:00, ВС - выходной',
-        phone: '+38 (097) 403-82-28',
-        lat: 50.390243,
-        lng: 30.604721,
-    },
-    {
-        id: 2,
-        shop: '«Б-52»',
-        address: 'ул. Братиславская 52 (Левый берег)',
-        workingHours: 'ПН-СБ 10:00 - 20:00, ВС 10:00 - 19:00',
-        phone: '+38 (067) 586-55-77',
-        lat: 50.491302,
-        lng: 30.610433,
-    },
-]
-
 const MapSection = () => {
     const [state, setState] = React.useState()
+
+    const { allShopLocationOnMapJson } = useStaticQuery(
+        graphql`
+            query {
+                allShopLocationOnMapJson {
+                    nodes {
+                        id
+                        shop
+                        address
+                        workingHours
+                        phone
+                        lat
+                        lng
+                    }
+                }
+            }
+        `
+    )
     const onHandleSelect = list => {
         setState(list)
     }
+
     return (
         <Grid>
             <div className="scroll">
-                {lists.map(list => (
+                {allShopLocationOnMapJson.nodes.map(list => (
                     <div
                         className="col"
                         key={list.id}
