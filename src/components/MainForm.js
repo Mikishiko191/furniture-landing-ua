@@ -77,11 +77,9 @@ const encode = data => {
         .join('&')
 }
 
-const MainForm = ({ isModal }) => {
-    // const userOrderForm = React.useRef(null)
-
+const MainForm = ({ isModal, couchPrice }) => {
     const [priceValue, setPrice] = React.useState({
-        price: 0,
+        price: couchPrice ? couchPrice : 0,
     })
 
     const formik = useFormik({
@@ -144,13 +142,15 @@ const MainForm = ({ isModal }) => {
     React.useEffect(() => {
         if (formik.values.couchSize) {
             setPrice({
-                price: formik.values.couchSize.value,
+                price: formik.values.couchSize.value + couchPrice,
             })
         }
         if (formik.values.color) {
             setPrice({
                 price:
-                    formik.values.color.value + formik.values.couchSize.value,
+                    formik.values.color.value +
+                    formik.values.couchSize.value +
+                    couchPrice,
             })
         }
         if (formik.values.mattress) {
@@ -158,7 +158,8 @@ const MainForm = ({ isModal }) => {
                 price:
                     formik.values.color.value +
                     formik.values.couchSize.value +
-                    formik.values.mattress.value,
+                    formik.values.mattress.value +
+                    couchPrice,
             })
         }
         if (formik.values.mattressSize) {
@@ -167,7 +168,8 @@ const MainForm = ({ isModal }) => {
                     formik.values.color.value +
                     formik.values.couchSize.value +
                     formik.values.mattress.value +
-                    formik.values.mattressSize.value,
+                    formik.values.mattressSize.value +
+                    couchPrice,
             })
         }
     }, [

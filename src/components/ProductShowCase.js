@@ -9,22 +9,30 @@ const Grid = styled.div`
     grid-template-columns: repeat(2, 1fr);
 `
 
-const ProductShowCase = ({ imageValue, onHandleChange }) => {
+const ProductShowCase = ({ item }) => {
+    const [imageValue, setImage] = React.useState()
+
+    const onHandleChangeImage = img => {
+        setImage(img)
+    }
+
     return (
-        <div>
-            <div>
+        <div style={{ position: 'sticky', top: 10 }}>
+            <div onClick={() => onHandleChangeImage(item.image)}>
                 <Image
                     alt="product"
-                    filename={!imageValue ? 'd4.jpg' : imageValue}
+                    filename={!imageValue ? item.image : imageValue}
                 />
             </div>
             <Grid>
-                <div onClick={() => onHandleChange('d4.jpg')}>
-                    <Image alt="product" filename="d4.jpg" />
-                </div>
-                <div onClick={() => onHandleChange('IMG_2930.jpg')}>
-                    <Image alt="product" filename="IMG_2930.jpg" />
-                </div>
+                {item.product.map(product => (
+                    <div
+                        onClick={() => onHandleChangeImage(product.image)}
+                        key={product.id}
+                    >
+                        <Image alt="product" filename={product.image} />
+                    </div>
+                ))}
             </Grid>
         </div>
     )

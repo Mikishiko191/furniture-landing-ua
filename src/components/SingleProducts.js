@@ -4,8 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
 import MainForm from '../components/MainForm'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
 import ProductShowCase from '../components/ProductShowCase'
 
 const Grid = styled.div`
@@ -17,10 +15,7 @@ const Grid = styled.div`
     padding: 0 1.0875rem 1.45rem;
 `
 
-const ProductPage = ({ location }) => {
-    const [imageValue, setImage] = React.useState()
-    const urlParams = new URLSearchParams(location.search)
-
+const SingleProducts = ({ reference, productId }) => {
     const { allFurnitureJson } = useStaticQuery(
         graphql`
             query {
@@ -28,6 +23,10 @@ const ProductPage = ({ location }) => {
                     nodes {
                         id
                         image
+                        product {
+                            id
+                            image
+                        }
                         title
                         description
                         reference
@@ -38,27 +37,17 @@ const ProductPage = ({ location }) => {
         `
     )
 
-    const data = allFurnitureJson.nodes.find(
-        item => item.id === urlParams.get('id')
-    )
-
-    const onHandleChangeImage = img => {
-        setImage(img)
-    }
+    const data = allFurnitureJson.nodes.find(item => item.id === productId)
 
     return (
-        <Layout>
+        <section ref={reference} id={data.id}>
             {!data ? (
                 <div>Нечего не найдено</div>
             ) : (
                 <>
-                    <SEO title="Product title" />
                     <Grid>
                         <div className="showcase">
-                            <ProductShowCase
-                                onHandleChange={onHandleChangeImage}
-                                imageValue={imageValue}
-                            />
+                            <ProductShowCase item={data} />
                         </div>
                         <div className="product-description">
                             <h2>{data.title}</h2>
@@ -101,14 +90,13 @@ const ProductPage = ({ location }) => {
                             </div>
                             <hr />
                             {/* Main form */}
-
-                            <MainForm />
+                            <MainForm couchPrice={data.price} />
                         </div>
                     </Grid>
                 </>
             )}
-        </Layout>
+        </section>
     )
 }
 
-export default ProductPage
+export default SingleProducts

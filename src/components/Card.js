@@ -65,7 +65,6 @@ const CardComponent = ({
     reference,
     price,
     onHandleClick,
-    children,
 }) => {
     return (
         <Card>

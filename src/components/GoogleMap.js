@@ -77,7 +77,7 @@ const GoogleMap = ({ list }) => {
             <Marker
                 lat={state.center.lat}
                 lng={state.center.lng}
-                text={list.shop}
+                text={list ? list.shop : ''}
                 onMarkerClick={onMarkerClick}
             />
         </GoogleMapReact>

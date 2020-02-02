@@ -76,7 +76,7 @@ const HowLongWeAre = ({ className }) => {
     ]
 
     return (
-        <>
+        <section style={{ overflow: 'hidden' }}>
             <BackgroundImage
                 Tag="section"
                 className={className}
@@ -101,7 +101,7 @@ const HowLongWeAre = ({ className }) => {
             </BackgroundImage>
             <SliderSection sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
             <SliderSection sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК" />
-        </>
+        </section>
     )
 }
 

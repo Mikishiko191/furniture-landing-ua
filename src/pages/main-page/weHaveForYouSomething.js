@@ -22,7 +22,7 @@ const WeHaveForYouSomething = () => {
         console.log('download')
     }
     return (
-        <div>
+        <div style={{ overflow: 'hidden' }}>
             <SliderSection sliderTitle="А ТАКЖЕ У НАС ЕСТЬ ЧТО ПРЕДЛОЖИТЬ ВАМ ЕЩЕ" />
             <div style={{ textAlign: 'center' }}>
                 <Button onClick={downloadPdf}>Скачать каталог</Button>

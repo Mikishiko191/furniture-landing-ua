@@ -85,7 +85,7 @@ const MainContainer = ({ className, scrollToElement }) => {
             className={className}
             fluid={sources}
             backgroundColor={`#040e18`}
-            style={{ zIndex: 3 }}
+            style={{ zIndex: 3, marginBottom: 50 }}
         >
             <Shadow />
             <MainContent>

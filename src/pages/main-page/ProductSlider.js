@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import { navigate } from 'gatsby'
 
 // Components
 import Card from '../../components/Card'
+import SingleProducts from '../../components/SingleProducts'
 
 const Section = styled.section`
     margin: 0 auto;
@@ -18,7 +18,15 @@ const ProductList = styled.div`
     grid-column-gap: 12px;
 `
 
+const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 115)
+
 const ProductSlider = ({ productSectionRef }) => {
+    const singleProductReference = React.useRef([
+        React.createRef(),
+        React.createRef(),
+        React.createRef(),
+    ])
+
     const { allFurnitureJson } = useStaticQuery(
         graphql`
             query {
@@ -36,9 +44,14 @@ const ProductSlider = ({ productSectionRef }) => {
         `
     )
 
-    const onClick = e => {
-        navigate(`/product?id=${e}`)
+    const onHandleSelectProductId = productId => {
+        singleProductReference.current.map(item => {
+            if (item.current.id === productId) {
+                scrollToRef(item)
+            }
+        })
     }
+
     return (
         <Section ref={productSectionRef}>
             <ProductList>
@@ -51,10 +64,19 @@ const ProductSlider = ({ productSectionRef }) => {
                         content={item.description}
                         reference={item.reference}
                         price={item.price}
-                        onHandleClick={() => onClick(item.id)}
+                        onHandleClick={() => onHandleSelectProductId(item.id)}
                     />
                 ))}
             </ProductList>
+
+            {allFurnitureJson.nodes.map((item, index) => (
+                <div style={{ marginBottom: 50, marginTop: 50 }} key={item.id}>
+                    <SingleProducts
+                        reference={singleProductReference.current[index]}
+                        productId={item.id}
+                    />
+                </div>
+            ))}
         </Section>
     )
 }

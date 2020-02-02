@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
                 siteTitle={data.site.siteMetadata.title}
                 onHandleOpenModal={onHandleOpenModal}
             />
-            <main>{children}</main>
+            <main style={{ marginTop: 94 }}>{children}</main>
             <Modal
                 modalIsOpen={modalIsOpen}
                 onHandelCloseModal={onHandelCloseModal}

@@ -12,7 +12,7 @@ import HowLongWeAre from './main-page/HowLongWeAre'
 import MapSection from './main-page/MapSection'
 import WeHaveForYouSomething from './main-page/weHaveForYouSomething'
 
-const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 105)
 
 const IndexPage = () => {
     const productSectionRef = React.useRef(null)
