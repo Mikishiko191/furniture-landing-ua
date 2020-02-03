@@ -104,7 +104,7 @@ const SingleProducts = ({ reference, productId }) => {
                             </div>
                             <hr />
                             {/* Main form */}
-                            <MainForm couchPrice={data.price} data={data} />
+                            <MainForm data={data} />
                         </div>
                     </Grid>
                 </>

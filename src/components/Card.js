@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-// components
-import Image from './image'
+import BackGroundImage from './BackGroundImage'
 
 const Card = styled.div`
     border: solid 2px #d1d1d6;
@@ -59,7 +57,6 @@ const Button = styled.button`
 
 const CardComponent = ({
     imageSources,
-    imageAlt,
     title,
     content,
     reference,
@@ -68,7 +65,7 @@ const CardComponent = ({
 }) => {
     return (
         <Card>
-            <Image alt={imageAlt} filename={imageSources} />
+            <BackGroundImage imageName={imageSources} bgImageSize={306} />
             <Content>
                 <h3>{title}</h3>
                 <p>{content}</p>

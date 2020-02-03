@@ -59,7 +59,6 @@ const ProductSlider = ({ productSectionRef }) => {
                     <Card
                         key={item.id}
                         imageSources={item.image}
-                        imageAlt={item.title}
                         title={item.title}
                         content={item.description}
                         reference={item.reference}
