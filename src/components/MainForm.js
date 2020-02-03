@@ -1,23 +1,15 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
-import { navigate } from 'gatsby'
 import * as Yup from 'yup'
 
 // Components
 import ReactSelect from './ReactSelect'
 import InputField from './InputField'
 
-const validationSchema = Yup.object().shape({
-    firstName: Yup.string()
-        .min(1, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
-    phone: Yup.string()
-        .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
+const phoneRegExp = /^\+?3?8?(0\d{9})$/
 
+const validationSchema = Yup.object().shape({
     couchSize: Yup.string()
         .ensure()
         .required('CouchSize is required!'),
@@ -27,9 +19,16 @@ const validationSchema = Yup.object().shape({
     mattress: Yup.string()
         .ensure()
         .required('Mattress is required!'),
-    mattressSize: Yup.string()
-        .ensure()
-        .required('Mattress size is required!'),
+    // mattressSize: Yup.string()
+    //     .ensure()
+    //     .required('Mattress size is required!'),
+    firstName: Yup.string()
+        .min(1, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required'),
+    phone: Yup.string()
+        .matches(phoneRegExp, 'Phone number is not valid')
+        .required('Required'),
 })
 
 const Button = styled.button`
@@ -61,12 +60,27 @@ const options = [
 ]
 
 const colorOptions = [
-    { value: 12, label: 'MT Velour DELUXE 1', img: '#!' },
-    { value: 33, label: 'MT Velour DELUXE 2', img: '#!' },
-    { value: 45, label: 'MT Velour DELUXE 3', img: '#!' },
-    { value: 100, label: 'MT Velour DELUXE 4', img: '#!' },
-    { value: 333, label: 'MT Velour DELUXE 5', img: '#!' },
-    { value: 1234, label: 'MT Velour DELUXE 6', img: '#!' },
+    { value: 1, label: 'MT Velour DELUXE 1', img: true },
+    { value: 5, label: 'MT Velour DELUXE 5', img: true },
+    { value: 7, label: 'MT Velour DELUXE 7', img: true },
+    { value: 9, label: 'MT Velour DELUXE 9', img: true },
+    { value: 12, label: 'MT Velour DELUXE 12', img: true },
+    { value: 13, label: 'MT Velour DELUXE 13', img: true },
+    { value: 14, label: 'MT Velour DELUXE 14', img: true },
+    { value: 17, label: 'MT Velour DELUXE 17', img: true },
+    { value: 18, label: 'MT Velour DELUXE 18', img: true },
+    { value: 19, label: 'MT Velour DELUXE 19', img: true },
+    { value: 21, label: 'MT Velour DELUXE 21', img: true },
+    { value: 25, label: 'MT Velour DELUXE 25', img: true },
+    { value: 26, label: 'MT Velour DELUXE 26', img: true },
+    { value: 30, label: 'MT Velour DELUXE 30', img: true },
+    { value: 32, label: 'MT Velour DELUXE 32', img: true },
+    { value: 33, label: 'MT Velour DELUXE 33', img: true },
+    { value: 34, label: 'MT Velour DELUXE 34', img: true },
+    { value: 37, label: 'MT Velour DELUXE 37', img: true },
+    { value: 39, label: 'MT Velour DELUXE 39', img: true },
+    { value: 40, label: 'MT Velour DELUXE 40', img: true },
+    { value: 44, label: 'MT Velour DELUXE 44', img: true },
 ]
 
 const encode = data => {
@@ -77,7 +91,7 @@ const encode = data => {
         .join('&')
 }
 
-const MainForm = ({ isModal, couchPrice }) => {
+const MainForm = ({ isModal, couchPrice, data }) => {
     const [priceValue, setPrice] = React.useState({
         price: couchPrice ? couchPrice : 0,
     })
@@ -85,7 +99,7 @@ const MainForm = ({ isModal, couchPrice }) => {
     const formik = useFormik({
         initialValues: {
             firstName: '',
-            phone: '',
+            phone: '+380',
             couchModel: '',
             couchSize: '',
             color: '',
@@ -145,36 +159,52 @@ const MainForm = ({ isModal, couchPrice }) => {
                 price: formik.values.couchSize.value + couchPrice,
             })
         }
-        if (formik.values.color) {
-            setPrice({
-                price:
-                    formik.values.color.value +
-                    formik.values.couchSize.value +
-                    couchPrice,
-            })
-        }
-        if (formik.values.mattress) {
-            setPrice({
-                price:
-                    formik.values.color.value +
-                    formik.values.couchSize.value +
-                    formik.values.mattress.value +
-                    couchPrice,
-            })
-        }
+        // if (formik.values.color) {
+        //     setPrice({
+        //         price:
+        //             formik.values.color.value +
+        //             formik.values.couchSize.value +
+        //             couchPrice,
+        //     })
+        // }
+        // if (formik.values.mattress) {
+        //     setPrice({
+        //         price:
+        //             // formik.values.color.value +
+        //             formik.values.couchSize.value +
+        //             formik.values.mattress.value +
+        //             couchPrice,
+        //     })
+        // }
         if (formik.values.mattressSize) {
-            setPrice({
-                price:
-                    formik.values.color.value +
-                    formik.values.couchSize.value +
-                    formik.values.mattress.value +
-                    formik.values.mattressSize.value +
-                    couchPrice,
-            })
+            if (formik.values.mattress.value === 1) {
+                setPrice({
+                    price:
+                        // formik.values.color.value +
+                        formik.values.couchSize.value + couchPrice,
+                })
+            }
+            if (formik.values.mattress.value === 2) {
+                setPrice({
+                    price:
+                        // formik.values.color.value +
+                        formik.values.couchSize.value +
+                        formik.values.mattressSize.sans +
+                        couchPrice,
+                })
+            }
+            if (formik.values.mattress.value === 3) {
+                setPrice({
+                    price:
+                        // formik.values.color.value +
+                        formik.values.couchSize.value +
+                        formik.values.mattressSize.soft +
+                        couchPrice,
+                })
+            }
         }
     }, [
         formik.values.couchSize,
-        formik.values.color,
         formik.values.mattress,
         formik.values.mattressSize,
     ])
@@ -208,7 +238,7 @@ const MainForm = ({ isModal, couchPrice }) => {
                 <Grid>
                     <ReactSelect
                         label="РАЗМЕР КРОВАТИ:"
-                        options={options}
+                        options={data.couchSize}
                         selectName="couchSize"
                         value={formik.values.couchSize}
                         onChange={formik.setFieldValue}
@@ -217,7 +247,6 @@ const MainForm = ({ isModal, couchPrice }) => {
                         touched={formik.touched.couchSize}
                         placeholder="Выберите кровать"
                     />
-
                     <ReactSelect
                         label="ЦВЕТ ОБИВКИ:"
                         options={colorOptions}
@@ -230,10 +259,9 @@ const MainForm = ({ isModal, couchPrice }) => {
                         isDisabled={!formik.values.couchSize}
                         placeholder="Выберите обивку"
                     />
-
                     <ReactSelect
                         label="МАТРАС:"
-                        options={options}
+                        options={data.mattress}
                         selectName="mattress"
                         value={formik.values.mattress}
                         onChange={formik.setFieldValue}
@@ -246,14 +274,17 @@ const MainForm = ({ isModal, couchPrice }) => {
 
                     <ReactSelect
                         label="РАЗМЕР МАТРАСА:"
-                        options={options}
+                        options={data.mattressSize}
                         selectName="mattressSize"
                         value={formik.values.mattressSize}
                         onChange={formik.setFieldValue}
                         onBlur={formik.setFieldTouched}
                         error={formik.errors.mattressSize}
                         touched={formik.touched.mattressSize}
-                        isDisabled={!formik.values.mattress}
+                        isDisabled={
+                            !formik.values.mattress ||
+                            formik.values.mattress.value === 1
+                        }
                         placeholder="Выберите размер матраса"
                     />
 
@@ -263,6 +294,8 @@ const MainForm = ({ isModal, couchPrice }) => {
                         placeholder="Введите ваше имя"
                         value={formik.values.firstName}
                         handleChange={formik.handleChange}
+                        error={formik.errors.firstName}
+                        touched={formik.touched.firstName}
                     />
 
                     <InputField
@@ -271,6 +304,8 @@ const MainForm = ({ isModal, couchPrice }) => {
                         placeholder="Номер телефона"
                         value={formik.values.phone}
                         handleChange={formik.handleChange}
+                        error={formik.errors.phone}
+                        touched={formik.touched.phone}
                     />
                 </Grid>
 

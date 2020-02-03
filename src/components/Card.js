@@ -7,10 +7,10 @@ import Image from './image'
 const Card = styled.div`
     border: solid 2px #d1d1d6;
     background-color: #fafafa;
-    /* transition: all 630ms;
+    transition: all 630ms;
     &:hover {
-        transform: translate3d(0, -3px, 0);
-    } */
+        box-shadow: 0 0 10px 0 #8e8e93;
+    }
 `
 
 const Content = styled.div`

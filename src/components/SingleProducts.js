@@ -31,6 +31,20 @@ const SingleProducts = ({ reference, productId }) => {
                         description
                         reference
                         price
+                        couchSize {
+                            value
+                            label
+                        }
+                        mattress {
+                            value
+                            label
+                        }
+                        mattressSize {
+                            value
+                            label
+                            sans
+                            soft
+                        }
                     }
                 }
             }
@@ -90,7 +104,7 @@ const SingleProducts = ({ reference, productId }) => {
                             </div>
                             <hr />
                             {/* Main form */}
-                            <MainForm couchPrice={data.price} />
+                            <MainForm couchPrice={data.price} data={data} />
                         </div>
                     </Grid>
                 </>

@@ -1,6 +1,9 @@
 import React from 'react'
 import Select, { components } from 'react-select'
 
+// Components
+import Image from './image'
+
 const Option = props => {
     const hasImage = props.options.some(item => item.img)
     return (
@@ -11,16 +14,49 @@ const Option = props => {
                         style={{
                             width: 30,
                             height: 30,
-                            background: 'pink',
+                            marginTop: 5,
                             marginRight: 10,
                         }}
                     >
-                        {props.data.img}
+                        <Image alt="product" filename={props.data.label} />
                     </div>
                 )}
                 <div>{props.data.label}</div>
             </div>
         </components.Option>
+    )
+}
+
+const NoOptionsMessage = props => {
+    return (
+        <components.NoOptionsMessage {...props}>
+            Нечего не найдено
+        </components.NoOptionsMessage>
+    )
+}
+
+const SingleValue = ({ children, ...props }) => {
+    const hasImage = props.options.some(item => item.img)
+    return (
+        <components.SingleValue {...props}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                {hasImage ? (
+                    <div
+                        style={{
+                            width: 30,
+                            height: 30,
+                            marginTop: 5,
+                            marginRight: 10,
+                        }}
+                    >
+                        <Image alt="product" filename={props.data.label} />
+                    </div>
+                ) : (
+                    ''
+                )}
+                <div style={{ paddingBottom: 1 }}>{children}</div>
+            </div>
+        </components.SingleValue>
     )
 }
 
@@ -59,6 +95,8 @@ const ReactSelect = ({
                 isDisabled={isDisabled}
                 components={{
                     Option,
+                    NoOptionsMessage,
+                    SingleValue,
                 }}
                 placeholder={
                     <span className="floating-label">{placeholder}</span>
@@ -73,6 +111,11 @@ const ReactSelect = ({
                         ...base,
                         backgroundColor: 'black',
                         color: 'white',
+                    }),
+                    option: base => ({
+                        ...base,
+                        border: `0.5px solid #ccc`,
+                        height: '100%',
                     }),
                     control: (base, props) => ({
                         ...base,

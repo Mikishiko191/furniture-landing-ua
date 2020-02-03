@@ -22,7 +22,7 @@ const ScrollTo = styled.div`
 
 const ScrollToTop = () => {
     const onHandleScrollToTop = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 850, left: 0, behavior: 'smooth' })
     }
 
     return (
