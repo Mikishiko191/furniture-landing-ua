@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 // Components
 import MainForm from '../components/MainForm'
 import ProductShowCase from '../components/ProductShowCase'
+import { PdfFile } from './Icons'
 
 const Grid = styled.div`
     display: grid;
@@ -13,6 +14,75 @@ const Grid = styled.div`
     margin: 0 auto;
     max-width: 1600px;
     padding: 0 1.0875rem 1.45rem;
+    .product-description {
+        h2 {
+            font-size: 33px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #000000;
+        }
+        &__list {
+            margin: 0;
+            list-style: none;
+            li {
+                display: flex;
+                align-items: center;
+                hr {
+                    background-color: #000000;
+                    opacity: 0.5;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .product-includes {
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        ul {
+            li {
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #000000;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .product-price {
+        font-size: 22px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        margin-bottom: 32px;
+        span {
+            font-size: 36px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #000000;
+        }
+    }
 `
 
 const SingleProducts = ({ reference, productId }) => {
@@ -65,27 +135,47 @@ const SingleProducts = ({ reference, productId }) => {
                         </div>
                         <div className="product-description">
                             <h2>{data.title}</h2>
-                            <ul>
-                                <li>Материал: велюр</li>
-                                <li>Ножки: скрытые пластиковые</li>
-                                <li>Наполнение: пенополиуретан </li>
-                                <li>Основа под матрас: ортопедическая рамка</li>
-                                <li>Ниша для вещей: есть</li>
+                            <ul className="product-description__list">
                                 <li>
-                                    Конструкция: каркас из ДСП, деревянного
-                                    бруса и фанерного листа
+                                    Материал <hr style={{ width: 105 }} />
+                                    велюр
                                 </li>
                                 <li>
-                                    Механизм: подъёмный механизм с
-                                    газо-масляными амортизаторами
+                                    Ножки <hr style={{ width: 131 }} /> скрытые
+                                    пластиковые
                                 </li>
                                 <li>
-                                    Дополнительно: мебельные стразы вместо
-                                    пуговиц 2100 грн
+                                    Наполнение <hr style={{ width: 87 }} />{' '}
+                                    пенополиуретан{' '}
                                 </li>
                                 <li>
-                                    Матрас (по желанию): матрас «Сан» матрас
-                                    «Моко-Софт»
+                                    Основа под матрас{' '}
+                                    <hr style={{ width: 35 }} /> ортопедическая
+                                    рамка
+                                </li>
+                                <li>
+                                    Ниша для вещей <hr style={{ width: 55 }} />{' '}
+                                    есть
+                                </li>
+                                <li>
+                                    Конструкция <hr style={{ width: 93 }} />{' '}
+                                    каркас из ДСП, деревянного бруса и фанерного
+                                    листа
+                                </li>
+                                <li>
+                                    Механизм <hr style={{ width: 128 }} />{' '}
+                                    подъёмный механизм с газо-масляными
+                                    амортизаторами
+                                </li>
+                                <li>
+                                    Дополнительно <hr style={{ width: 58 }} />{' '}
+                                    мебельные стразы вместо пуговиц <br /> 2100
+                                    грн
+                                </li>
+                                <li>
+                                    Матрас (по желанию){' '}
+                                    <hr style={{ width: 17 }} /> матрас «Сан»
+                                    матрас «Моко-Софт»
                                 </li>
                             </ul>
                             <hr />
@@ -97,7 +187,23 @@ const SingleProducts = ({ reference, productId }) => {
                                     <li>Инструкцию по уходу и сборке</li>
                                     <li>Гарантийный талон</li>
                                 </ul>
-                                <a href="#!">ОПЛАТА ДОСТАВКА ГАРАНТИЯ </a>
+                                <div
+                                    style={{
+                                        marginBottom: 45,
+                                    }}
+                                >
+                                    <a
+                                        href="!#"
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            color: '#000000',
+                                        }}
+                                    >
+                                        ОПЛАТА ДОСТАВКА ГАРАНТИЯ
+                                        <PdfFile style={{ marginLeft: 15 }} />
+                                    </a>
+                                </div>
                             </div>
                             <div className="product-price">
                                 от <span>17 200 грн</span>

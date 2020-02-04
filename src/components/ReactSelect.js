@@ -84,9 +84,11 @@ const ReactSelect = ({
 
     return (
         <div style={{ marginBottom: 10 }}>
-            <label htmlFor="color" style={{ fontSize: 20 }}>
-                {label}
-            </label>
+            <div style={{ marginBottom: 15, marginTop: 20 }}>
+                <label htmlFor="color" style={{ fontSize: 20 }}>
+                    {label}
+                </label>
+            </div>
             <Select
                 value={selectedValue}
                 onChange={handleChange}

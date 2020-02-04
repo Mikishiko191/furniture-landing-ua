@@ -17,7 +17,7 @@ const ProductShowCase = ({ item }) => {
     }
 
     return (
-        <div style={{ position: 'sticky', top: 10 }}>
+        <div style={{ position: 'sticky', top: 100 }}>
             <div onClick={() => onHandleChangeImage(item.image)}>
                 <Image
                     alt="product"

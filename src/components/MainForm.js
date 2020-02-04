@@ -32,7 +32,7 @@ const validationSchema = Yup.object().shape({
 })
 
 const Button = styled.button`
-    padding: 16px 30px;
+    padding: 16px 80px;
     border: solid 2px #000000;
     background: #000000;
     color: white;
@@ -48,6 +48,9 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
+    .product-full-price {
+        background: pink;
+    }
 `
 
 const options = [
@@ -83,13 +86,13 @@ const colorOptions = [
     { value: 44, label: 'MT Velour DELUXE 44', img: true },
 ]
 
-const encode = data => {
-    return Object.keys(data)
-        .map(
-            key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-        )
-        .join('&')
-}
+// const encode = data => {
+//     return Object.keys(data)
+//         .map(
+//             key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+//         )
+//         .join('&')
+// }
 
 const MainForm = ({ isModal, data }) => {
     const [priceValue, setPrice] = React.useState({
@@ -299,10 +302,16 @@ const MainForm = ({ isModal, data }) => {
                     />
                 </Grid>
 
-                <div className="product-full-price">
-                    Итого: <span>{priceValue.price} грн</span>
+                <div
+                    className="product-full-price"
+                    style={{ fontSize: 22, color: '#000000', marginTop: 20 }}
+                >
+                    Итого:{' '}
+                    <span style={{ fontSize: 36, fontWeight: 600 }}>
+                        {priceValue.price} грн
+                    </span>
                 </div>
-                <div className="product-submit">
+                <div className="product-submit" style={{ marginTop: 42 }}>
                     <Button type="submit">Отправить заказ</Button>
                 </div>
             </form>

@@ -60,49 +60,65 @@ const MapSection = () => {
     }
 
     return (
-        <Grid>
-            <div className="scroll">
-                {allShopLocationOnMapJson.nodes.map(list => (
-                    <div
-                        className="col"
-                        key={list.id}
-                        onClick={() => onHandleSelect(list)}
-                    >
-                        <p style={{ color: '#000000' }}>
-                            Магазин{' '}
-                            <span style={{ fontSize: 28 }}>{list.shop}</span>
-                        </p>
-                        <p>
-                            <span
-                                style={{ color: '#6f6f75', paddingRight: 15 }}
-                            >
-                                Адрес:
-                            </span>{' '}
-                            {list.address}
-                        </p>
-                        <p>
-                            <span
-                                style={{ color: '#6f6f75', paddingRight: 15 }}
-                            >
-                                Режим работы:
-                            </span>
-                            {list.workingHours}
-                        </p>
-                        <p>
-                            <span
-                                style={{ color: '#6f6f75', paddingRight: 15 }}
-                            >
-                                Телефон:
-                            </span>{' '}
-                            {list.phone}
-                        </p>
-                    </div>
-                ))}
-            </div>
-            <div style={{ height: '50vh' }}>
-                <GoogleMap list={state} />
-            </div>
-        </Grid>
+        <section style={{ margin: '100px 0 ' }}>
+            <h2 style={{ textAlign: 'center', marginBottom: 86 }}>
+                УВИДЕТЬ ВЖИВУЮ И ОЦЕНИТЬ КАЧЕСТВО НАШЕЙ МЕБЕЛИ МОЖНО ЗДЕСЬ
+            </h2>
+            <Grid>
+                <div className="scroll">
+                    {allShopLocationOnMapJson.nodes.map(list => (
+                        <div
+                            className="col"
+                            key={list.id}
+                            onClick={() => onHandleSelect(list)}
+                        >
+                            <p style={{ color: '#000000' }}>
+                                Магазин{' '}
+                                <span style={{ fontSize: 28 }}>
+                                    {list.shop}
+                                </span>
+                            </p>
+                            <p>
+                                <span
+                                    style={{
+                                        color: '#6f6f75',
+                                        paddingRight: 15,
+                                    }}
+                                >
+                                    Адрес:
+                                </span>{' '}
+                                {list.address}
+                            </p>
+                            <p>
+                                <span
+                                    style={{
+                                        color: '#6f6f75',
+                                        paddingRight: 15,
+                                    }}
+                                >
+                                    Режим работы:
+                                </span>
+                                {list.workingHours}
+                            </p>
+                            <p>
+                                <span
+                                    style={{
+                                        color: '#6f6f75',
+                                        paddingRight: 15,
+                                    }}
+                                >
+                                    Телефон:
+                                </span>{' '}
+                                {list.phone}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+                <div style={{ height: '50vh' }}>
+                    <GoogleMap list={state} />
+                </div>
+            </Grid>
+        </section>
     )
 }
 

@@ -16,7 +16,7 @@ const InputField = ({
                     border: !!error ? 'solid 1px red' : 'solid 1px #000000',
                     padding: '13px 21px',
                     width: '100%',
-                    margin: '10px 0',
+                    margin: '25px 0',
                 }}
                 id={name}
                 name={name}
