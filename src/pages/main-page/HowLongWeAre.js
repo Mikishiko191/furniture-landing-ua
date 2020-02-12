@@ -43,7 +43,7 @@ const Grid = styled.div`
     }
 `
 
-const HowLongWeAre = ({ className }) => {
+const HowLongWeAre = ({ className, scrollToAboutRef }) => {
     const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
@@ -76,7 +76,7 @@ const HowLongWeAre = ({ className }) => {
     ]
 
     return (
-        <section style={{ overflow: 'hidden' }}>
+        <section style={{ overflow: 'hidden' }} ref={scrollToAboutRef}>
             <BackgroundImage
                 Tag="section"
                 className={className}

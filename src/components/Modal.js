@@ -1,6 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import ReactSelect from './ReactSelect'
 
 // Components
 import MainFrom from './MainForm'
@@ -25,13 +27,67 @@ const customStyles = {
     },
 }
 
+const couchOptions = [
+    { value: 'fc50543e-6628-4a74-af10-d2817422b513', label: 'Кровать DAKOTA' },
+    { value: 'd10ffc35-eb7e-4dd7-bfd5-4e19edb24ccc', label: 'Кровать BRIDGET' },
+    { value: 'a91d4a1b-44ff-4477-9533-0d5e9de3578d', label: 'Кровать EMILIA' },
+]
+
 Modal.setAppElement('#___gatsby')
 
 const ModalComponent = ({ modalIsOpen, onHandelCloseModal }) => {
+    const [productId, setProductId] = React.useState(
+        'fc50543e-6628-4a74-af10-d2817422b513'
+    )
+    const [couchModel, setCouchModel] = React.useState({
+        value: 'fc50543e-6628-4a74-af10-d2817422b513',
+        label: 'Кровать DAKOTA',
+    })
+    const { allFurnitureJson } = useStaticQuery(
+        graphql`
+            query {
+                allFurnitureJson {
+                    nodes {
+                        id
+                        image
+                        product {
+                            id
+                            image
+                        }
+                        title
+                        description
+                        reference
+                        price
+                        couchSize {
+                            value
+                            label
+                        }
+                        mattress {
+                            value
+                            label
+                        }
+                        mattressSize {
+                            value
+                            label
+                            sans
+                            soft
+                        }
+                    }
+                }
+            }
+        `
+    )
+
+    const data = allFurnitureJson.nodes.find(item => item.id === productId)
+
+    const onHandleChangeCouchOption = (_, value) => {
+        setProductId(value.value)
+        setCouchModel(value)
+    }
+
     return (
         <Modal
             isOpen={modalIsOpen}
-            //   onAfterOpen={afterOpenModal}
             onRequestClose={onHandelCloseModal}
             style={customStyles}
             contentLabel="Example Modal"
@@ -47,7 +103,17 @@ const ModalComponent = ({ modalIsOpen, onHandelCloseModal }) => {
                         <path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z" />
                     </svg>
                 </CloseButton>
-                <MainFrom isModal />
+                <MainFrom isModal data={data} couchModel={couchModel}>
+                    <ReactSelect
+                        label="КРОВАТЬ:"
+                        options={couchOptions}
+                        selectName="couchModel"
+                        value={couchModel}
+                        defaultValue={couchModel}
+                        onChange={onHandleChangeCouchOption}
+                        placeholder="Выберите модель "
+                    />
+                </MainFrom>
                 <p
                     style={{
                         fontSize: 16,

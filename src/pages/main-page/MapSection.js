@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
 import GoogleMap from '../../components/GoogleMap'
+import Image from '../../components/image'
 
 const Grid = styled.div`
     display: grid;
@@ -13,16 +14,25 @@ const Grid = styled.div`
     max-width: 1300px;
     padding: 0 1.0875rem 1.45rem;
     .scroll {
-        height: 80vh;
-        overflow: scroll;
+        /* height: 80vh;
+        overflow: scroll; */
 
         .col {
             padding: 30px;
             cursor: pointer;
+            /* display: flex;
+            align-items: center; */
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            div {
+                align-self: center;
+            }
+            /* justify-content: center; */
             transition: all 600ms;
             p {
                 margin: 0;
-                padding: 5px 0;
+                padding: 4px 0;
+                line-height: normal;
             }
             &:nth-child(odd) {
                 background: #e6e6e6;
@@ -44,6 +54,8 @@ const MapSection = () => {
                 allShopLocationOnMapJson {
                     nodes {
                         id
+                        shopType
+                        shopLogo
                         shop
                         address
                         workingHours
@@ -72,50 +84,66 @@ const MapSection = () => {
                             key={list.id}
                             onClick={() => onHandleSelect(list)}
                         >
-                            <p style={{ color: '#000000' }}>
-                                Магазин{' '}
-                                <span style={{ fontSize: 28 }}>
-                                    {list.shop}
-                                </span>
-                            </p>
-                            <p>
-                                <span
-                                    style={{
-                                        color: '#6f6f75',
-                                        paddingRight: 15,
-                                    }}
-                                >
-                                    Адрес:
-                                </span>{' '}
-                                {list.address}
-                            </p>
-                            <p>
-                                <span
-                                    style={{
-                                        color: '#6f6f75',
-                                        paddingRight: 15,
-                                    }}
-                                >
-                                    Режим работы:
-                                </span>
-                                {list.workingHours}
-                            </p>
-                            <p>
-                                <span
-                                    style={{
-                                        color: '#6f6f75',
-                                        paddingRight: 15,
-                                    }}
-                                >
-                                    Телефон:
-                                </span>{' '}
-                                {list.phone}
-                            </p>
+                            <div style={{ width: 126 }}>
+                                <Image alt="product" filename={list.shopLogo} />
+                            </div>
+                            <div>
+                                <p style={{ color: '#000000' }}>
+                                    <span
+                                        style={{
+                                            fontSize: 16,
+                                            marginRight: 10,
+                                        }}
+                                    >
+                                        {list.shopType}
+                                    </span>
+                                    <span style={{ fontSize: 20 }}>
+                                        {list.shop}
+                                    </span>
+                                </p>
+                                <p style={{ fontSize: 16 }}>
+                                    <span
+                                        style={{
+                                            color: '#6f6f75',
+                                            paddingRight: 15,
+                                        }}
+                                    >
+                                        Адрес:
+                                    </span>{' '}
+                                    {list.address}
+                                </p>
+                                <p style={{ fontSize: 16 }}>
+                                    <span
+                                        style={{
+                                            color: '#6f6f75',
+                                            paddingRight: 15,
+                                        }}
+                                    >
+                                        Режим работы:
+                                    </span>
+                                    {list.workingHours}
+                                </p>
+                                <p style={{ fontSize: 16 }}>
+                                    <span
+                                        style={{
+                                            color: '#6f6f75',
+                                            paddingRight: 15,
+                                        }}
+                                    >
+                                        Телефон:
+                                    </span>{' '}
+                                    {list.phone}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
-                <div style={{ height: '50vh' }}>
-                    <GoogleMap list={state} />
+                <div style={{ position: 'relative' }}>
+                    <div
+                        style={{ position: 'sticky', top: 120, height: '50vh' }}
+                    >
+                        <GoogleMap list={state} />
+                    </div>
                 </div>
             </Grid>
         </section>

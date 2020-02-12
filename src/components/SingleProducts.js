@@ -6,6 +6,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import MainForm from '../components/MainForm'
 import ProductShowCase from '../components/ProductShowCase'
 import { PdfFile } from './Icons'
+import Tooltip from './Tooltip'
+import Image from '../components/image'
 
 const Grid = styled.div`
     display: grid;
@@ -174,8 +176,66 @@ const SingleProducts = ({ reference, productId }) => {
                                 </li>
                                 <li>
                                     Матрас (по желанию){' '}
-                                    <hr style={{ width: 17 }} /> матрас «Сан»
-                                    матрас «Моко-Софт»
+                                    <hr style={{ width: 17 }} />
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            матрас «Сан»
+                                            <Tooltip>
+                                                <h5>Матрас «Сан»</h5>
+                                                <p>ТИП МАТРАСА: Двусторонний</p>
+                                                <p>ВЫСОТА МОДЕЛИ: 26 см</p>
+                                                <p>ЖЕСТКОСТЬ: 3/2</p>
+                                                <p>
+                                                    НАГРУЗКА НА СПАЛЬНОЕ МЕСТО
+                                                    до 170 кг
+                                                </p>
+                                                <p>
+                                                    Производитель: Украина,
+                                                    Matroluxe
+                                                </p>
+                                                {/* <Image
+                                                    alt="Матрас «Сан»"
+                                                    filename="matras"
+                                                /> */}
+                                            </Tooltip>
+                                        </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            матрас «Моко-Софт»
+                                            <Tooltip>
+                                                <h5>Матрас «Мокко-Софт»</h5>
+                                                <p>ТИП МАТРАСА: Двусторонний</p>
+                                                <p>ВЫСОТА МОДЕЛИ: 22 см</p>
+                                                <p>ЖЕСТКОСТЬ: 4/4</p>
+                                                <p>
+                                                    НАГРУЗКА НА СПАЛЬНОЕ МЕСТО
+                                                    до 150 кг
+                                                </p>
+                                                <p>
+                                                    Производитель: Украина,
+                                                    Matroluxe
+                                                </p>
+                                                {/* <Image
+                                                    alt="Матрас «Мокко-Софт»"
+                                                    filename="barinhouse.png"
+                                                /> */}
+                                            </Tooltip>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                             <hr />

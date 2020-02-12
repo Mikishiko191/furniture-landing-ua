@@ -3,6 +3,7 @@ import Select, { components } from 'react-select'
 
 // Components
 import Image from './image'
+import Tooltip from './Tooltip'
 
 const Option = props => {
     const hasImage = props.options.some(item => item.img)
@@ -71,6 +72,8 @@ const ReactSelect = ({
     touched,
     isDisabled,
     placeholder,
+    defaultValue,
+    withToolTip,
 }) => {
     const handleChange = value => {
         // this is going to call setFieldValue and manually update values of the selectName
@@ -79,14 +82,49 @@ const ReactSelect = ({
 
     const handleBlur = () => {
         // this is going to call setFieldTouched and manually update touched of the selectName
-        onBlur(selectName, true)
+        if (onBlur) {
+            onBlur(selectName, true)
+        }
     }
 
     return (
         <div style={{ marginBottom: 10 }}>
             <div style={{ marginBottom: 15, marginTop: 20 }}>
-                <label htmlFor="color" style={{ fontSize: 20 }}>
-                    {label}
+                <label
+                    htmlFor="color"
+                    style={{
+                        fontSize: 20,
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <span>{label}</span>
+                    <span>
+                        {withToolTip && (
+                            <Tooltip>
+                                <div>
+                                    <p>MAGITEX MT Velour Deluxe</p>
+                                    <p>Производитель: Турция</p>
+                                    <p>Поставщик: Magitex</p>
+                                    <p>Коллекция: MT Velour Deluxe</p>
+                                    <p>Тип ткани: велюр</p>
+                                    <p>
+                                        Износостойкость: 150000 циклов по
+                                        Мартиндейлу
+                                    </p>
+                                    <p>
+                                        Особенности: Soft Touch, антикоготь,
+                                        гипоаллергенная
+                                    </p>
+                                    <p>Плотность: 410 г/м.п.</p>
+                                    <p style={{ color: '#f95047' }}>
+                                        Цвет материала может отличаться от цвета
+                                        на вашем экране
+                                    </p>
+                                </div>
+                            </Tooltip>
+                        )}
+                    </span>
                 </label>
             </div>
             <Select
@@ -95,6 +133,7 @@ const ReactSelect = ({
                 onBlur={handleBlur}
                 options={options}
                 isDisabled={isDisabled}
+                defaultValue={defaultValue}
                 components={{
                     Option,
                     NoOptionsMessage,

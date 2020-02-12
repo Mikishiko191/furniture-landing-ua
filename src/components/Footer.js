@@ -57,9 +57,9 @@ const Grid = styled.div`
     }
 `
 
-const Footer = () => {
+const Footer = ({ scrollToContactUsRef }) => {
     return (
-        <footer style={{ background: '#000000' }}>
+        <footer style={{ background: '#000000' }} ref={scrollToContactUsRef}>
             <Grid>
                 <div>
                     <h5>НУЖНА КОНСЛУЛЬТАЦИЯ МЕНЕДЖЕРА</h5>

@@ -7,6 +7,11 @@ import * as Yup from 'yup'
 import ReactSelect from './ReactSelect'
 import InputField from './InputField'
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const SweetAlert = withReactContent(Swal)
+
 const phoneRegExp = /^\+?3?8?(0\d{9})$/
 
 const validationSchema = Yup.object().shape({
@@ -53,15 +58,6 @@ const Grid = styled.div`
     }
 `
 
-const options = [
-    { value: 12, label: 'Food' },
-    { value: 33, label: 'Being Fabulous' },
-    { value: 45, label: 'Ken Wheeler' },
-    { value: 100, label: 'ReasonML' },
-    { value: 333, label: 'Unicorns' },
-    { value: 1234, label: 'Kittens' },
-]
-
 const colorOptions = [
     { value: 1, label: 'MT Velour DELUXE 1', img: true },
     { value: 5, label: 'MT Velour DELUXE 5', img: true },
@@ -94,7 +90,7 @@ const colorOptions = [
 //         .join('&')
 // }
 
-const MainForm = ({ isModal, data }) => {
+const MainForm = ({ isModal, children, data, couchModel }) => {
     const [priceValue, setPrice] = React.useState({
         price: 0,
     })
@@ -109,6 +105,7 @@ const MainForm = ({ isModal, data }) => {
             mattress: '',
             mattressSize: '',
         },
+        // enableReinitialize: false,
         validationSchema,
         onSubmit: values => {
             const schema = {
@@ -119,6 +116,12 @@ const MainForm = ({ isModal, data }) => {
                 mattress: values.mattress.value,
                 mattressSize: values.mattressSize.value,
             }
+
+            SweetAlert.fire({
+                title: <p>Спасибо что оставили заявку, мы с вами свяжемся</p>,
+                icon: 'success',
+                confirmButtonText: 'Закрыть',
+            })
 
             // const form = userOrderForm.current
             console.log(schema)
@@ -162,6 +165,15 @@ const MainForm = ({ isModal, data }) => {
                 price: formik.values.couchSize.value,
             })
         }
+
+        // if (couchModel) {
+        //     // console.log('reset')
+        //     formik.resetForm({
+        //         values: {
+        //             couchSize: null,
+        //         },
+        //     })
+        // }
         // if (formik.values.color) {
         //     setPrice({
         //         price:
@@ -200,6 +212,7 @@ const MainForm = ({ isModal, data }) => {
         formik.values.couchSize,
         formik.values.mattress,
         formik.values.mattressSize,
+        couchModel,
     ])
 
     return (
@@ -215,19 +228,19 @@ const MainForm = ({ isModal, data }) => {
                 onSubmit={formik.handleSubmit}
                 className="product-select-form"
             >
-                {isModal && (
-                    <ReactSelect
-                        label="КРОВАТЬ:"
-                        options={options}
-                        selectName="couchModel"
-                        value={formik.values.couchModel}
-                        onChange={formik.setFieldValue}
-                        onBlur={formik.setFieldTouched}
-                        error={formik.errors.couchModel}
-                        touched={formik.touched.couchModel}
-                        placeholder="Выберите модель "
-                    />
-                )}
+                {isModal && children
+                // <ReactSelect
+                //     label="КРОВАТЬ:"
+                //     options={couchOptions}
+                //     selectName="couchModel"
+                //     value={formik.values.couchModel}
+                //     onChange={formik.setFieldValue}
+                //     onBlur={formik.setFieldTouched}
+                //     error={formik.errors.couchModel}
+                //     touched={formik.touched.couchModel}
+                //     placeholder="Выберите модель "
+                // />
+                }
                 <Grid>
                     <ReactSelect
                         label="РАЗМЕР КРОВАТИ:"
@@ -242,6 +255,7 @@ const MainForm = ({ isModal, data }) => {
                     />
                     <ReactSelect
                         label="ЦВЕТ ОБИВКИ:"
+                        withToolTip
                         options={colorOptions}
                         selectName="color"
                         value={formik.values.color}

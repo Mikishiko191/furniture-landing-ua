@@ -50,6 +50,12 @@ const Flex = styled.div`
             margin: 0;
         }
     }
+
+    .display-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 `
 
 const Button = styled.button`
@@ -64,7 +70,33 @@ const Button = styled.button`
     }
 `
 
-const Header = ({ onHandleOpenModal }) => (
+const ButtonLink = styled.button`
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 30px;
+    border: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background: black;
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: 0.25s linear;
+    }
+    &:hover:before,
+    &:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+`
+
+const Header = ({ onHandleOpenModal, onHandleScrollTo }) => (
     <HeaderStyleComponent>
         <Wrapper>
             <div className="logo" style={{ width: 300 }}>
@@ -77,7 +109,13 @@ const Header = ({ onHandleOpenModal }) => (
                     <p>+38 (098) 777-67-60</p>
                     <p>+38 (099) 777-67-80</p>
                 </div>
-                <div>
+                <div className="display-flex">
+                    <ButtonLink onClick={() => onHandleScrollTo('about')}>
+                        О нас
+                    </ButtonLink>
+                    <ButtonLink onClick={() => onHandleScrollTo('contact-us')}>
+                        Контакты
+                    </ButtonLink>
                     <Button onClick={onHandleOpenModal}>Оформить заказ</Button>
                 </div>
             </Flex>
