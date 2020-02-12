@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import BackGroundImage from './BackGroundImage'
 
+// Utils
+import numberWithSpaces from '../utils/numberWithSpaces'
+
 const Card = styled.div`
     border: solid 2px #d1d1d6;
     background-color: #fafafa;
@@ -71,7 +74,7 @@ const CardComponent = ({
                 <p>{content}</p>
                 <h5>{reference}</h5>
                 <p className="price">
-                    от <span>{price} грн</span>
+                    от <span>{numberWithSpaces(price)} грн</span>
                 </p>
                 <Button onClick={onHandleClick}>Подробнее</Button>
             </Content>

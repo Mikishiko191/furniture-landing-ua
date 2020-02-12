@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
+import axios from 'axios'
 import * as Yup from 'yup'
 
 // Components
@@ -9,6 +10,9 @@ import InputField from './InputField'
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+
+// Utils
+import numberWithSpaces from '../utils/numberWithSpaces'
 
 const SweetAlert = withReactContent(Swal)
 
@@ -97,6 +101,7 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
 
     const formik = useFormik({
         initialValues: {
+            couchTitle: data.title,
             firstName: '',
             phone: '+380',
             couchModel: '',
@@ -111,51 +116,32 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
             const schema = {
                 firstName: values.firstName,
                 phone: values.phone,
-                couchSize: values.couchSize.value,
-                color: values.color.value,
-                mattress: values.mattress.value,
-                mattressSize: values.mattressSize.value,
+                couchSize: values.couchSize.label,
+                color: values.color.label,
+                mattress: values.mattress.label,
+                mattressSize: values.mattressSize.label,
             }
 
-            SweetAlert.fire({
-                title: <p>Спасибо что оставили заявку, мы с вами свяжемся</p>,
-                icon: 'success',
-                confirmButtonText: 'Закрыть',
-            })
-
-            // const form = userOrderForm.current
-            console.log(schema)
-            // fetch('/', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/x-www-form-urlencoded',
-            //     },
-            //     body: encode({
-            //         'form-name': form.getAttribute('name'),
-            //         ...schema,
-            //     }),
-            // })
-            //     .then(response => {
-            //         console.log('====================================')
-            //         console.log(`${JSON.stringify(response, null, 2)}`)
-            //         console.log('====================================')
-            //         navigate(form.getAttribute('action'))
-            //     })
-            //     .catch(error => {
-            //         console.log('====================================')
-            //         console.log(`error in submiting the form data:${error}`)
-            //         console.log('====================================')
-            //     })
-
-            // fetch('/', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/x-www-form-urlencoded',
-            //     },
-            //     body: encode({ 'form-name': 'userOrder', ...schema }),
-            // })
-            //     .then(() => alert('Success!'))
-            //     .catch(error => alert(error))
+            axios
+                .post('http://localhost:4444/api/v1', schema)
+                .then(() => {
+                    SweetAlert.fire({
+                        title: (
+                            <p>
+                                Спасибо что оставили заявку, мы с вами свяжемся
+                            </p>
+                        ),
+                        icon: 'success',
+                        confirmButtonText: 'Закрыть',
+                    })
+                })
+                .catch(() => {
+                    SweetAlert.fire({
+                        title: <p>Что то пошло не так, попробуете еще раз</p>,
+                        icon: 'error',
+                        confirmButtonText: 'Закрыть',
+                    })
+                })
         },
     })
 
@@ -322,7 +308,7 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
                 >
                     Итого:{' '}
                     <span style={{ fontSize: 36, fontWeight: 600 }}>
-                        {priceValue.price} грн
+                        {numberWithSpaces(priceValue.price)} грн
                     </span>
                 </div>
                 <div className="product-submit" style={{ marginTop: 42 }}>

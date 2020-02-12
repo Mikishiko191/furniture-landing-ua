@@ -7,7 +7,9 @@ import MainForm from '../components/MainForm'
 import ProductShowCase from '../components/ProductShowCase'
 import { PdfFile } from './Icons'
 import Tooltip from './Tooltip'
-import Image from '../components/image'
+
+// Utils
+import numberWithSpaces from '../utils/numberWithSpaces'
 
 const Grid = styled.div`
     display: grid;
@@ -266,7 +268,8 @@ const SingleProducts = ({ reference, productId }) => {
                                 </div>
                             </div>
                             <div className="product-price">
-                                от <span>17 200 грн</span>
+                                от{' '}
+                                <span>{numberWithSpaces(data.price)} грн</span>
                             </div>
                             <hr />
                             {/* Main form */}
