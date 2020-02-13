@@ -6,12 +6,39 @@ import { Facebook, Instagram, Gmail } from './Icons'
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(1, 1fr);
+    text-align: center; */
     padding: 60px;
     color: white;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        ul {
+            list-style: none;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+        ul {
+            list-style: inside;
+        }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 100px;
+        text-align: left;
+    }
+
     h5 {
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 20px;
+        font-weight: bold;
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -21,6 +48,13 @@ const Grid = styled.div`
     }
     p {
         margin: 4px 0;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
     }
     ul {
         margin: 0;
@@ -102,10 +136,7 @@ const Footer = ({ scrollToContactUsRef }) => {
                 <div>
                     <h5>ДОСТАВКА </h5>
                     <p style={{ marginBottom: 14 }}>
-                        Осуществляется только по предоплате
-                    </p>
-                    <p style={{ marginBottom: 14 }}>
-                        Доставка по Украине транспортной компанией Delivery до
+                        Бесплатно по Украине транспортной компанией Delivery до
                         отделения в Вашем населенном пункте
                     </p>
                     <p>

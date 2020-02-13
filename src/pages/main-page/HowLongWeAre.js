@@ -18,8 +18,61 @@ const Shadow = styled.div`
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     grid-column-gap: 12px;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+        .col {
+            &:nth-child(1) {
+                margin-bottom: 40px;
+            }
+            &:nth-child(2) {
+                margin-bottom: 40px;
+            }
+            h3 {
+                font-size: 35px;
+                font-weight: bold;
+                color: #ffffff;
+                margin: 0;
+            }
+            p {
+                height: 48px;
+                font-size: 23px;
+                font-weight: 600;
+                color: #ffffff;
+                margin: 0;
+            }
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        .col {
+            &:nth-child(1) {
+                margin-bottom: 0;
+            }
+            &:nth-child(2) {
+                margin-bottom: 0;
+            }
+            h3 {
+                font-size: 92px;
+                font-weight: bold;
+                color: #ffffff;
+                margin: 0;
+            }
+            p {
+                height: 48px;
+                font-size: 32px;
+                font-weight: bold;
+                color: #ffffff;
+                margin: 0;
+            }
+        }
+    }
+
     margin: 0 auto;
     max-width: 1300px;
     padding: 0 1.0875rem 1.45rem;
@@ -27,19 +80,6 @@ const Grid = styled.div`
     z-index: 1;
     .col {
         text-align: center;
-        h3 {
-            font-size: 92px;
-            font-weight: 500;
-            color: #ffffff;
-            margin: 0;
-        }
-        h4 {
-            height: 48px;
-            font-size: 40px;
-            font-weight: 600;
-            color: #ffffff;
-            margin: 0;
-        }
     }
 `
 
@@ -86,20 +126,22 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
                 <Shadow />
                 <Grid>
                     <div className="col">
-                        <h3>4+</h3>
-                        <h4>года на рынке</h4>
+                        <h3>с 2016</h3>
+                        <p>года на рынке</p>
                     </div>
                     <div className="col">
                         <h3>5480+</h3>
-                        <h4>готовых изделий</h4>
+                        <p>готовых изделий</p>
                     </div>
                     <div className="col">
                         <h3>80+</h3>
-                        <h4>городов</h4>
+                        <p>городов</p>
                     </div>
                 </Grid>
             </BackgroundImage>
-            <SliderSection sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
+            <div style={{ marginBottom: 80, marginTop: 80 }}>
+                <SliderSection sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
+            </div>
             <SliderSection sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК" />
         </section>
     )

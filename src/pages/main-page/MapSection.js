@@ -8,8 +8,38 @@ import Image from '../../components/image'
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
     grid-column-gap: 53px;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+        .scroll {
+            .col {
+                grid-template-columns: 1fr;
+                .logo {
+                    width: 50%;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        .scroll {
+            .col {
+                grid-template-columns: 0.4fr 1fr;
+                .logo {
+                    width: 126px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
     margin: 0 auto;
     max-width: 1300px;
     padding: 0 1.0875rem 1.45rem;
@@ -23,7 +53,7 @@ const Grid = styled.div`
             /* display: flex;
             align-items: center; */
             display: grid;
-            grid-template-columns: 0.4fr 1fr;
+            /* grid-template-columns: 0.4fr 1fr; */
             div {
                 align-self: center;
             }
@@ -73,7 +103,7 @@ const MapSection = () => {
 
     return (
         <section style={{ margin: '100px 0 ' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: 86 }}>
+            <h2 style={{ textAlign: 'center', marginBottom: 86, fontSize: 28, fontWeight: 'bold', color: '#000000'  }}>
                 УВИДЕТЬ ВЖИВУЮ И ОЦЕНИТЬ КАЧЕСТВО НАШЕЙ МЕБЕЛИ МОЖНО ЗДЕСЬ
             </h2>
             <Grid>
@@ -84,7 +114,7 @@ const MapSection = () => {
                             key={list.id}
                             onClick={() => onHandleSelect(list)}
                         >
-                            <div style={{ width: 126 }}>
+                            <div className="logo">
                                 <Image alt="product" filename={list.shopLogo} />
                             </div>
                             <div>

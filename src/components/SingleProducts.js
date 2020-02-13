@@ -13,8 +13,18 @@ import numberWithSpaces from '../utils/numberWithSpaces'
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 70px;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     margin: 0 auto;
     max-width: 1600px;
     padding: 0 1.0875rem 1.45rem;
@@ -97,14 +107,22 @@ const SingleProducts = ({ reference, productId }) => {
                     nodes {
                         id
                         image
-                        product {
-                            id
-                            image
-                        }
                         title
                         description
                         reference
                         price
+                        material
+                        legs
+                        filling
+                        mattress_base
+                        niche_for_things
+                        construction
+                        mechanism
+                        additionally
+                        product {
+                            id
+                            image
+                        }
                         couchSize {
                             value
                             label
@@ -142,39 +160,39 @@ const SingleProducts = ({ reference, productId }) => {
                             <ul className="product-description__list">
                                 <li>
                                     Материал <hr style={{ width: 105 }} />
-                                    велюр
+                                    {data.material}
                                 </li>
                                 <li>
-                                    Ножки <hr style={{ width: 131 }} /> скрытые
-                                    пластиковые
+                                    Ножки <hr style={{ width: 131 }} />{' '}
+                                    {data.legs}
                                 </li>
                                 <li>
                                     Наполнение <hr style={{ width: 87 }} />{' '}
-                                    пенополиуретан{' '}
+                                    {data.filling}
                                 </li>
                                 <li>
                                     Основа под матрас{' '}
-                                    <hr style={{ width: 35 }} /> ортопедическая
-                                    рамка
+                                    <hr style={{ width: 35 }} />{' '}
+                                    {data.mattress_base}
                                 </li>
-                                <li>
-                                    Ниша для вещей <hr style={{ width: 55 }} />{' '}
-                                    есть
-                                </li>
+                                {data.niche_for_things && (
+                                    <li>
+                                        Ниша для вещей{' '}
+                                        <hr style={{ width: 55 }} />{' '}
+                                        {data.niche_for_things ? 'есть' : 'нет'}
+                                    </li>
+                                )}
                                 <li>
                                     Конструкция <hr style={{ width: 93 }} />{' '}
-                                    каркас из ДСП, деревянного бруса и фанерного
-                                    листа
+                                    {data.construction}
                                 </li>
                                 <li>
                                     Механизм <hr style={{ width: 128 }} />{' '}
-                                    подъёмный механизм с газо-масляными
-                                    амортизаторами
+                                    {data.mechanism}
                                 </li>
                                 <li>
                                     Дополнительно <hr style={{ width: 58 }} />{' '}
-                                    мебельные стразы вместо пуговиц <br /> 2100
-                                    грн
+                                    {data.additionally}
                                 </li>
                                 <li>
                                     Матрас (по желанию){' '}

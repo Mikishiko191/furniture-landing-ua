@@ -47,6 +47,11 @@ const Button = styled.button`
     color: white;
     cursor: pointer;
     transition: all 300ms;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        width: 100%;
+    }
     &:hover {
         background: white;
         color: black;
@@ -55,7 +60,17 @@ const Button = styled.button`
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     grid-column-gap: 20px;
     .product-full-price {
         background: pink;
@@ -101,7 +116,6 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
 
     const formik = useFormik({
         initialValues: {
-            couchTitle: data.title,
             firstName: '',
             phone: '+380',
             couchModel: '',
@@ -114,6 +128,7 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
         validationSchema,
         onSubmit: values => {
             const schema = {
+                couchTitle: data.title,
                 firstName: values.firstName,
                 phone: values.phone,
                 couchSize: values.couchSize.label,

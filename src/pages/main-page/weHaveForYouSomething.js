@@ -6,7 +6,7 @@ import SliderSection from '../../components/Slider'
 import { PdfFile } from '../../components/Icons'
 
 const Button = styled.button`
-    padding: 16px 30px;
+    padding: 16px 100px;
     border: solid 2px #000000;
     background: #000000;
     color: white;
