@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Icons
-import { Facebook, Instagram, Gmail } from './Icons'
+import SocialIcons from './SocialIcons'
 
 const Grid = styled.div`
     display: grid;
@@ -121,17 +121,7 @@ const Footer = ({ scrollToContactUsRef }) => {
                         <li>Безналичная оплата на расчетный счет</li>
                         <li>Перевод на карту ПриватБанка</li>
                     </ul>
-                    <div className="icons">
-                        <a href="#!">
-                            <Facebook />
-                        </a>
-                        <a href="#!">
-                            <Instagram />
-                        </a>
-                        <a href="#!">
-                            <Gmail />
-                        </a>
-                    </div>
+                    <SocialIcons />
                 </div>
                 <div>
                     <h5>ДОСТАВКА </h5>

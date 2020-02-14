@@ -21,7 +21,7 @@ import Modal from '../components/Modal'
 import ScrollToTop from '../components/ScrollToTop'
 
 // Icons
-import { Facebook, Instagram, Gmail } from '../components/Icons'
+import SocialIcons from '../components/SocialIcons'
 
 const SideMenu = styled.div`
     padding: 20px;
@@ -198,17 +198,7 @@ const IndexPage = () => {
                     <p style={{ marginBottom: 10 }}>
                         Доставка по миру обслуждается индивидуально с менеджером
                     </p>
-                    <div className="icons">
-                        <a href="#!">
-                            <Facebook />
-                        </a>
-                        <a href="#!">
-                            <Instagram />
-                        </a>
-                        <a href="#!">
-                            <Gmail />
-                        </a>
-                    </div>
+                    <SocialIcons />
                 </SideMenu>
             </div>
             <Modal
@@ -217,6 +207,7 @@ const IndexPage = () => {
             />
             <Footer scrollToContactUsRef={scrollToContactUsRef} />
             <ScrollToTop />
+            <div id="fb-root"></div>
         </>
     )
 }
