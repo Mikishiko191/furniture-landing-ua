@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Components
-import SliderSection from '../../components/Slider'
+import Carousel from '../../components/FlickityCarusel'
 import { PdfFile } from '../../components/Icons'
 
 const Button = styled.button`
@@ -32,8 +32,8 @@ const WeHaveForYouSomething = () => {
         console.log('download')
     }
     return (
-        <div style={{ overflow: 'hidden' }}>
-            <SliderSection sliderTitle="А ТАКЖЕ У НАС ЕСТЬ ЧТО ПРЕДЛОЖИТЬ ВАМ ЕЩЕ" />
+        <>
+            <Carousel sliderTitle="А ТАКЖЕ У НАС ЕСТЬ ЧТО ПРЕДЛОЖИТЬ ВАМ ЕЩЕ" />
             <div style={{ textAlign: 'center', marginTop: 100 }}>
                 <div
                     style={{
@@ -69,7 +69,7 @@ const WeHaveForYouSomething = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

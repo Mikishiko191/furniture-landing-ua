@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
 // Components
-import SliderSection from '../../components/Slider'
+import Carousel from '../../components/FlickityCarusel'
 
 const Shadow = styled.div`
     position: absolute;
@@ -140,9 +140,9 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
                 </Grid>
             </BackgroundImage>
             <div style={{ marginBottom: 80, marginTop: 80 }}>
-                <SliderSection sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
+                <Carousel sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
             </div>
-            <SliderSection sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК" />
+            <Carousel sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК" />
         </section>
     )
 }
