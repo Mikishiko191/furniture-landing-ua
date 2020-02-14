@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import '../css/hamburger.css'
 import React from 'react'
 
 // Components
@@ -11,9 +12,25 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     .logo {
+        width: 200px;
+        /* width: 300px; */
         img {
             margin: 0;
             padding-bottom: 3px;
+        }
+    }
+
+    @media only screen and (min-width: 320px) {
+        .sideMenu {
+            display: block;
+            margin-right: 30px;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        .sideMenu {
+            display: none;
         }
     }
 `
@@ -29,9 +46,17 @@ const HeaderStyleComponent = styled.header`
 `
 
 const Flex = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        display: none;
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
     .phone {
         position: relative;
@@ -96,10 +121,27 @@ const ButtonLink = styled.button`
     }
 `
 
-const Header = ({ onHandleOpenModal, onHandleScrollTo }) => (
+const Header = ({
+    onHandleOpenModal,
+    onHandleScrollTo,
+    onHandleOpenSlider,
+    isSideMenuOpen,
+}) => (
     <HeaderStyleComponent>
         <Wrapper>
-            <div className="logo" style={{ width: 300 }}>
+            <div onClick={onHandleOpenSlider} className="sideMenu">
+                <button
+                    className={`hamburger hamburger--slider ${
+                        isSideMenuOpen ? 'is-active' : ''
+                    }`}
+                    type="button"
+                >
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+            <div className="logo">
                 <Link to="/">
                     <Image alt="лого" filename="logo.png" />
                 </Link>

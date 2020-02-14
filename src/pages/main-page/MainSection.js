@@ -40,17 +40,49 @@ const MainContent = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    margin: 0 80px;
     color: white;
-    h1 {
-        font-size: 45px;
+    /* h1 {
+        font-size: 50px;
         font-weight: 900;
         margin-bottom: 80px;
+    } */
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        margin: 0 10px;
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;
+            margin: 0;
+            padding-bottom: 3px;
+        }
     }
-    p {
-        font-size: 24px;
-        font-weight: 500;
-        margin: 5px 0;
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        margin: 0 80px;
+        h1 {
+            font-size: 50px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+        p {
+            font-size: 25px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;
+            margin: 0;
+            padding-bottom: 3px;
+        }
     }
 
     .button {
@@ -117,10 +149,10 @@ const MainContainer = ({ className, scrollToElement }) => {
                 </h1>
 
                 <div
-                    data-sal="fade"
-                    data-sal-duration="600"
-                    data-sal-delay="1000"
-                    data-sal-easing="ease-out-back"
+                // data-sal="fade"
+                // data-sal-duration="600"
+                // data-sal-delay="1000"
+                // data-sal-easing="ease-out-back"
                 >
                     <p>— Ручная работа</p>
                     <p>— Серцифицированные матералы</p>
