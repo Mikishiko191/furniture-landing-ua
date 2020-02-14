@@ -154,13 +154,27 @@ const MainContainer = ({ className, scrollToElement }) => {
                 // data-sal-delay="1000"
                 // data-sal-easing="ease-out-back"
                 >
-                    <p>— Ручная работа</p>
-                    <p>— Серцифицированные матералы</p>
-                    <p>— Металлическая рамка</p>
-                    <p>— Буковые ламели</p>
-                    <p>— Импортный механизм</p>
-                    <p>— Контроль качества</p>
-                    <p>— Доставка бесплатная</p>
+                    <p>
+                        <span>-</span> Ручная работа
+                    </p>
+                    <p>
+                        <span>-</span> Серцифицированные матералы
+                    </p>
+                    <p>
+                        <span>-</span> Металлическая рамка
+                    </p>
+                    <p>
+                        <span>-</span> Буковые ламели
+                    </p>
+                    <p>
+                        <span>-</span> Импортный механизм
+                    </p>
+                    <p>
+                        <span>-</span> Контроль качества
+                    </p>
+                    <p>
+                        <span>-</span> Доставка бесплатная
+                    </p>
                 </div>
                 <div className="button" style={{ zIndex: 9 }}>
                     <button onClick={scrollToElement}>Подробнее</button>
