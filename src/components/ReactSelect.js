@@ -1,9 +1,20 @@
 import React from 'react'
 import Select, { components } from 'react-select'
+import styled from 'styled-components'
 
 // Components
 import Image from './image'
 import Tooltip from './Tooltip'
+
+const Span = styled.span`
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+`
 
 const Option = props => {
     const hasImage = props.options.some(item => item.img)
@@ -89,16 +100,15 @@ const ReactSelect = ({
 
     return (
         <div style={{ marginBottom: 10 }}>
-            <div style={{ marginBottom: 15, marginTop: 20 }}>
+            <div style={{ marginBottom: 5, marginTop: 5 }}>
                 <label
                     htmlFor="color"
                     style={{
-                        fontSize: 20,
                         display: 'flex',
                         justifyContent: 'space-between',
                     }}
                 >
-                    <span>{label}</span>
+                    <Span>{label}</Span>
                     <span>
                         {withToolTip && (
                             <Tooltip>

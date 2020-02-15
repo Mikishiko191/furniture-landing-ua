@@ -21,23 +21,23 @@ const phoneRegExp = /^\+?3?8?(0\d{9})$/
 const validationSchema = Yup.object().shape({
     couchSize: Yup.string()
         .ensure()
-        .required('CouchSize is required!'),
+        .required('Обязательное поле*'),
     color: Yup.string()
         .ensure()
-        .required('Color is required!'),
+        .required('Обязательное поле*'),
     mattress: Yup.string()
         .ensure()
-        .required('Mattress is required!'),
+        .required('Обязательное поле*'),
     // mattressSize: Yup.string()
     //     .ensure()
     //     .required('Mattress size is required!'),
     firstName: Yup.string()
         .min(1, 'Too Short!')
         .max(50, 'Too Long!')
-        .required('Required'),
+        .required('Обязательное поле*'),
     phone: Yup.string()
-        .matches(phoneRegExp, 'Phone number is not valid')
-        .required('Required'),
+        .matches(phoneRegExp, 'Номер телефона не валидный')
+        .required('Обязательное поле*'),
 })
 
 const Button = styled.button`
@@ -101,14 +101,6 @@ const colorOptions = [
     { value: 44, label: 'MT Velour DELUXE 44', img: true },
 ]
 
-// const encode = data => {
-//     return Object.keys(data)
-//         .map(
-//             key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-//         )
-//         .join('&')
-// }
-
 const MainForm = ({ isModal, children, data, couchModel }) => {
     const [priceValue, setPrice] = React.useState({
         price: 0,
@@ -135,10 +127,11 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
                 color: values.color.label,
                 mattress: values.mattress.label,
                 mattressSize: values.mattressSize.label,
+                amountPrice: priceValue.price,
             }
 
             axios
-                .post('http://localhost:4444/api/v1', schema)
+                .post('https://capitonestylemailer.now.sh/api/v1', schema)
                 .then(() => {
                     SweetAlert.fire({
                         title: (
@@ -167,31 +160,6 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
             })
         }
 
-        // if (couchModel) {
-        //     // console.log('reset')
-        //     formik.resetForm({
-        //         values: {
-        //             couchSize: null,
-        //         },
-        //     })
-        // }
-        // if (formik.values.color) {
-        //     setPrice({
-        //         price:
-        //             formik.values.color.value +
-        //             formik.values.couchSize.value +
-        //             couchPrice,
-        //     })
-        // }
-        // if (formik.values.mattress) {
-        //     setPrice({
-        //         price:
-        //             // formik.values.color.value +
-        //             formik.values.couchSize.value +
-        //             formik.values.mattress.value +
-        //             couchPrice,
-        //     })
-        // }
         if (formik.values.mattressSize) {
             if (formik.values.mattress.value === 1) {
                 setPrice({
@@ -219,29 +187,10 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
     return (
         <div className="main-form">
             <form
-                // netlify="true"
-                // name="userOrder"
-                // method="POST"
-                // action="/success"
-                // data-netlify="true"
-                // data-netlify-honeypot="bot-field"
-                // ref={userOrderForm}
                 onSubmit={formik.handleSubmit}
                 className="product-select-form"
             >
-                {isModal && children
-                // <ReactSelect
-                //     label="КРОВАТЬ:"
-                //     options={couchOptions}
-                //     selectName="couchModel"
-                //     value={formik.values.couchModel}
-                //     onChange={formik.setFieldValue}
-                //     onBlur={formik.setFieldTouched}
-                //     error={formik.errors.couchModel}
-                //     touched={formik.touched.couchModel}
-                //     placeholder="Выберите модель "
-                // />
-                }
+                {isModal && children}
                 <Grid>
                     <ReactSelect
                         label="РАЗМЕР КРОВАТИ:"

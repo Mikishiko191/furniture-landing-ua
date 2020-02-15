@@ -10,13 +10,15 @@ const InputField = ({
     touched,
 }) => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div
+            style={{ display: 'flex', flexDirection: 'column', marginTop: 10 }}
+        >
             <input
                 style={{
                     border: !!error ? 'solid 1px red' : 'solid 1px #000000',
                     padding: '13px 21px',
                     width: '100%',
-                    margin: '25px 0',
+                    margin: '5px 0',
                 }}
                 id={name}
                 name={name}
@@ -25,9 +27,7 @@ const InputField = ({
                 onChange={handleChange}
                 value={value}
             />
-            {!!error && touched && (
-                <div style={{ color: 'red', marginTop: '.5rem' }}>{error}</div>
-            )}
+            {!!error && touched && <div style={{ color: 'red' }}>{error}</div>}
         </div>
     )
 }
