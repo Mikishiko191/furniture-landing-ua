@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackGroundImage from './BackGroundImage'
+import Image from './Image'
 
 // Utils
 import numberWithSpaces from '../utils/numberWithSpaces'
@@ -15,7 +15,7 @@ const Card = styled.div`
 `
 
 const Content = styled.div`
-    padding: 16px 35px 38px 35px;
+    padding: 16px 35px 30px 35px;
     h3 {
         font-size: 25px;
         font-weight: 600;
@@ -68,10 +68,10 @@ const CardComponent = ({
 }) => {
     return (
         <Card>
-            <BackGroundImage imageName={imageSources} bgImageSize={306} />
+            <Image alt={title} filename={imageSources} />
             <Content>
                 <h3>{title}</h3>
-                <p>{content}</p>
+                <p style={{ height: 85 }}>{content}</p>
                 <h5>{reference}</h5>
                 <p className="price">
                     от <span>{numberWithSpaces(price)} грн</span>

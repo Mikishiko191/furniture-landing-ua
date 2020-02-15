@@ -86,11 +86,11 @@ const MainContent = styled.div`
     }
 
     .button {
-        margin-top: 100px;
+        margin-top: 80px;
         margin-bottom: 40px;
         text-align: center;
         width: 100%;
-        button {
+        /* button {
             padding: 23px 115px;
             cursor: pointer;
             transition: all 300ms;
@@ -98,7 +98,28 @@ const MainContent = styled.div`
                 background: #000000;
                 color: white;
             }
-        }
+        } */
+    }
+`
+
+const Button = styled.button`
+    padding: 17px 93px;
+    cursor: pointer;
+    border: solid 2px white;
+    background: white;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    transition: all 600ms;
+    &:hover {
+        border: solid 2px #000000;
+        background: #000000;
+        color: white;
     }
 `
 
@@ -140,7 +161,7 @@ const MainContainer = ({ className, scrollToElement }) => {
             className={className}
             fluid={sources}
             backgroundColor={`#040e18`}
-            style={{ zIndex: 3, marginBottom: 50 }}
+            style={{ zIndex: 3, marginBottom: 150 }}
         >
             <Shadow />
             <MainContent>
@@ -177,7 +198,7 @@ const MainContainer = ({ className, scrollToElement }) => {
                     </p>
                 </div>
                 <div className="button" style={{ zIndex: 9 }}>
-                    <button onClick={scrollToElement}>Подробнее</button>
+                    <Button onClick={scrollToElement}>Подробнее</Button>
                 </div>
                 <ArrowDown onClick={scrollToElement}>
                     <svg width="40" height="40" viewBox="0 0 512.011 512.011">

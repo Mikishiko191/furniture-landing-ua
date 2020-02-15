@@ -84,14 +84,23 @@ const Flex = styled.div`
 `
 
 const Button = styled.button`
-    padding: 11px 30px;
-    border: solid 2px #000000;
+    padding: 10px 30px;
     cursor: pointer;
+    border: solid 2px #000000;
+    background: #000000;
+    font-size: 16px;
+    color: white;
     transition: all 300ms;
-    font-weight: 500;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
     &:hover {
-        background: #000000;
-        color: white;
+        border: solid 2px #000000;
+        background: white;
+        color: #000000;
     }
 `
 
@@ -99,7 +108,7 @@ const ButtonLink = styled.button`
     position: relative;
     background: transparent;
     cursor: pointer;
-    margin-right: 30px;
+    margin-right: 75px;
     border: 0;
     &:before {
         content: '';

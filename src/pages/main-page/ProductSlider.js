@@ -80,7 +80,10 @@ const ProductSlider = ({ productSectionRef }) => {
             </ProductList>
 
             {allFurnitureJson.nodes.map((item, index) => (
-                <div style={{ marginBottom: 50, marginTop: 50 }} key={item.id}>
+                <div
+                    style={{ marginBottom: 200, marginTop: 200 }}
+                    key={item.id}
+                >
                     <SingleProducts
                         reference={singleProductReference.current[index]}
                         productId={item.id}

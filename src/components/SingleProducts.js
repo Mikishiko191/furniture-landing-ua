@@ -159,44 +159,45 @@ const SingleProducts = ({ reference, productId }) => {
                             <h2>{data.title}</h2>
                             <ul className="product-description__list">
                                 <li>
-                                    Материал <hr style={{ width: 105 }} />
-                                    {data.material}
+                                    Материал: &nbsp;&nbsp;{' '}
+                                    <strong>{data.material}</strong>
                                 </li>
                                 <li>
-                                    Ножки <hr style={{ width: 131 }} />{' '}
-                                    {data.legs}
+                                    Ножки: &nbsp;&nbsp;{' '}
+                                    <strong>{data.legs}</strong>
                                 </li>
                                 <li>
-                                    Наполнение <hr style={{ width: 87 }} />{' '}
-                                    {data.filling}
+                                    Наполнение: &nbsp;&nbsp;{' '}
+                                    <strong>{data.filling}</strong>
                                 </li>
                                 <li>
-                                    Основа под матрас{' '}
-                                    <hr style={{ width: 35 }} />{' '}
-                                    {data.mattress_base}
+                                    Основа под матрас: &nbsp;&nbsp;
+                                    <strong>{data.mattress_base}</strong>
                                 </li>
                                 {data.niche_for_things && (
                                     <li>
-                                        Ниша для вещей{' '}
-                                        <hr style={{ width: 55 }} />{' '}
-                                        {data.niche_for_things ? 'есть' : 'нет'}
+                                        Ниша для вещей: &nbsp;&nbsp;{' '}
+                                        <strong>
+                                            {data.niche_for_things
+                                                ? 'есть'
+                                                : 'нет'}
+                                        </strong>
                                     </li>
                                 )}
                                 <li>
-                                    Конструкция <hr style={{ width: 93 }} />{' '}
-                                    {data.construction}
+                                    Конструкция: &nbsp;&nbsp;{' '}
+                                    <strong>{data.construction}</strong>
                                 </li>
                                 <li>
-                                    Механизм <hr style={{ width: 128 }} />{' '}
-                                    {data.mechanism}
+                                    Механизм: &nbsp;&nbsp;{' '}
+                                    <strong>{data.mechanism}</strong>
                                 </li>
                                 <li>
-                                    Дополнительно <hr style={{ width: 58 }} />{' '}
-                                    {data.additionally}
+                                    Дополнительно: &nbsp;&nbsp;{' '}
+                                    <strong>{data.additionally}</strong>
                                 </li>
                                 <li>
-                                    Матрас (по желанию){' '}
-                                    <hr style={{ width: 17 }} />
+                                    Матрас (по желанию): &nbsp;&nbsp;
                                     <div
                                         style={{
                                             display: 'flex',
@@ -209,7 +210,7 @@ const SingleProducts = ({ reference, productId }) => {
                                                 alignItems: 'center',
                                             }}
                                         >
-                                            матрас «Сан»
+                                            <strong> матрас «Сан»</strong>
                                             <Tooltip>
                                                 <h5>Матрас «Сан»</h5>
                                                 <p>ТИП МАТРАСА: Двусторонний</p>
@@ -235,7 +236,7 @@ const SingleProducts = ({ reference, productId }) => {
                                                 alignItems: 'center',
                                             }}
                                         >
-                                            матрас «Моко-Софт»
+                                            <strong>матрас «Моко-Софт»</strong>
                                             <Tooltip>
                                                 <h5>Матрас «Мокко-Софт»</h5>
                                                 <p>ТИП МАТРАСА: Двусторонний</p>
