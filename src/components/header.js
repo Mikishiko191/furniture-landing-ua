@@ -4,7 +4,7 @@ import '../css/hamburger.css'
 import React from 'react'
 
 // Components
-import Image from './image'
+import Image from './Image'
 
 const Wrapper = styled.div`
     margin: 0 50px;

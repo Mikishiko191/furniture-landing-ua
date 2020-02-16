@@ -53,33 +53,33 @@ module.exports = {
                 exitEventName: 'sal:out', // Exit event name
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-facebook-analytics`,
-        //     options: {
-        //         // Required - set this to the ID of your Facebook app.
-        //         appId: `YOUR_APP_ID`,
+        {
+            resolve: `gatsby-plugin-facebook-analytics`,
+            options: {
+                // Required - set this to the ID of your Facebook app.
+                appId: '',
 
-        //         // Which version of the SDK to load.
-        //         version: `v6.0`,
+                // Which version of the SDK to load.
+                version: `v6.0`,
 
-        //         // Determines whether XFBML tags used by social plugins are parsed.
-        //         xfbml: true,
+                // Determines whether XFBML tags used by social plugins are parsed.
+                xfbml: true,
 
-        //         // Determines whether a cookie is created for the session or not.
-        //         cookie: false,
+                // Determines whether a cookie is created for the session or not.
+                cookie: false,
 
-        //         // Include Facebook analytics in development.
-        //         // Defaults to false meaning the library will only be loaded in production.
-        //         includeInDevelopment: false,
+                // Include Facebook analytics in development.
+                // Defaults to false meaning the library will only be loaded in production.
+                includeInDevelopment: false,
 
-        //         // Include debug version of sdk
-        //         // Defaults to false meaning the library will load sdk.js
-        //         debug: false,
+                // Include debug version of sdk
+                // Defaults to false meaning the library will load sdk.js
+                debug: false,
 
-        //         // Select your language.
-        //         language: `ru_RU`,
-        //     },
-        // },
+                // Select your language.
+                language: `ru_RU`,
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

@@ -127,7 +127,9 @@ const MainContainer = ({ className, scrollToElement }) => {
     const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
-                mobileImage: file(relativePath: { eq: "main_page.jpg" }) {
+                mobileImage: file(
+                    relativePath: { eq: "main_page_mobile.jpg" }
+                ) {
                     childImageSharp {
                         fluid(maxWidth: 490, quality: 100) {
                             ...GatsbyImageSharpFluid_withWebp
@@ -136,7 +138,7 @@ const MainContainer = ({ className, scrollToElement }) => {
                 }
                 desktopImage: file(relativePath: { eq: "main_page.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 100, maxWidth: 4160) {
+                        fluid(quality: 100, maxWidth: 1440) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -154,6 +156,9 @@ const MainContainer = ({ className, scrollToElement }) => {
             media: `(min-width: 491px)`,
         },
     ]
+    if (process.env) {
+        console.log(process.env.facebookID)
+    }
 
     return (
         <BackgroundImage

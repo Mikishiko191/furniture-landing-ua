@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Components
-import Image from '../components/image'
+import Image from './Image'
 
 const Grid = styled.div`
     display: grid;

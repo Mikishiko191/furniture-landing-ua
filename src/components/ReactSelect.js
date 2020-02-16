@@ -3,7 +3,7 @@ import Select, { components } from 'react-select'
 import styled from 'styled-components'
 
 // Components
-import Image from './image'
+import Image from './Image'
 import Tooltip from './Tooltip'
 
 const Span = styled.span`

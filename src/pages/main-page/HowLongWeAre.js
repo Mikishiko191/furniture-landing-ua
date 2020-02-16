@@ -87,7 +87,7 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
     const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
-                mobileImage: file(relativePath: { eq: "couch.jpg" }) {
+                mobileImage: file(relativePath: { eq: "couch_mobile.jpg" }) {
                     childImageSharp {
                         fluid(maxWidth: 490, quality: 100) {
                             ...GatsbyImageSharpFluid_withWebp
@@ -96,7 +96,7 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
                 }
                 desktopImage: file(relativePath: { eq: "couch.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 100, maxWidth: 4160) {
+                        fluid(quality: 100, maxWidth: 1440) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }

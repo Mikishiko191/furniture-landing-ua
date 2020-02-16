@@ -42,12 +42,14 @@ const Grid = styled.div`
             margin: 0;
             list-style: none;
             li {
-                display: flex;
-                align-items: center;
                 hr {
                     background-color: #000000;
                     opacity: 0.5;
                     margin: 0 10px;
+                }
+                &:last-child {
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
