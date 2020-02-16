@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Components
-import Image from './Image'
+import ProductImage from './ProductImage'
 
 const Grid = styled.div`
     display: grid;
@@ -19,7 +19,7 @@ const ProductShowCase = ({ item }) => {
     return (
         <div style={{ position: 'sticky', top: 100 }}>
             <div onClick={() => onHandleChangeImage(item.image)}>
-                <Image
+                <ProductImage
                     alt="product"
                     filename={!imageValue ? item.image : imageValue}
                 />
@@ -30,7 +30,7 @@ const ProductShowCase = ({ item }) => {
                         onClick={() => onHandleChangeImage(product.image)}
                         key={product.id}
                     >
-                        <Image alt="product" filename={product.image} />
+                        <ProductImage alt="product" filename={product.image} />
                     </div>
                 ))}
             </Grid>

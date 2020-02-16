@@ -4,7 +4,7 @@ import '../css/hamburger.css'
 import React from 'react'
 
 // Components
-import Image from './Image'
+import ProductImage from './ProductImage'
 
 const Wrapper = styled.div`
     margin: 0 50px;
@@ -152,7 +152,7 @@ const Header = ({
             </div>
             <div className="logo">
                 <Link to="/">
-                    <Image alt="лого" filename="logo.png" />
+                    <ProductImage alt="лого" filename="logo.png" />
                 </Link>
             </div>
             <Flex>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from './Image'
+import ProductImage from './ProductImage'
 
 // Utils
 import numberWithSpaces from '../utils/numberWithSpaces'
@@ -67,7 +67,7 @@ const CardComponent = ({
 }) => {
     return (
         <Card>
-            <Image alt={title} filename={imageSources} />
+            <ProductImage alt={title} filename={imageSources} />
             <Content>
                 <h3>{title}</h3>
                 <p style={{ height: 85 }}>{content}</p>

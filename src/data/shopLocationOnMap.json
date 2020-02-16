@@ -2,7 +2,7 @@
     {
         "id": 1,
         "shopType": "Магазин",
-        "shopLogo": "barinhouse.png",
+        "shopLogo": "barinhouse.jpg",
         "shop": "«BARIN HOUSE»",
         "address": "ул. 135-а Садовая 3 (район Осокорки)",
         "workingHours": "ПН-СБ 10:00 - 20:00, ВС - выходной",
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "shopType": "ТЦ",
-        "shopLogo": "b52.png",
+        "shopLogo": "b52.jpg",
         "shop": "«Б-52»",
         "address": "ул. Братиславская 52 (Левый берег)",
         "workingHours": "ПН-СБ 10:00 - 20:00, ВС 10:00 - 19:00",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "shopType": "Магазин",
-        "shopLogo": "aviva.png",
+        "shopLogo": "aviva.jpg",
         "shop": "«Авиа мебли»",
         "address": "ул. Ершова 11А, г. Луцк",
         "workingHours": "ПН-СБ 10:00 - 20:00, ВС - выходной",
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "shopType": "Гиппермаркет",
-        "shopLogo": "rolf.png",
+        "shopLogo": "rolf.jpg",
         "shop": "«ROLF»",
         "address": "ул. Ветрука 9Б, г. Житомир",
         "workingHours": "ПН-ВС 10:00 - 20:00",
@@ -46,7 +46,7 @@
     {
         "id": 6,
         "shopType": "Салон",
-        "shopLogo": "roda.png",
+        "shopLogo": "roda.jpg",
         "shop": "«RODA»",
         "address": "г. Ужгород, Закарпатская обл., ул. Александра Блистива (ул. Краснодонцев), 1",
         "workingHours": "ВТ-ПТ 9:00 - 17:30, СБ-ВС 10:00 - 16:00",
@@ -57,7 +57,7 @@
     {
         "id": 7,
         "shopType": "Магазин",
-        "shopLogo": "macro.png",
+        "shopLogo": "macro.jpg",
         "shop": "«Макромебель»",
         "address": "ул. Млинивська 20, г Ровно",
         "workingHours": "ВТ-ПТ 9:00 - 18:00, СБ 9:00 - 15:00",

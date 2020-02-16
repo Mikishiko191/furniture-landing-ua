@@ -3,7 +3,7 @@ import Select, { components } from 'react-select'
 import styled from 'styled-components'
 
 // Components
-import Image from './Image'
+import ProductImage from './ProductImage'
 import Tooltip from './Tooltip'
 
 const Span = styled.span`
@@ -30,7 +30,10 @@ const Option = props => {
                             marginRight: 10,
                         }}
                     >
-                        <Image alt="product" filename={props.data.label} />
+                        <ProductImage
+                            alt="product"
+                            filename={props.data.label}
+                        />
                     </div>
                 )}
                 <div>{props.data.label}</div>
@@ -61,7 +64,10 @@ const SingleValue = ({ children, ...props }) => {
                             marginRight: 10,
                         }}
                     >
-                        <Image alt="product" filename={props.data.label} />
+                        <ProductImage
+                            alt="product"
+                            filename={props.data.label}
+                        />
                     </div>
                 ) : (
                     ''

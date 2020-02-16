@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
 import GoogleMap from '../../components/GoogleMap'
-import Image from '../../components/image'
+import ProductImage from '../../components/ProductImage'
 
 const Grid = styled.div`
     display: grid;
@@ -103,7 +103,15 @@ const MapSection = () => {
 
     return (
         <section style={{ margin: '100px 0 ' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: 86, fontSize: 28, fontWeight: 'bold', color: '#000000'  }}>
+            <h2
+                style={{
+                    textAlign: 'center',
+                    marginBottom: 86,
+                    fontSize: 28,
+                    fontWeight: 'bold',
+                    color: '#000000',
+                }}
+            >
                 УВИДЕТЬ ВЖИВУЮ И ОЦЕНИТЬ КАЧЕСТВО НАШЕЙ МЕБЕЛИ МОЖНО ЗДЕСЬ
             </h2>
             <Grid>
@@ -115,7 +123,10 @@ const MapSection = () => {
                             onClick={() => onHandleSelect(list)}
                         >
                             <div className="logo">
-                                <Image alt="product" filename={list.shopLogo} />
+                                <ProductImage
+                                    alt="product"
+                                    filename={list.shopLogo}
+                                />
                             </div>
                             <div>
                                 <p style={{ color: '#000000' }}>
