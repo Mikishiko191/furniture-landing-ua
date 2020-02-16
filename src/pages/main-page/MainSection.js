@@ -157,7 +157,7 @@ const MainContainer = ({ className, scrollToElement }) => {
         },
     ]
     if (process.env) {
-        console.log(process.env)
+        console.log(process)
     }
 
     return (
