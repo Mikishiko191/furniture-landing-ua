@@ -214,22 +214,35 @@ const SingleProducts = ({ reference, productId }) => {
                                         >
                                             <strong> матрас «Сан»</strong>
                                             <Tooltip>
-                                                <h5>Матрас «Сан»</h5>
-                                                <p>ТИП МАТРАСА: Двусторонний</p>
-                                                <p>ВЫСОТА МОДЕЛИ: 26 см</p>
-                                                <p>ЖЕСТКОСТЬ: 3/2</p>
-                                                <p>
-                                                    НАГРУЗКА НА СПАЛЬНОЕ МЕСТО
-                                                    до 170 кг
-                                                </p>
-                                                <p>
-                                                    Производитель: Украина,
-                                                    Matroluxe
-                                                </p>
-                                                {/* <Image
-                                                    alt="Матрас «Сан»"
-                                                    filename="matras"
-                                                /> */}
+                                                <div
+                                                    style={{
+                                                        position: 'relative',
+                                                        zIndex: 9999999,
+                                                    }}
+                                                >
+                                                    <h5>Матрас «Сан»</h5>
+                                                    <p>
+                                                        ТИП МАТРАСА:
+                                                        Двусторонний
+                                                    </p>
+                                                    <p>ВЫСОТА МОДЕЛИ: 26 см</p>
+                                                    <p>ЖЕСТКОСТЬ: 3/2</p>
+                                                    <p>
+                                                        НАГРУЗКА НА СПАЛЬНОЕ
+                                                        МЕСТО до 170 кг
+                                                    </p>
+                                                    <p>
+                                                        Производитель: Украина,
+                                                        Matroluxe
+                                                    </p>
+                                                    <img
+                                                        style={{
+                                                            marginTop: 30,
+                                                        }}
+                                                        alt="Матрас «Сан»"
+                                                        src="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581880995/matras_furgll.jpg"
+                                                    />
+                                                </div>
                                             </Tooltip>
                                         </div>
                                         <div
@@ -252,10 +265,11 @@ const SingleProducts = ({ reference, productId }) => {
                                                     Производитель: Украина,
                                                     Matroluxe
                                                 </p>
-                                                {/* <Image
-                                                    alt="Матрас «Мокко-Софт»"
-                                                    filename="barinhouse.png"
-                                                /> */}
+                                                <img
+                                                    style={{ marginTop: 30 }}
+                                                    alt="«Мокко-Софт»"
+                                                    src="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581880995/matras2_hsxzxr.jpg"
+                                                />
                                             </Tooltip>
                                         </div>
                                     </div>

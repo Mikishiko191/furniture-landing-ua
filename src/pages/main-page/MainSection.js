@@ -156,10 +156,6 @@ const MainContainer = ({ className, scrollToElement }) => {
             media: `(min-width: 491px)`,
         },
     ]
-    if (process.env) {
-        console.log(process)
-        console.log(process.env)
-    }
 
     return (
         <BackgroundImage

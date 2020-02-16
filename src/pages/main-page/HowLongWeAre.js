@@ -84,7 +84,12 @@ const Grid = styled.div`
 `
 
 const HowLongWeAre = ({ className, scrollToAboutRef }) => {
-    const { mobileImage, desktopImage } = useStaticQuery(
+    const {
+        mobileImage,
+        desktopImage,
+        allExhibitionJson,
+        allProductionJson,
+    } = useStaticQuery(
         graphql`
             query {
                 mobileImage: file(relativePath: { eq: "couch_mobile.jpg" }) {
@@ -99,6 +104,18 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
                         fluid(quality: 100, maxWidth: 1440) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
+                    }
+                }
+                allExhibitionJson {
+                    nodes {
+                        id
+                        image
+                    }
+                }
+                allProductionJson {
+                    nodes {
+                        id
+                        image
                     }
                 }
             }
@@ -140,9 +157,15 @@ const HowLongWeAre = ({ className, scrollToAboutRef }) => {
                 </Grid>
             </BackgroundImage>
             <div style={{ marginBottom: 80, marginTop: 80 }}>
-                <Carousel sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША" />
+                <Carousel
+                    sliderTitle="ВЕДЬ В НАШЕ ПРОИЗВОДСТВО ВЛОЖЕНА ДУША"
+                    data={allProductionJson.nodes}
+                />
             </div>
-            <Carousel sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК" />
+            <Carousel
+                sliderTitle="ТАКЖЕ МЫ УЧАСНИКИ МЕЖДУНАРОДНЫХ ВЫСТАВОК"
+                data={allExhibitionJson.nodes}
+            />
         </section>
     )
 }

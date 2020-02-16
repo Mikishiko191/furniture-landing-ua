@@ -6,6 +6,21 @@ import 'react-tippy/dist/tippy.css'
 // Icons
 import { Information } from './Icons'
 
+const popperOptions = {
+    modifiers: {
+        addZIndex: {
+            enabled: true,
+            fn: data => ({
+                ...data,
+                styles: {
+                    ...data.styles,
+                    zIndex: 10,
+                },
+            }),
+        },
+    },
+}
+
 const StyledTooltip = styled.div`
     text-align: left;
     p {
@@ -34,7 +49,11 @@ const StyledTooltip = styled.div`
 
 const TooltipComponent = ({ children }) => {
     return (
-        <Tooltip html={<StyledTooltip>{children}</StyledTooltip>} theme="light">
+        <Tooltip
+            popperOptions={popperOptions}
+            html={<StyledTooltip>{children}</StyledTooltip>}
+            theme="light"
+        >
             <Information />
         </Tooltip>
     )

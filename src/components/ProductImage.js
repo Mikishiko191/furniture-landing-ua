@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-const ProductImage = ({ alt, filename }) => (
+const ProductImage = ({ alt, filename, ...args }) => (
     <StaticQuery
         query={graphql`
             query {
@@ -30,7 +30,13 @@ const ProductImage = ({ alt, filename }) => (
                 return null
             }
 
-            return <Img alt={alt} fluid={image.node.childImageSharp.fluid} />
+            return (
+                <Img
+                    alt={alt}
+                    fluid={image.node.childImageSharp.fluid}
+                    {...args}
+                />
+            )
         }}
     />
 )

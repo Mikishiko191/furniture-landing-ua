@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Components
 import Carousel from '../../components/FlickityCarusel'
@@ -28,12 +29,32 @@ const Button = styled.button`
 `
 
 const WeHaveForYouSomething = () => {
+    const { allOtherFurnitureJson } = useStaticQuery(
+        graphql`
+            query {
+                allOtherFurnitureJson {
+                    nodes {
+                        id
+                        image
+                    }
+                }
+            }
+        `
+    )
+
     const downloadPdf = () => {
-        console.log('download')
+        window.open(
+            'https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf',
+            '_blank'
+        )
     }
+
     return (
         <>
-            <Carousel sliderTitle="А ТАКЖЕ У НАС ЕСТЬ ЧТО ПРЕДЛОЖИТЬ ВАМ ЕЩЕ" />
+            <Carousel
+                sliderTitle="А ТАКЖЕ У НАС ЕСТЬ ЧТО ПРЕДЛОЖИТЬ ВАМ ЕЩЕ"
+                data={allOtherFurnitureJson.nodes}
+            />
             <div style={{ textAlign: 'center', marginTop: 100 }}>
                 <div
                     style={{
@@ -57,7 +78,8 @@ const WeHaveForYouSomething = () => {
                     }}
                 >
                     <a
-                        href="!#"
+                        href="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf"
+                        target="_blank"
                         style={{
                             display: 'flex',
                             alignItems: 'center',

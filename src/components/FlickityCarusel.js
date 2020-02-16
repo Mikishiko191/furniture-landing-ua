@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 // Styles
 import './flickity.css'
+import ProductImage from './ProductImage'
 
 const H3 = styled.div`
     font-size: 28px;
@@ -26,21 +27,7 @@ const flickityOptions = {
     pageDots: false,
 }
 
-const data = [
-    { img: 'https://picsum.photos/720/540/?image=517' },
-    { img: 'https://picsum.photos/720/540/?image=696' },
-    { img: 'https://picsum.photos/720/540/?image=56' },
-    { img: 'https://picsum.photos/720/540/?image=1084' },
-    { img: 'https://picsum.photos/720/540/?image=1080' },
-    { img: 'https://picsum.photos/720/540/?image=1074' },
-    { img: 'https://picsum.photos/720/540/?image=1062' },
-    { img: 'https://picsum.photos/720/540/?image=1002' },
-    { img: 'https://picsum.photos/720/540/?image=935' },
-    { img: 'https://picsum.photos/720/540/?image=855' },
-    { img: 'https://picsum.photos/720/540/?image=824' },
-]
-
-const Carousel = ({ sliderTitle }) => {
+const Carousel = ({ sliderTitle, data }) => {
     return (
         <div style={{ margin: '42px 0' }}>
             <H3>{sliderTitle}</H3>
@@ -53,9 +40,12 @@ const Carousel = ({ sliderTitle }) => {
                 static // default false
             >
                 {data.map(item => (
-                    <img
+                    <ProductImage
+                        key={item.id}
+                        alt={item.image}
                         className="carousel-image"
-                        data-flickity-lazyload={item.img}
+                        placeholderClassName="carousel-image"
+                        filename={item.image}
                     />
                 ))}
             </Flickity>
