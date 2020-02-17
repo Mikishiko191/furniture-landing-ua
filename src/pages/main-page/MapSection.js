@@ -72,11 +72,25 @@ const Grid = styled.div`
                 transform: translate3d(0, -3px, 0);
             }
         }
+        .isActive {
+            box-shadow: 0 2px 10px 0 #8e8e93;
+            transform: translate3d(0, -3px, 0);
+        }
     }
 `
 
 const MapSection = () => {
-    const [state, setState] = React.useState()
+    const [state, setState] = React.useState({
+        id: '1',
+        shopType: 'Магазин',
+        shopLogo: 'barinhouse.jpg,',
+        shop: '«BARIN HOUSE»',
+        address: 'ул. 135-а Садовая 3 (район Осокорки)',
+        workingHours: 'ПН-СБ 10:00 - 20:00, ВС - выходной',
+        phone: '+38 (097) 403-82-28',
+        lat: 50.390243,
+        lng: 30.604721,
+    })
 
     const { allShopLocationOnMapJson } = useStaticQuery(
         graphql`
@@ -118,7 +132,9 @@ const MapSection = () => {
                 <div className="scroll">
                     {allShopLocationOnMapJson.nodes.map(list => (
                         <div
-                            className="col"
+                            className={`col ${
+                                list.lat === state.lat ? 'isActive' : ''
+                            }`}
                             key={list.id}
                             onClick={() => onHandleSelect(list)}
                         >

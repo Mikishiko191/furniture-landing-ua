@@ -290,7 +290,8 @@ const SingleProducts = ({ reference, productId }) => {
                                     }}
                                 >
                                     <a
-                                        href="!#"
+                                        href="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf"
+                                        target="_blank"
                                         style={{
                                             display: 'flex',
                                             alignItems: 'center',

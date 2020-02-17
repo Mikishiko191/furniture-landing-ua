@@ -101,7 +101,7 @@ const colorOptions = [
     { value: 44, label: 'MT Velour DELUXE 44', img: true },
 ]
 
-const MainForm = ({ isModal, children, data, couchModel }) => {
+const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
     const [priceValue, setPrice] = React.useState({
         price: 0,
     })
@@ -116,9 +116,9 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
             mattress: '',
             mattressSize: '',
         },
-        // enableReinitialize: false,
+        enableReinitialize: false,
         validationSchema,
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
             const schema = {
                 couchTitle: data.title,
                 firstName: values.firstName,
@@ -142,6 +142,16 @@ const MainForm = ({ isModal, children, data, couchModel }) => {
                         icon: 'success',
                         confirmButtonText: 'Закрыть',
                     })
+
+                    resetForm()
+
+                    setPrice({
+                        price: 0,
+                    })
+
+                    if (setIsOpen) {
+                        setIsOpen(false)
+                    }
                 })
                 .catch(() => {
                     SweetAlert.fire({

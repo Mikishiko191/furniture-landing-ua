@@ -161,3 +161,15 @@ https://flickity.metafizzy.co
     height: auto;
     max-height: 100%;
 }
+
+.product-carousel-image {
+    display: block;
+    height: 220px;
+    /* set min-width, allow images to set cell width */
+    min-width: 270px;
+    max-width: 100%;
+    margin-right: 10px;
+    /* vertically center */
+    top: 30%;
+    transform: translateY(5%);
+}

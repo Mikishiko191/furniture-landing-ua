@@ -35,7 +35,7 @@ const couchOptions = [
 
 Modal.setAppElement('#___gatsby')
 
-const ModalComponent = ({ modalIsOpen, onHandelCloseModal }) => {
+const ModalComponent = ({ modalIsOpen, onHandelCloseModal, setIsOpen }) => {
     const [productId, setProductId] = React.useState(
         'fc50543e-6628-4a74-af10-d2817422b513'
     )
@@ -103,7 +103,12 @@ const ModalComponent = ({ modalIsOpen, onHandelCloseModal }) => {
                         <path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z" />
                     </svg>
                 </CloseButton>
-                <MainFrom isModal data={data} couchModel={couchModel}>
+                <MainFrom
+                    isModal
+                    data={data}
+                    couchModel={couchModel}
+                    setIsOpen={setIsOpen}
+                >
                     <ReactSelect
                         label="КРОВАТЬ:"
                         options={couchOptions}

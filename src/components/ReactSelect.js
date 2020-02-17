@@ -81,7 +81,6 @@ const SingleValue = ({ children, ...props }) => {
 const ReactSelect = ({
     selectName,
     label,
-    selectedValue,
     onChange,
     onBlur,
     options,
@@ -91,6 +90,7 @@ const ReactSelect = ({
     placeholder,
     defaultValue,
     withToolTip,
+    value,
 }) => {
     const handleChange = value => {
         // this is going to call setFieldValue and manually update values of the selectName
@@ -144,7 +144,7 @@ const ReactSelect = ({
                 </label>
             </div>
             <Select
-                value={selectedValue}
+                value={value}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 options={options}

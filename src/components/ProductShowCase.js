@@ -1,13 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import Flickity from 'react-flickity-component'
 
 // Components
 import ProductImage from './ProductImage'
 
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-`
+// const Grid = styled.div`
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+// `
+
+const flickityOptions = {
+    initialIndex: 1,
+    lazyLoad: 2,
+    groupCells: 1,
+    wrapAround: true,
+    fullscreen: true,
+    pageDots: false,
+}
 
 const ProductShowCase = ({ item }) => {
     const [imageValue, setImage] = React.useState()
@@ -24,16 +34,30 @@ const ProductShowCase = ({ item }) => {
                     filename={!imageValue ? item.image : imageValue}
                 />
             </div>
-            <Grid>
-                {item.product.map(product => (
-                    <div
-                        onClick={() => onHandleChangeImage(product.image)}
-                        key={product.id}
-                    >
-                        <ProductImage alt="product" filename={product.image} />
-                    </div>
-                ))}
-            </Grid>
+            <div>
+                <Flickity
+                    className={'carousel'} // default ''
+                    elementType={'div'} // default 'div'
+                    options={flickityOptions} // takes flickity options {}
+                    disableImagesLoaded={true} // default false
+                    // reloadOnUpdate // default false
+                    // static // default false
+                >
+                    {item.product.map(product => (
+                        <div
+                            onClick={() => onHandleChangeImage(product.image)}
+                            key={product.id}
+                        >
+                            <ProductImage
+                                alt={product.image}
+                                filename={product.image}
+                                className="product-carousel-image"
+                                placeholderClassName="product-carousel-image"
+                            />
+                        </div>
+                    ))}
+                </Flickity>
+            </div>
         </div>
     )
 }

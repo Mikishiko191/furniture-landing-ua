@@ -649,8 +649,8 @@ pre tt:after {
 }
 
 .slide-out {
-    animation: slide-out 0.5s forwards;
-    -webkit-animation: slide-out 0.5s forwards;
+    opacity: 0;
+    transition: all 600ms;
 }
 
 @keyframes slide-in {
@@ -665,7 +665,7 @@ pre tt:after {
     }
 }
 
-@keyframes slide-out {
+/* @keyframes slide-out {
     0% {
         transform: translateX(0%);
     }
@@ -681,4 +681,4 @@ pre tt:after {
     100% {
         -webkit-transform: translateX(-100%);
     }
-}
+} */

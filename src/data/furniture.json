@@ -63,8 +63,9 @@
         "id": "a91d4a1b-44ff-4477-9533-0d5e9de3578d",
         "image": "emilia1.jpg",
         "product": [
-            { "id": 1, "image": "emilia2.jpg" },
-            { "id": 2, "image": "emilia3.jpg" }
+            { "id": 1, "image": "emilia1.jpg" },
+            { "id": 2, "image": "emilia2.jpg" },
+            { "id": 3, "image": "emilia3.jpg" }
         ],
         "couchSize": [
             { "value": 14900, "label": "140х190(200) см" },
@@ -103,8 +104,9 @@
         "id": "d10ffc35-eb7e-4dd7-bfd5-4e19edb24ccc",
         "image": "bridget1.jpg",
         "product": [
-            { "id": 1, "image": "bridget2.jpg" },
-            { "id": 2, "image": "bridget3.jpg" }
+            { "id": 1, "image": "bridget1.jpg" },
+            { "id": 2, "image": "bridget2.jpg" },
+            { "id": 3, "image": "bridget3.jpg" }
         ],
         "couchSize": [
             { "value": 18000, "label": "140х190(200) см" },

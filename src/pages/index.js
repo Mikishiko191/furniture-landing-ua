@@ -161,49 +161,53 @@ const IndexPage = () => {
                 <MapSection />
                 <WeHaveForYouSomething />
             </main>
-            <div
-                id="sideMenu"
-                className={isSideMenuOpen ? 'slide-in' : 'slide-out'}
-                onTouchMove={onHandleTouchMove}
-            >
-                <SideMenu>
-                    <h2>НУЖНА КОНСЛУЛЬТАЦИЯ </h2>
-                    <p>Звоните по телефонам:</p>
-                    <p>+38 (098) 777-67-60</p>
-                    <p>+38 (099) 777-67-80</p>
-                    <div style={{ marginBottom: 23 }}>
-                        <a href="mailto:support@capitone-style.com">
-                            support@capitone-style.com
+            {isSideMenuOpen && (
+                <div
+                    id="sideMenu"
+                    className={isSideMenuOpen ? 'slide-in' : 'slide-out'}
+                    onTouchMove={onHandleTouchMove}
+                >
+                    <SideMenu>
+                        <h2>НУЖНА КОНСЛУЛЬТАЦИЯ </h2>
+                        <p>Звоните по телефонам:</p>
+                        <p>+38 (098) 777-67-60</p>
+                        <p>+38 (099) 777-67-80</p>
+                        <div style={{ marginBottom: 23 }}>
+                            <a href="mailto:support@capitone-style.com">
+                                support@capitone-style.com
+                            </a>
+                        </div>
+                        <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
+                        <a href="mailto:sales@capitone-style.com">
+                            sales@capitone-style.com
                         </a>
-                    </div>
-                    <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
-                    <a href="mailto:sales@capitone-style.com">
-                        sales@capitone-style.com
-                    </a>
-                    <h2>ОПЛАТА </h2>
-                    <p>
-                        При покупке вы оплачиваете 50%, остача — по факту
-                        получения товара
-                    </p>
-                    <p style={{ margin: '15px 0' }}>Варианты оплаты: </p>
-                    <ul>
-                        <li>1. Безналичная оплата на расчетный счет</li>
-                        <li>2. Перевод на карту ПриватБанка</li>
-                    </ul>
-                    <h2>ДОСТАВКА </h2>
-                    <p style={{ marginBottom: 14 }}>
-                        Бесплатно по Украине транспортной компанией Delivery до
-                        отделения в Вашем населенном пункте
-                    </p>
-                    <p style={{ marginBottom: 10 }}>
-                        Доставка по миру обслуждается индивидуально с менеджером
-                    </p>
-                    <SocialIcons />
-                </SideMenu>
-            </div>
+                        <h2>ОПЛАТА </h2>
+                        <p>
+                            При покупке вы оплачиваете 50%, остача — по факту
+                            получения товара
+                        </p>
+                        <p style={{ margin: '15px 0' }}>Варианты оплаты: </p>
+                        <ul>
+                            <li>1. Безналичная оплата на расчетный счет</li>
+                            <li>2. Перевод на карту ПриватБанка</li>
+                        </ul>
+                        <h2>ДОСТАВКА </h2>
+                        <p style={{ marginBottom: 14 }}>
+                            Бесплатно по Украине транспортной компанией Delivery
+                            до отделения в Вашем населенном пункте
+                        </p>
+                        <p style={{ marginBottom: 10 }}>
+                            Доставка по миру обслуждается индивидуально с
+                            менеджером
+                        </p>
+                        <SocialIcons />
+                    </SideMenu>
+                </div>
+            )}
             <Modal
                 modalIsOpen={modalIsOpen}
                 onHandelCloseModal={onHandelCloseModal}
+                setIsOpen={setIsOpen}
             />
             <Footer scrollToContactUsRef={scrollToContactUsRef} />
             <ScrollToTop />

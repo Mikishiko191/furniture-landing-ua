@@ -171,12 +171,7 @@ const MainContainer = ({ className, scrollToElement }) => {
                     КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ <br /> ЗА 3 ДНЯ
                 </h1>
 
-                <div
-                // data-sal="fade"
-                // data-sal-duration="600"
-                // data-sal-delay="1000"
-                // data-sal-easing="ease-out-back"
-                >
+                <div>
                     <p>
                         <span>-</span> Ручная работа
                     </p>
