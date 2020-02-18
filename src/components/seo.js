@@ -10,13 +10,15 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, pageContext }) {
+    console.log(pageContext)
     const { site } = useStaticQuery(
         graphql`
             query {
                 site {
                     siteMetadata {
                         title
+                        url
                         description
                         author
                     }
@@ -40,6 +42,20 @@ function SEO({ description, lang, meta, title }) {
                     content: metaDescription,
                 },
                 {
+                    name: `image`,
+                    content:
+                        'https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1582059726/logo_zp59eg.png',
+                },
+                {
+                    property: `og:image`,
+                    content:
+                        'https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1582059726/logo_zp59eg.png',
+                },
+                {
+                    property: `og:url`,
+                    content: site.siteMetadata.url,
+                },
+                {
                     property: `og:title`,
                     content: title,
                 },
@@ -50,22 +66,6 @@ function SEO({ description, lang, meta, title }) {
                 {
                     property: `og:type`,
                     content: `website`,
-                },
-                {
-                    name: `twitter:card`,
-                    content: `summary`,
-                },
-                {
-                    name: `twitter:creator`,
-                    content: site.siteMetadata.author,
-                },
-                {
-                    name: `twitter:title`,
-                    content: title,
-                },
-                {
-                    name: `twitter:description`,
-                    content: metaDescription,
                 },
             ].concat(meta)}
         >

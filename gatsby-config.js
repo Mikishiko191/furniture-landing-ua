@@ -1,7 +1,8 @@
 module.exports = {
     siteMetadata: {
-        title: `Furniture landing`,
-        description: ``,
+        title: `Capitone Style`,
+        description: `Кровать, мягкая мебель от производителя для дома, отеля, ресторана, кафе. ОПТ / розница. Эксклюзивный дизайн. Бесплатная доставка. Гарантия.`,
+        url: 'https://www.capitonestyle.com',
         author: `@gatsbyjs`,
     },
     plugins: [
