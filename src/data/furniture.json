@@ -5,7 +5,10 @@
         "product": [
             { "id": 1, "image": "dakota1.jpg" },
             { "id": 2, "image": "dakota2.jpg" },
-            { "id": 3, "image": "dakota3.jpg" }
+            { "id": 3, "image": "dakota3.jpg" },
+            { "id": 4, "image": "dakota4.jpg" },
+            { "id": 5, "image": "dakota5.jpg" },
+            { "id": 6, "image": "dakota6.jpg" }
         ],
         "couchSize": [
             { "value": 13400, "label": "80х190(200) см" },
@@ -65,7 +68,10 @@
         "product": [
             { "id": 1, "image": "emilia1.jpg" },
             { "id": 2, "image": "emilia2.jpg" },
-            { "id": 3, "image": "emilia3.jpg" }
+            { "id": 3, "image": "emilia3.jpg" },
+            { "id": 4, "image": "emilia4.jpg" },
+            { "id": 5, "image": "emilia5.jpg" },
+            { "id": 6, "image": "emilia6.jpg" }
         ],
         "couchSize": [
             { "value": 14900, "label": "140х190(200) см" },
@@ -106,7 +112,10 @@
         "product": [
             { "id": 1, "image": "bridget1.jpg" },
             { "id": 2, "image": "bridget2.jpg" },
-            { "id": 3, "image": "bridget3.jpg" }
+            { "id": 3, "image": "bridget3.jpg" },
+            { "id": 4, "image": "bridget4.jpg" },
+            { "id": 5, "image": "bridget5.jpg" },
+            { "id": 6, "image": "bridget6.jpg" }
         ],
         "couchSize": [
             { "value": 18000, "label": "140х190(200) см" },

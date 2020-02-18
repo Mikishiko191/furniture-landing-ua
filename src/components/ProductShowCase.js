@@ -1,14 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import Flickity from 'react-flickity-component'
 
 // Components
 import ProductImage from './ProductImage'
-
-// const Grid = styled.div`
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-// `
 
 const flickityOptions = {
     initialIndex: 1,
