@@ -28,14 +28,14 @@ const Instagram = () => (
             gradientUnits="userSpaceOnUse"
             r="564.64588968"
         >
-            <stop offset="0" stop-color="#fae100" />
-            <stop offset=".0544" stop-color="#fadc04" />
-            <stop offset=".1167" stop-color="#fbce0e" />
-            <stop offset=".1829" stop-color="#fcb720" />
-            <stop offset=".2514" stop-color="#fe9838" />
-            <stop offset=".3054" stop-color="#ff7950" />
-            <stop offset=".4922" stop-color="#ff1c74" />
-            <stop offset="1" stop-color="#6c1cd1" />
+            <stop offset="0" stopColor="#fae100" />
+            <stop offset=".0544" stopColor="#fadc04" />
+            <stop offset=".1167" stopColor="#fbce0e" />
+            <stop offset=".1829" stopColor="#fcb720" />
+            <stop offset=".2514" stopColor="#fe9838" />
+            <stop offset=".3054" stopColor="#ff7950" />
+            <stop offset=".4922" stopColor="#ff1c74" />
+            <stop offset="1" stopColor="#6c1cd1" />
         </radialGradient>
         <linearGradient
             id="b"
@@ -45,10 +45,10 @@ const Instagram = () => (
             y1="222.4596783332"
             y2="-265.4464136668"
         >
-            <stop offset="0" stop-color="#a1b5d8" stop-opacity="0" />
-            <stop offset=".3094" stop-color="#90a2bd" stop-opacity=".309804" />
-            <stop offset=".7554" stop-color="#7c8b9c" stop-opacity=".756863" />
-            <stop offset="1" stop-color="#748290" />
+            <stop offset="0" stopColor="#a1b5d8" stopOpacity="0" />
+            <stop offset=".3094" stopColor="#90a2bd" stopOpacity=".309804" />
+            <stop offset=".7554" stopColor="#7c8b9c" stopOpacity=".756863" />
+            <stop offset="1" stopColor="#748290" />
         </linearGradient>
         <linearGradient
             id="c"
@@ -58,15 +58,15 @@ const Instagram = () => (
             y1="451.9660859688"
             y2="531.773969673"
         >
-            <stop offset="0" stop-color="#fae100" stop-opacity="0" />
-            <stop offset=".3068" stop-color="#fca800" stop-opacity=".305882" />
-            <stop offset=".6275" stop-color="#fe7300" stop-opacity=".627451" />
-            <stop offset=".8685" stop-color="#ff5200" stop-opacity=".866667" />
-            <stop offset="1" stop-color="#ff4500" />
+            <stop offset="0" stopColor="#fae100" stopOpacity="0" />
+            <stop offset=".3068" stopColor="#fca800" stopOpacity=".305882" />
+            <stop offset=".6275" stopColor="#fe7300" stopOpacity=".627451" />
+            <stop offset=".8685" stopColor="#ff5200" stopOpacity=".866667" />
+            <stop offset="1" stopColor="#ff4500" />
         </linearGradient>
         <linearGradient id="d">
-            <stop offset="0" stop-color="#833ab4" stop-opacity="0" />
-            <stop offset="1" stop-color="#833ab4" />
+            <stop offset="0" stopColor="#833ab4" stopOpacity="0" />
+            <stop offset="1" stopColor="#833ab4" />
         </linearGradient>
         <linearGradient
             id="e"
@@ -108,17 +108,17 @@ const Instagram = () => (
             y1="155.0495285836"
             y2="362.1651626766"
         >
-            <stop offset="0" stop-color="#833ab4" />
-            <stop offset=".0922" stop-color="#9c3495" />
-            <stop offset=".2927" stop-color="#dc2546" />
-            <stop offset=".392" stop-color="#fd1d1d" />
-            <stop offset=".5589" stop-color="#fc6831" />
-            <stop offset=".6887" stop-color="#fc9b40" />
-            <stop offset=".7521" stop-color="#fcaf45" />
-            <stop offset=".7806" stop-color="#fdb750" />
-            <stop offset=".8656" stop-color="#fecb6a" />
-            <stop offset=".9415" stop-color="#ffd87a" />
-            <stop offset="1" stop-color="#ffdc80" />
+            <stop offset="0" stopColor="#833ab4" />
+            <stop offset=".0922" stopColor="#9c3495" />
+            <stop offset=".2927" stopColor="#dc2546" />
+            <stop offset=".392" stopColor="#fd1d1d" />
+            <stop offset=".5589" stopColor="#fc6831" />
+            <stop offset=".6887" stopColor="#fc9b40" />
+            <stop offset=".7521" stopColor="#fcaf45" />
+            <stop offset=".7806" stopColor="#fdb750" />
+            <stop offset=".8656" stopColor="#fecb6a" />
+            <stop offset=".9415" stopColor="#ffd87a" />
+            <stop offset="1" stopColor="#ffdc80" />
         </linearGradient>
         <path
             d="m503.234375 91.578125c-4.660156-43.664063-39.144531-78.15625-82.8125-82.8125-109.507813-11.6875-219.335937-11.6875-328.839844 0-43.667969 4.660156-78.15625 39.148437-82.816406 82.8125-11.6875 109.503906-11.6875 219.335937 0 328.839844 4.660156 43.667969 39.148437 78.15625 82.8125 82.816406 109.503906 11.6875 219.335937 11.6875 328.84375 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.816406 11.6875-109.503907 11.6875-219.332031 0-328.839844zm0 0"

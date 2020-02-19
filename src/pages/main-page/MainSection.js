@@ -176,22 +176,22 @@ const MainContainer = ({ className, scrollToElement }) => {
                         <span>-</span> Ручная работа
                     </p>
                     <p>
-                        <span>-</span> Серцифицированные матералы
-                    </p>
-                    <p>
-                        <span>-</span> Металлическая рамка
-                    </p>
-                    <p>
                         <span>-</span> Буковые ламели
-                    </p>
-                    <p>
-                        <span>-</span> Импортный механизм
                     </p>
                     <p>
                         <span>-</span> Контроль качества
                     </p>
                     <p>
                         <span>-</span> Доставка бесплатная
+                    </p>
+                    <p>
+                        <span>-</span> Металлическая рамка
+                    </p>
+                    <p>
+                        <span>-</span> Импортный подъемный механизм
+                    </p>
+                    <p>
+                        <span>-</span> Серцифицированные матералы
                     </p>
                 </div>
                 <div className="button" style={{ zIndex: 9 }}>
