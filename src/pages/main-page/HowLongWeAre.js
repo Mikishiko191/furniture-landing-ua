@@ -26,6 +26,33 @@ const Grid = styled.div`
         grid-template-columns: repeat(1, 1fr);
         .col {
             &:nth-child(1) {
+                margin-top: 40px;
+                margin-bottom: 10px;
+            }
+            &:nth-child(2) {
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-size: 30px;
+                font-weight: bold;
+                color: #ffffff;
+                margin: 0;
+            }
+            p {
+                height: 48px;
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin: 0;
+            }
+        }
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width: 375px) {
+        .col {
+            &:nth-child(1) {
+                margin-top: 40px;
                 margin-bottom: 40px;
             }
             &:nth-child(2) {
@@ -52,23 +79,17 @@ const Grid = styled.div`
         grid-template-columns: repeat(3, 1fr);
         .col {
             &:nth-child(1) {
-                margin-bottom: 0;
+                margin-top: 0px;
+                margin-bottom: 0px;
             }
             &:nth-child(2) {
-                margin-bottom: 0;
+                margin-bottom: 0px;
             }
             h3 {
                 font-size: 92px;
-                font-weight: bold;
-                color: #ffffff;
-                margin: 0;
             }
             p {
-                height: 48px;
                 font-size: 32px;
-                font-weight: bold;
-                color: #ffffff;
-                margin: 0;
             }
         }
     }

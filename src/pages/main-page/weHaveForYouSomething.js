@@ -7,7 +7,16 @@ import Carousel from '../../components/FlickityCarusel'
 import { PdfFile } from '../../components/Icons'
 
 const Button = styled.button`
-    padding: 16px 100px;
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        padding: 16px 65px;
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        padding: 16px 100px;
+    }
+
     border: solid 2px #000000;
     background: #000000;
     color: white;
@@ -80,6 +89,8 @@ const WeHaveForYouSomething = () => {
                     <a
                         href="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        role="button"
                         style={{
                             display: 'flex',
                             alignItems: 'center',

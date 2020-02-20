@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../components/layout.css'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -25,51 +25,71 @@ import SocialIcons from '../components/SocialIcons'
 
 const SideMenu = styled.div`
     padding: 20px;
-    h2 {
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        margin-bottom: 15px;
-    }
-    p {
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        margin-bottom: 3px;
-    }
-    a {
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-decoration: underline;
-        margin: 0;
-        color: white;
-    }
-    ul {
-        margin: 0;
-        list-style: none;
-        li {
-            font-size: 14px;
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        h2 {
+            font-size: 12px;
             font-weight: normal;
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 10px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            margin-bottom: 0px;
+        }
+        a {
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-decoration: underline;
+            margin: 0;
+            color: white;
+        }
+        ul {
+            margin: 0;
+            list-style: none;
+            li {
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+            }
         }
     }
-    .icons {
-        display: flex;
-        justify-content: space-between;
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width: 375px) {
+        h2 {
+            font-size: 22px;
+        }
+        p {
+            font-size: 16px;
+        }
+        a {
+            font-size: 16px;
+        }
+        ul {
+            li {
+                font-size: 16px;
+            }
+        }
     }
+
+    /* @media only screen and (min-width: 768px) {
+    } */
 `
 
 const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 105)
@@ -173,12 +193,15 @@ const IndexPage = () => {
                         <p>+38 (098) 777-67-60</p>
                         <p>+38 (099) 777-67-80</p>
                         <div style={{ marginBottom: 23 }}>
-                            <a href="mailto:support@capitone-style.com">
+                            <a
+                                href="mailto:support@capitone-style.com"
+                                role="link"
+                            >
                                 support@capitone-style.com
                             </a>
                         </div>
                         <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
-                        <a href="mailto:sales@capitone-style.com">
+                        <a href="mailto:sales@capitone-style.com" role="link">
                             sales@capitone-style.com
                         </a>
                         <h2>ОПЛАТА </h2>

@@ -1,8 +1,34 @@
 import React from 'react'
 import Flickity from 'react-flickity-component'
+import styled from 'styled-components'
 
 // Components
 import ProductImage from './ProductImage'
+
+const ProductShowCaseStyles = styled.div`
+    position: sticky;
+    top: 100px;
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        .hide-on-mobile {
+            display: none;
+        }
+        .product-slider {
+            padding-bottom: 50px;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        .hide-on-mobile {
+            display: block;
+        }
+        .product-slider {
+            padding-bottom: 0px;
+        }
+    }
+`
 
 const flickityOptions = {
     initialIndex: 1,
@@ -21,14 +47,17 @@ const ProductShowCase = ({ item }) => {
     }
 
     return (
-        <div style={{ position: 'sticky', top: 100 }}>
-            <div onClick={() => onHandleChangeImage(item.image)}>
+        <ProductShowCaseStyles>
+            <div
+                className="hide-on-mobile"
+                onClick={() => onHandleChangeImage(item.image)}
+            >
                 <ProductImage
                     alt="product"
                     filename={!imageValue ? item.image : imageValue}
                 />
             </div>
-            <div>
+            <div className="product-slider">
                 <Flickity
                     className={'carousel'} // default ''
                     elementType={'div'} // default 'div'
@@ -52,7 +81,7 @@ const ProductShowCase = ({ item }) => {
                     ))}
                 </Flickity>
             </div>
-        </div>
+        </ProductShowCaseStyles>
     )
 }
 

@@ -21,6 +21,21 @@ const Content = styled.div`
         color: #2a2a2a;
     }
 
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width: 320px) {
+        .space-between {
+            height: 100%;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        .space-between {
+            height: 90px;
+        }
+    }
+
+
     h5 {
         font-size: 18px;
         font-weight: normal;
@@ -70,7 +85,7 @@ const CardComponent = ({
             <ProductImage alt={title} filename={imageSources} />
             <Content>
                 <h3>{title}</h3>
-                <p style={{ height: 85 }}>{content}</p>
+                <p className="space-between">{content}</p>
                 <h5>{reference}</h5>
                 <p className="price">
                     от <span>{numberWithSpaces(price)} грн</span>

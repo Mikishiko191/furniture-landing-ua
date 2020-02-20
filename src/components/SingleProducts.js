@@ -18,11 +18,31 @@ const Grid = styled.div`
     /* Custom, iPhone Retina */
     @media only screen and (min-width: 320px) {
         grid-template-columns: repeat(1, 1fr);
+        .showcase {
+            .mobile-title {
+                display: block;
+            }
+        }
+        .product-description {
+            .desktop-title {
+                display: none;
+            }
+        }
     }
 
     /* Small Devices, Tablets */
     @media only screen and (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
+        .showcase {
+            .mobile-title {
+                display: none;
+            }
+        }
+        .product-description {
+            .desktop-title {
+                display: block;
+            }
+        }
     }
 
     margin: 0 auto;
@@ -155,10 +175,11 @@ const SingleProducts = ({ reference, productId }) => {
                 <>
                     <Grid>
                         <div className="showcase">
+                            <h2 className="mobile-title">{data.title}</h2>
                             <ProductShowCase item={data} />
                         </div>
                         <div className="product-description">
-                            <h2>{data.title}</h2>
+                            <h2 className="desktop-title">{data.title}</h2>
                             <ul className="product-description__list">
                                 <li>
                                     Материал: &nbsp;&nbsp;{' '}
@@ -292,6 +313,8 @@ const SingleProducts = ({ reference, productId }) => {
                                     <a
                                         href="https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf"
                                         target="_blank"
+                                        rel="noopener noreferrer"
+                                        role="button"
                                         style={{
                                             display: 'flex',
                                             alignItems: 'center',

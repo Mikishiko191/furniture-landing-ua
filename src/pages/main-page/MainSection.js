@@ -50,6 +50,12 @@ const MainContent = styled.div`
     /* Custom, iPhone Retina */
     @media only screen and (min-width: 320px) {
         margin: 0 10px;
+        h1 {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
         p {
             font-size: 16px;
             font-weight: 600;
@@ -61,6 +67,23 @@ const MainContent = styled.div`
             margin: 0;
             padding-bottom: 3px;
         }
+        .button {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width: 375px) {
+        margin: 0 20px;
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 25px;
+        }
     }
 
     /* Small Devices, Tablets */
@@ -68,37 +91,13 @@ const MainContent = styled.div`
         margin: 0 80px;
         h1 {
             font-size: 50px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            margin-top: 50px;
         }
         p {
             font-size: 25px;
-            font-weight: 600;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            color: #ffffff;
-            margin: 0;
-            padding-bottom: 3px;
         }
-    }
-
-    .button {
-        margin-top: 80px;
-        margin-bottom: 40px;
-        text-align: center;
-        width: 100%;
-        /* button {
-            padding: 23px 115px;
-            cursor: pointer;
-            transition: all 300ms;
-            &:hover {
-                background: #000000;
-                color: white;
-            }
-        } */
+        .button {
+            margin-top: 80px;
+        }
     }
 `
 
