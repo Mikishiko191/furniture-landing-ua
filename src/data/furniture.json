@@ -8,7 +8,9 @@
             { "id": 3, "image": "dakota3.jpg" },
             { "id": 4, "image": "dakota4.jpg" },
             { "id": 5, "image": "dakota5.jpg" },
-            { "id": 6, "image": "dakota6.jpg" }
+            { "id": 6, "image": "dakota6.jpg" },
+            { "id": 7, "image": "dakota7.jpg" },
+            { "id": 8, "image": "dakota8.jpg" }
         ],
         "couchSize": [
             { "value": 13400, "label": "80х190(200) см" },
@@ -71,7 +73,11 @@
             { "id": 3, "image": "emilia3.jpg" },
             { "id": 4, "image": "emilia4.jpg" },
             { "id": 5, "image": "emilia5.jpg" },
-            { "id": 6, "image": "emilia6.jpg" }
+            { "id": 6, "image": "emilia6.jpg" },
+            { "id": 7, "image": "emilia7.jpg" },
+            { "id": 8, "image": "emilia8.jpg" },
+            { "id": 9, "image": "emilia9.jpg" },
+            { "id": 10, "image": "emilia10.jpg" }
         ],
         "couchSize": [
             { "value": 14900, "label": "140х190(200) см" },
@@ -115,7 +121,11 @@
             { "id": 3, "image": "bridget3.jpg" },
             { "id": 4, "image": "bridget4.jpg" },
             { "id": 5, "image": "bridget5.jpg" },
-            { "id": 6, "image": "bridget6.jpg" }
+            { "id": 6, "image": "bridget6.jpg" },
+            { "id": 7, "image": "bridget7.jpg" },
+            { "id": 8, "image": "bridget8.jpg" },
+            { "id": 9, "image": "bridget9.jpg" },
+            { "id": 10, "image": "bridget10.jpg" }
         ],
         "couchSize": [
             { "value": 18000, "label": "140х190(200) см" },
