@@ -147,6 +147,7 @@ const SingleProducts = ({ reference, productId }) => {
                         }
                         couchSize {
                             value
+                            price
                             label
                         }
                         mattress {

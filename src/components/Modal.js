@@ -94,12 +94,7 @@ const ModalComponent = ({ modalIsOpen, onHandelCloseModal, setIsOpen }) => {
         >
             <div style={{ position: 'relative', padding: '30px 30px 0 30px' }}>
                 <CloseButton onClick={onHandelCloseModal}>
-                    <svg
-                        height="30"
-                        viewBox="0 0 413.348 413.348"
-                        width="30"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg height="30" viewBox="0 0 413.348 413.348" width="30">
                         <path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z" />
                     </svg>
                 </CloseButton>

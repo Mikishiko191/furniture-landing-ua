@@ -169,24 +169,28 @@ const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
     React.useEffect(() => {
         if (formik.values.couchSize) {
             setPrice({
-                price: formik.values.couchSize.value,
+                price: formik.values.couchSize.price,
             })
         }
 
         if (formik.values.mattressSize) {
             if (formik.values.mattress.value === 1) {
                 setPrice({
-                    price: formik.values.couchSize.value,
+                    price: formik.values.couchSize.price,
                 })
             }
             if (formik.values.mattress.value === 2) {
                 setPrice({
-                    price: formik.values.mattressSize.sans,
+                    price:
+                        formik.values.mattressSize.sans +
+                        formik.values.couchSize.price,
                 })
             }
             if (formik.values.mattress.value === 3) {
                 setPrice({
-                    price: formik.values.mattressSize.soft,
+                    price:
+                        formik.values.mattressSize.soft +
+                        formik.values.couchSize.price,
                 })
             }
         }
