@@ -99,18 +99,18 @@ const Footer = ({ scrollToContactUsRef }) => {
         <footer style={{ background: '#000000' }} ref={scrollToContactUsRef}>
             <Grid>
                 <div>
-                    <h5>НУЖНА КОНСЛУЛЬТАЦИЯ МЕНЕДЖЕРА</h5>
+                    <h5>Мы поможем выбрать</h5>
                     <p>Звоните по телефонам:</p>
                     <p>+38 (098) 777-67-60</p>
                     <p>+38 (099) 777-67-80</p>
                     <div style={{ marginBottom: 48 }}>
-                        <a href="mailto:support@capitone-style.com" role="link">
-                            support@capitone-style.com
+                        <a href="mailto:sales@capitone-style.com" role="link">
+                            sales@capitone-style.com
                         </a>
                     </div>
                     <h5>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h5>
-                    <a href="mailto:sales@capitone-style.com" role="link">
-                        sales@capitone-style.com
+                    <a href="mailto:support@capitone-style.com" role="link">
+                        support@capitone-style.com
                     </a>
                 </div>
                 <div>

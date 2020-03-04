@@ -27,7 +27,7 @@ function BackGroundImage({ className, imageName, bgImageSize }) {
                             relativePath
                             name
                             childImageSharp {
-                                fluid(quality: 100, maxWidth: 4160) {
+                                fluid(quality: 100, maxWidth: 1400) {
                                     ...GatsbyImageSharpFluid_withWebp
                                 }
                             }

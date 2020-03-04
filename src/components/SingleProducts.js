@@ -234,7 +234,7 @@ const SingleProducts = ({ reference, productId }) => {
                                             }}
                                         >
                                             <strong> матрас «Сан»</strong>
-                                            <Tooltip>
+                                            <Tooltip iconStyles={true}>
                                                 <div
                                                     style={{
                                                         position: 'relative',
@@ -273,7 +273,7 @@ const SingleProducts = ({ reference, productId }) => {
                                             }}
                                         >
                                             <strong>матрас «Моко-Софт»</strong>
-                                            <Tooltip>
+                                            <Tooltip iconStyles={true}>
                                                 <h5>Матрас «Мокко-Софт»</h5>
                                                 <p>ТИП МАТРАСА: Двусторонний</p>
                                                 <p>ВЫСОТА МОДЕЛИ: 22 см</p>

@@ -16,6 +16,13 @@ const Span = styled.span`
     color: #000000;
 `
 
+const ErrorMessage = styled.div`
+    position: absolute;
+    bottom: -22px;
+    color: red;
+    font-size: 15px;
+`
+
 const Option = props => {
     const hasImage = props.options.some(item => item.img)
     return (
@@ -91,6 +98,7 @@ const ReactSelect = ({
     defaultValue,
     withToolTip,
     value,
+    iconStyles,
 }) => {
     const handleChange = value => {
         // this is going to call setFieldValue and manually update values of the selectName
@@ -105,7 +113,7 @@ const ReactSelect = ({
     }
 
     return (
-        <div style={{ marginBottom: 10 }}>
+        <div style={{ marginBottom: 10, position: 'relative' }}>
             <div style={{ marginBottom: 5, marginTop: 5 }}>
                 <label
                     htmlFor="color"
@@ -117,7 +125,7 @@ const ReactSelect = ({
                     <Span>{label}</Span>
                     <span>
                         {withToolTip && (
-                            <Tooltip>
+                            <Tooltip iconStyles={iconStyles}>
                                 <div>
                                     <p>MAGITEX MT Velour Deluxe</p>
                                     <p>Производитель: Турция</p>
@@ -177,18 +185,23 @@ const ReactSelect = ({
                     control: (base, props) => ({
                         ...base,
                         background: 'white',
-                        // border: props.selectProps.errors
-                        //     ? 'solid 1px #e01e25'
-                        //     : 'solid 1px #ccc',
+                        border:
+                            !!error && touched
+                                ? 'solid 1px #e01e25'
+                                : 'solid 1px #ccc',
                         borderRadius: 1,
-                        // '&:hover': {
-                        //     border: props.selectProps.errors
-                        //         ? 'solid 1px #e01e25'
-                        //         : 'solid 1px #ccc',
-                        // },
+                        '&:hover': {
+                            border:
+                                !!error && touched
+                                    ? 'solid 1px #e01e25'
+                                    : 'solid 1px #ccc',
+                        },
                         transition: 'all 300ms',
                         '&:hover': { borderColor: 'lightgray' },
-                        border: '1px solid #000000',
+                        border:
+                            !!error && touched
+                                ? 'solid 1px #e01e25'
+                                : '1px solid #000000',
                         boxShadow: 'none',
                     }),
                     valueContainer: (base, props) => ({
@@ -212,9 +225,7 @@ const ReactSelect = ({
                     }),
                 }}
             />
-            {!!error && touched && (
-                <div style={{ color: 'red', marginTop: '.5rem' }}>{error}</div>
-            )}
+            {!!error && touched && <ErrorMessage>{error}</ErrorMessage>}
         </div>
     )
 }

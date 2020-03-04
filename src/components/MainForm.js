@@ -18,28 +18,6 @@ const SweetAlert = withReactContent(Swal)
 
 const phoneRegExp = /^\+?3?8?(0\d{9})$/
 
-const validationSchema = Yup.object().shape({
-    couchSize: Yup.string()
-        .ensure()
-        .required('Обязательное поле*'),
-    color: Yup.string()
-        .ensure()
-        .required('Обязательное поле*'),
-    mattress: Yup.string()
-        .ensure()
-        .required('Обязательное поле*'),
-    // mattressSize: Yup.string()
-    //     .ensure()
-    //     .required('Mattress size is required!'),
-    firstName: Yup.string()
-        .min(1, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Обязательное поле*'),
-    phone: Yup.string()
-        .matches(phoneRegExp, 'Номер телефона не валидный')
-        .required('Обязательное поле*'),
-})
-
 const Button = styled.button`
     padding: 16px 80px;
     border: solid 2px #000000;
@@ -117,7 +95,32 @@ const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
             mattressSize: '',
         },
         enableReinitialize: false,
-        validationSchema,
+        validationSchema: () => {
+            return Yup.object().shape({
+                couchSize: Yup.string()
+                    .ensure()
+                    .required('Обязательное поле*'),
+                color: Yup.string()
+                    .ensure()
+                    .required('Обязательное поле*'),
+                mattress: Yup.string()
+                    .ensure()
+                    .required('Обязательное поле*'),
+                mattressSize:
+                    formik.values.mattress || formik.values.mattress.value === 1
+                        ? Yup.string()
+                              .ensure()
+                              .required('Обязательное поле*')
+                        : null,
+                firstName: Yup.string()
+                    .min(1, 'Too Short!')
+                    .max(50, 'Too Long!')
+                    .required('Обязательное поле*'),
+                phone: Yup.string()
+                    .matches(phoneRegExp, 'Номер телефона не валидный')
+                    .required('Обязательное поле*'),
+            })
+        },
         onSubmit: (values, { resetForm }) => {
             const schema = {
                 couchTitle: data.title,
@@ -225,6 +228,7 @@ const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
                         touched={formik.touched.color}
                         isDisabled={!formik.values.couchSize}
                         placeholder="Выберите обивку"
+                        iconStyles={false}
                     />
                     <ReactSelect
                         label="МАТРАС:"

@@ -32,7 +32,7 @@ const StyledTooltip = styled.div`
     }
 `
 
-const TooltipComponent = ({ children }) => {
+const TooltipComponent = ({ children, iconStyles }) => {
     return (
         <Tooltip
             sticky={true}
@@ -41,7 +41,7 @@ const TooltipComponent = ({ children }) => {
             animation="fade"
             arrow={true}
         >
-            <Information />
+            <Information styles={iconStyles} />
         </Tooltip>
     )
 }
