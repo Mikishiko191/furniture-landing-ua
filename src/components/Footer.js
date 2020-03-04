@@ -60,6 +60,7 @@ const Grid = styled.div`
         letter-spacing: normal;
         color: #ffffff;
         margin-bottom: 11px;
+        text-transform: uppercase;
     }
     p {
         margin: 4px 0;
