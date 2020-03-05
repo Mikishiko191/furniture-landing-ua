@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 800px) {
         .sideMenu {
             display: none;
         }
@@ -52,7 +52,7 @@ const Flex = styled.div`
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 800px) {
         display: flex;
         justify-content: space-between;
         width: 100%;

@@ -80,15 +80,29 @@ const MainContent = styled.div`
     @media only screen and (min-width: 375px) {
         margin: 0 20px;
         h1 {
-            font-size: 40px;
+            /* font-size: 40px; */
+            font-size: 30px;
         }
         p {
-            font-size: 25px;
+            font-size: 18px;
         }
     }
 
     /* Small Devices, Tablets */
     @media only screen and (min-width: 768px) {
+        margin: 0 80px;
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 25px;
+        }
+        .button {
+            margin-top: 80px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
         margin: 0 80px;
         h1 {
             font-size: 50px;

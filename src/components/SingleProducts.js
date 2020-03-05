@@ -31,7 +31,7 @@ const Grid = styled.div`
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
         .showcase {
             .mobile-title {

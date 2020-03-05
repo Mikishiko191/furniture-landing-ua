@@ -22,7 +22,7 @@ const ProductList = styled.div`
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 12px;
         grid-row-gap: 0;

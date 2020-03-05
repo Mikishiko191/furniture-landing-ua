@@ -25,6 +25,12 @@ const ProductShowCaseStyles = styled.div`
             display: block;
         }
         .product-slider {
+            padding-bottom: 50px;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .product-slider {
             padding-bottom: 0px;
         }
     }

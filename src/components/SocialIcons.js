@@ -11,7 +11,7 @@ const Icons = styled.div`
     @media only screen and (min-width: 320px) {
         margin: 0px;
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         margin: 0 55px;
     }
     a {

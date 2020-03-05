@@ -76,6 +76,19 @@ const Grid = styled.div`
 
     /* Small Devices, Tablets */
     @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        .col {
+            h3 {
+                font-size: 45px;
+            }
+            p {
+                font-size: 32px;
+            }
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
         .col {
             &:nth-child(1) {

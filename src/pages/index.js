@@ -73,7 +73,24 @@ const SideMenu = styled.div`
     /* Extra Small Devices, Phones */
     @media only screen and (min-width: 375px) {
         h2 {
-            font-size: 22px;
+            font-size: 17px;
+        }
+        p {
+            font-size: 13px;
+        }
+        a {
+            font-size: 13px;
+        }
+        ul {
+            li {
+                font-size: 13px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        h2 {
+            font-size: 23px;
         }
         p {
             font-size: 16px;
@@ -87,9 +104,6 @@ const SideMenu = styled.div`
             }
         }
     }
-
-    /* @media only screen and (min-width: 768px) {
-    } */
 `
 
 const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 105)
@@ -194,15 +208,15 @@ const IndexPage = () => {
                         <p>+38 (099) 777-67-80</p>
                         <div style={{ marginBottom: 23 }}>
                             <a
-                                href="mailto:support@capitone-style.com"
+                                href="mailto:sales@capitone-style.com"
                                 role="link"
                             >
-                                support@capitone-style.com
+                                sales@capitone-style.com
                             </a>
                         </div>
                         <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
-                        <a href="mailto:sales@capitone-style.com" role="link">
-                            sales@capitone-style.com
+                        <a href="mailto:support@capitone-style.com" role="link">
+                            support@capitone-style.com
                         </a>
                         <h2>ОПЛАТА </h2>
                         <p>

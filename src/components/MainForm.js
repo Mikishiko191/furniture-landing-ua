@@ -19,7 +19,6 @@ const SweetAlert = withReactContent(Swal)
 const phoneRegExp = /^\+?3?8?(0\d{9})$/
 
 const Button = styled.button`
-    padding: 16px 80px;
     border: solid 2px #000000;
     background: #000000;
     color: white;
@@ -28,8 +27,15 @@ const Button = styled.button`
 
     /* Custom, iPhone Retina */
     @media only screen and (min-width: 320px) {
+        padding: 16px 50px;
         width: 100%;
     }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 768px) {
+        padding: 16px 80px;
+    }
+
     &:hover {
         background: white;
         color: black;
