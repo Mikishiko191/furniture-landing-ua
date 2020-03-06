@@ -7,29 +7,36 @@ import React from 'react'
 import ProductImage from './ProductImage'
 
 const Wrapper = styled.div`
-    margin: 0 50px;
     height: 94px;
     display: flex;
     align-items: center;
-    .logo {
-        width: 200px;
-        /* width: 300px; */
-        img {
-            margin: 0;
-            padding-bottom: 3px;
-        }
-    }
 
     @media only screen and (min-width: 320px) {
+        margin: 0 20px;
+        .logo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .gatsby-image-wrapper {
+                width: 200px;
+            }
+        }
         .sideMenu {
-            display: block;
             margin-right: 30px;
+            display: block;
         }
     }
-
     /* Small Devices, Tablets */
     @media only screen and (min-width: 800px) {
+        margin: 0 50px;
+        .logo {
+            width: 200px;
+            display: block;
+        }
         .sideMenu {
+            margin: 0;
             display: none;
         }
     }

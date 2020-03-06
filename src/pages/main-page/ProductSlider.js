@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 // Components
 import Card from '../../components/Card'
 import SingleProducts from '../../components/SingleProducts'
+import ZoomInImageModal from '../../components/ZoomInImageModal'
 
 const Section = styled.section`
     margin: 0 auto;
@@ -32,6 +33,9 @@ const ProductList = styled.div`
 const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 115)
 
 const ProductSlider = ({ productSectionRef }) => {
+    const [modalIsOpen, setZoomInModal] = React.useState(false)
+    const [filename, setFilename] = React.useState('')
+
     const singleProductReference = React.useRef([
         React.createRef(),
         React.createRef(),
@@ -63,6 +67,14 @@ const ProductSlider = ({ productSectionRef }) => {
         })
     }
 
+    const onHandelCloseModal = () => {
+        setZoomInModal(false)
+    }
+
+    const onHandleOpenZoomInModal = () => {
+        setZoomInModal(true)
+    }
+
     return (
         <Section ref={productSectionRef}>
             <ProductList>
@@ -87,9 +99,17 @@ const ProductSlider = ({ productSectionRef }) => {
                     <SingleProducts
                         reference={singleProductReference.current[index]}
                         productId={item.id}
+                        setFilename={setFilename}
+                        onHandleOpenZoomInModal={onHandleOpenZoomInModal}
                     />
                 </div>
             ))}
+
+            <ZoomInImageModal
+                modalIsOpen={modalIsOpen}
+                onHandelCloseModal={onHandelCloseModal}
+                filename={filename}
+            />
         </Section>
     )
 }

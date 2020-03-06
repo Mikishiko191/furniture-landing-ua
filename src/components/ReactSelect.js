@@ -27,14 +27,21 @@ const Option = props => {
     const hasImage = props.options.some(item => item.img)
     return (
         <components.Option {...props}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    position: 'relative',
+                }}
+            >
                 {hasImage && (
                     <div
                         style={{
-                            width: 30,
-                            height: 30,
-                            marginTop: 5,
-                            marginRight: 10,
+                            position: 'absolute',
+                            width: '21%',
+                            height: '100%',
+                            top: -6.6,
+                            left: -10,
                         }}
                     >
                         <ProductImage
@@ -43,7 +50,9 @@ const Option = props => {
                         />
                     </div>
                 )}
-                <div>{props.data.label}</div>
+                <div style={{ marginLeft: hasImage ? 60 : 0 }}>
+                    {props.data.label}
+                </div>
             </div>
         </components.Option>
     )

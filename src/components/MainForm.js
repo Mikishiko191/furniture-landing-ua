@@ -145,7 +145,8 @@ const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
                     SweetAlert.fire({
                         title: (
                             <p>
-                                Спасибо что оставили заявку, мы с вами свяжемся
+                                Спасибо! Ваш заказ принят. Мы свяжемся с Вами в
+                                ближайшее время.
                             </p>
                         ),
                         icon: 'success',

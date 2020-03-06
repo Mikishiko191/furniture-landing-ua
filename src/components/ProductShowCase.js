@@ -45,11 +45,16 @@ const flickityOptions = {
     pageDots: false,
 }
 
-const ProductShowCase = ({ item }) => {
+const ProductShowCase = ({ item, setFilename, onHandleOpenZoomInModal }) => {
     const [imageValue, setImage] = React.useState()
 
     const onHandleChangeImage = img => {
         setImage(img)
+    }
+
+    const onHandleZoomProductImage = img => {
+        setFilename(img)
+        onHandleOpenZoomInModal(true)
     }
 
     return (
@@ -58,6 +63,9 @@ const ProductShowCase = ({ item }) => {
                 className="hide-on-mobile"
                 onClick={() => onHandleChangeImage(item.image)}
             >
+                {/* <div onClick={() => onHandleZoomProductImage(item.image)}>
+                    Icon
+                </div> */}
                 <ProductImage
                     alt="product"
                     filename={!imageValue ? item.image : imageValue}

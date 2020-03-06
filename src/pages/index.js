@@ -213,6 +213,12 @@ const IndexPage = () => {
                             >
                                 sales@capitone-style.com
                             </a>
+                            <a
+                                href="mailto:sales2@capitone-style.com"
+                                role="link"
+                            >
+                                sales2@capitone-style.com
+                            </a>
                         </div>
                         <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
                         <a href="mailto:support@capitone-style.com" role="link">

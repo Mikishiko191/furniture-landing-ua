@@ -90,7 +90,7 @@ const ModalComponent = ({ modalIsOpen, onHandelCloseModal, setIsOpen }) => {
             isOpen={modalIsOpen}
             onRequestClose={onHandelCloseModal}
             style={customStyles}
-            contentLabel="Example Modal"
+            contentLabel="Form modal"
         >
             <div style={{ position: 'relative', padding: '30px 30px 0 30px' }}>
                 <CloseButton onClick={onHandelCloseModal}>

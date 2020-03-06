@@ -121,7 +121,12 @@ const Grid = styled.div`
     }
 `
 
-const SingleProducts = ({ reference, productId }) => {
+const SingleProducts = ({
+    reference,
+    productId,
+    setFilename,
+    onHandleOpenZoomInModal,
+}) => {
     const { allFurnitureJson } = useStaticQuery(
         graphql`
             query {
@@ -177,7 +182,13 @@ const SingleProducts = ({ reference, productId }) => {
                     <Grid>
                         <div className="showcase">
                             <h2 className="mobile-title">{data.title}</h2>
-                            <ProductShowCase item={data} />
+                            <ProductShowCase
+                                item={data}
+                                setFilename={setFilename}
+                                onHandleOpenZoomInModal={
+                                    onHandleOpenZoomInModal
+                                }
+                            />
                         </div>
                         <div className="product-description">
                             <h2 className="desktop-title">{data.title}</h2>
@@ -212,10 +223,12 @@ const SingleProducts = ({ reference, productId }) => {
                                     Конструкция: &nbsp;&nbsp;{' '}
                                     <strong>{data.construction}</strong>
                                 </li>
-                                <li>
-                                    Механизм: &nbsp;&nbsp;{' '}
-                                    <strong>{data.mechanism}</strong>
-                                </li>
+                                {data.mechanism && (
+                                    <li>
+                                        Механизм: &nbsp;&nbsp;{' '}
+                                        <strong>{data.mechanism}</strong>
+                                    </li>
+                                )}
                                 <li>
                                     Дополнительно: &nbsp;&nbsp;{' '}
                                     <strong>{data.additionally}</strong>

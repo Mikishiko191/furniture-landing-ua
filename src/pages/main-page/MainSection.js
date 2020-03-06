@@ -93,6 +93,7 @@ const MainContent = styled.div`
         margin: 0 80px;
         h1 {
             font-size: 40px;
+            margin-bottom: 65px;
         }
         p {
             font-size: 25px;
@@ -105,13 +106,14 @@ const MainContent = styled.div`
     @media screen and (min-width: 1200px) {
         margin: 0 80px;
         h1 {
-            font-size: 50px;
+            font-size: 43px;
+            margin-bottom: 35px;
         }
         p {
-            font-size: 25px;
+            font-size: 23px;
         }
         .button {
-            margin-top: 80px;
+            margin-top: 50px;
         }
     }
 `
@@ -182,7 +184,15 @@ const MainContainer = ({ className, scrollToElement }) => {
             <Shadow />
             <MainContent>
                 <h1>
-                    КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ <br /> ЗА 3 ДНЯ
+                    КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ <br /> ЗА{' '}
+                    <span
+                        style={{
+                            borderBottom: '3px solid white',
+                        }}
+                    >
+                        ТРИ
+                    </span>{' '}
+                    ДНЯ
                 </h1>
 
                 <div>
