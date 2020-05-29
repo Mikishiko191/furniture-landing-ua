@@ -183,17 +183,7 @@ const MainContainer = ({ className, scrollToElement }) => {
         >
             <Shadow />
             <MainContent>
-                <h1>
-                    КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ <br /> ЗА{' '}
-                    <span
-                        style={{
-                            borderBottom: '3px solid white',
-                        }}
-                    >
-                        ТРИ
-                    </span>{' '}
-                    ДНЯ
-                </h1>
+                <h1>КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ</h1>
 
                 <div>
                     <p>

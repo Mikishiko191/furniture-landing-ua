@@ -211,7 +211,6 @@ const StyledHowLongWeAre = styled(HowLongWeAre)`
     background-position: bottom center;
     background-repeat: repeat-y;
     background-size: cover;
-    background-attachment: fixed;
     z-index: -1;
     display: flex;
     align-items: center;
