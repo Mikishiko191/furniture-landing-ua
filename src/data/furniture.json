@@ -19,18 +19,18 @@
             { "id": 14, "image": "dakota14.jpg" }
         ],
         "couchSize": [
-            { "value": 0, "price": 13400, "label": "80х190(200) см" },
-            { "value": 1, "price": 13400, "label": "80х200(200) см" },
-            { "value": 2, "price": 14100, "label": "90х190(200) см" },
-            { "value": 3, "price": 14100, "label": "90х200(200) см" },
-            { "value": 4, "price": 14800, "label": "120х190(200) см" },
-            { "value": 5, "price": 14800, "label": "120х200(200) см" },
-            { "value": 6, "price": 15500, "label": "140х190(200) см" },
-            { "value": 7, "price": 15500, "label": "140х200(200) см" },
-            { "value": 8, "price": 16200, "label": "160х190(200) см" },
-            { "value": 9, "price": 16200, "label": "160х200(200) см" },
-            { "value": 10, "price": 17000, "label": "180х190(200) см" },
-            { "value": 11, "price": 17000, "label": "180х200(200) см" },
+            { "value": 0, "price": 13400, "label": "80х190 см" },
+            { "value": 1, "price": 13400, "label": "80х200 см" },
+            { "value": 2, "price": 14100, "label": "90х190 см" },
+            { "value": 3, "price": 14100, "label": "90х200 см" },
+            { "value": 4, "price": 14800, "label": "120х190 см" },
+            { "value": 5, "price": 14800, "label": "120х200 см" },
+            { "value": 6, "price": 15500, "label": "140х190 см" },
+            { "value": 7, "price": 15500, "label": "140х200 см" },
+            { "value": 8, "price": 16200, "label": "160х190 см" },
+            { "value": 9, "price": 16200, "label": "160х200 см" },
+            { "value": 10, "price": 17000, "label": "180х190 см" },
+            { "value": 11, "price": 17000, "label": "180х200 см" },
             { "value": 12, "price": 17800, "label": "200х200 см" }
         ],
         "mattress": [
@@ -98,12 +98,12 @@
             { "id": 16, "image": "emilia16.jpg" }
         ],
         "couchSize": [
-            { "value": 0, "price": 14900, "label": "140х190(200) см" },
-            { "value": 1, "price": 14900, "label": "140х200(200) см" },
-            { "value": 2, "price": 16100, "label": "160х190(200) см" },
-            { "value": 3, "price": 16100, "label": "160х200(200) см" },
-            { "value": 4, "price": 17300, "label": "180х190(200) см" },
-            { "value": 5, "price": 17300, "label": "180х200(200) см" },
+            { "value": 0, "price": 14900, "label": "140х190 см" },
+            { "value": 1, "price": 14900, "label": "140х200 см" },
+            { "value": 2, "price": 16100, "label": "160х190 см" },
+            { "value": 3, "price": 16100, "label": "160х200 см" },
+            { "value": 4, "price": 17300, "label": "180х190 см" },
+            { "value": 5, "price": 17300, "label": "180х200 см" },
             { "value": 6, "price": 18500, "label": "200х200 см" }
         ],
         "mattress": [
@@ -164,12 +164,12 @@
             { "id": 16, "image": "bridget16.jpg" }
         ],
         "couchSize": [
-            { "value": 0, "price": 18000, "label": "140х190(200) см" },
-            { "value": 1, "price": 18000, "label": "140х200(200) см" },
-            { "value": 2, "price": 18600, "label": "160х190(200) см" },
-            { "value": 3, "price": 18600, "label": "160х200(200) см" },
-            { "value": 4, "price": 19200, "label": "180х190(200) см" },
-            { "value": 5, "price": 19200, "label": "180х200(200) см" },
+            { "value": 0, "price": 18000, "label": "140х190 см" },
+            { "value": 1, "price": 18000, "label": "140х200 см" },
+            { "value": 2, "price": 18600, "label": "160х190 см" },
+            { "value": 3, "price": 18600, "label": "160х200 см" },
+            { "value": 4, "price": 19200, "label": "180х190 см" },
+            { "value": 5, "price": 19200, "label": "180х200 см" },
             { "value": 6, "price": 19800, "label": "200х200 см" }
         ],
         "mattress": [

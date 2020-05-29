@@ -53,7 +53,7 @@ const WeHaveForYouSomething = () => {
 
     const downloadPdf = () => {
         window.open(
-            'https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1581886341/warranty_vvjfhy.pdf',
+            'https://res.cloudinary.com/https-capitonestyle-com/image/upload/v1590743532/price-list_iwvni4.pdf',
             '_blank'
         )
     }
