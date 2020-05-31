@@ -30,6 +30,19 @@ const Wrapper = styled.div`
     }
     /* Small Devices, Tablets */
     @media only screen and (min-width: 800px) {
+        margin: 0 20px;
+        .logo {
+            width: 200px;
+            display: block;
+        }
+        .sideMenu {
+            margin: 0;
+            display: none;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 1030px) {
         margin: 0 50px;
         .logo {
             width: 200px;

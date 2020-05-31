@@ -97,6 +97,7 @@ const MainContent = styled.div`
         }
         p {
             font-size: 25px;
+            line-height: 1.6;
         }
         .button {
             margin-top: 80px;
@@ -184,16 +185,12 @@ const MainContainer = ({ className, scrollToElement }) => {
             <Shadow />
             <MainContent>
                 <h1>КРОВАТЬ ОТ ПРОИЗВОДИТЕЛЯ</h1>
-
                 <div>
                     <p>
                         <span>-</span> Ручная работа
                     </p>
                     <p>
                         <span>-</span> Контроль качества
-                    </p>
-                    <p>
-                        <span>-</span> Бесплатная доставка
                     </p>
                     <p>
                         <span>-</span> Металлическая рамка
