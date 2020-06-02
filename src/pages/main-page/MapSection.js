@@ -79,7 +79,20 @@ const Grid = styled.div`
     }
 `
 
-const MapSection = () => {
+const ArrowRight = () => {
+    return (
+        <svg
+            viewBox="0 0 512 512"
+            width="15"
+            height="15"
+            style={{ marginLeft: 5 }}
+        >
+            <path d="M508.875,248.458l-160-160c-4.167-4.167-10.917-4.167-15.083,0c-4.167,4.167-4.167,10.917,0,15.083l141.792,141.792    H10.667C4.771,245.333,0,250.104,0,256s4.771,10.667,10.667,10.667h464.917L333.792,408.458c-4.167,4.167-4.167,10.917,0,15.083    c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125l160-160C513.042,259.375,513.042,252.625,508.875,248.458z    " />
+        </svg>
+    )
+}
+
+const MapSection = ({ onHandleOpenDiscountModal }) => {
     const [state, setState] = React.useState({
         id: '1',
         shopType: 'Магазин',
@@ -200,6 +213,23 @@ const MapSection = () => {
                         style={{ position: 'sticky', top: 120, height: '50vh' }}
                     >
                         <GoogleMap list={state} />
+                        <button
+                            style={{
+                                background: 'transparent',
+                                border: 'none',
+                                textDecoration: 'underline',
+                                paddingTop: 10,
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                outlineWidth: 0,
+                            }}
+                            type="button"
+                            onClick={onHandleOpenDiscountModal}
+                        >
+                            Получить ПРОМО-КОД на покупку в магазине{' '}
+                            <ArrowRight />
+                        </button>
                     </div>
                 </div>
             </Grid>

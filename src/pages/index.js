@@ -19,6 +19,7 @@ import MapSection from './main-page/MapSection'
 import WeHaveForYouSomething from './main-page/weHaveForYouSomething'
 import Modal from '../components/Modal'
 import ScrollToTop from '../components/ScrollToTop'
+import DiscountModal from '../components/DiscountModal'
 
 // Icons
 import SocialIcons from '../components/SocialIcons'
@@ -110,6 +111,7 @@ const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 105)
 
 const IndexPage = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false)
+    const [discountModalIsOpen, setDiscountIsOpen] = React.useState(false)
     const [scrollDirection, setScrollDirection] = React.useState('')
     const [isSideMenuOpen, setSideMenu] = React.useState(false)
 
@@ -158,8 +160,16 @@ const IndexPage = () => {
         setIsOpen(true)
     }
 
+    const onHandleOpenDiscountModal = () => {
+        setDiscountIsOpen(true)
+    }
+
     const onHandelCloseModal = () => {
         setIsOpen(false)
+    }
+
+    const onHandelCloseDiscountModal = () => {
+        setDiscountIsOpen(false)
     }
 
     const onHandleScrollTo = args => {
@@ -192,7 +202,9 @@ const IndexPage = () => {
                 <MainContainer scrollToElement={scrollToElement} />
                 <ProductSlider productSectionRef={productSectionRef} />
                 <HowLongWeAre scrollToAboutRef={scrollToAboutRef} />
-                <MapSection />
+                <MapSection
+                    onHandleOpenDiscountModal={onHandleOpenDiscountModal}
+                />
                 <WeHaveForYouSomething />
             </main>
             {isSideMenuOpen && (
@@ -251,6 +263,11 @@ const IndexPage = () => {
                 modalIsOpen={modalIsOpen}
                 onHandelCloseModal={onHandelCloseModal}
                 setIsOpen={setIsOpen}
+            />
+
+            <DiscountModal
+                modalIsOpen={discountModalIsOpen}
+                onHandelCloseModal={onHandelCloseDiscountModal}
             />
             <Footer scrollToContactUsRef={scrollToContactUsRef} />
             <ScrollToTop />
