@@ -225,12 +225,12 @@ const IndexPage = () => {
                             >
                                 sales@capitone-style.com
                             </a>
-                            <a
+                            {/* <a
                                 href="mailto:sales2@capitone-style.com"
                                 role="link"
                             >
                                 sales2@capitone-style.com
-                            </a>
+                            </a> */}
                         </div>
                         <h2>КОРПОРАТИВНЫМ И ОПТОВЫМ КЛИЕНТАМ </h2>
                         <a href="mailto:support@capitone-style.com" role="link">
@@ -238,8 +238,8 @@ const IndexPage = () => {
                         </a>
                         <h2>ОПЛАТА </h2>
                         <p>
-                            При покупке вы оплачиваете 50%, остача — по факту
-                            получения товара
+                            При покупке вы оплачиваете 50%, остача, перед
+                            отправкой готовой продукции
                         </p>
                         <p style={{ margin: '15px 0' }}>Варианты оплаты: </p>
                         <ul>
