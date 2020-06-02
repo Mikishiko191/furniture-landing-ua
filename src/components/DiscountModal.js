@@ -121,10 +121,10 @@ const DiscountModal = ({ modalIsOpen, onHandelCloseModal }) => {
                     </svg>
                 </CloseButton>
                 <form style={{ textAlign: 'center' }} onSubmit={onHandleSubmit}>
-                    <h3>Уважаемые клиенты Caption Style!</h3>
+                    <h3>Уважаемые клиенты Captione Style!</h3>
                     <p>
-                        При покупке изделий в магазинах наших партнеров <br />{' '}
-                        получите
+                        При покупке изделий в магазинах наших партнеров, <br />{' '}
+                        получите{' '}
                         <span style={{ fontWeight: 'bold', color: 'black' }}>
                             СКИДКУ 5%
                         </span>
@@ -133,7 +133,7 @@ const DiscountModal = ({ modalIsOpen, onHandelCloseModal }) => {
                             ПРОМО- <br />
                             КОД
                         </span>{' '}
-                        придет в течений 10 минут, либо свяжитесь с <br /> нами
+                        придет в течении 10 минут, либо свяжитесь с <br /> нами
                         по телефону
                     </p>
                     <InputField
