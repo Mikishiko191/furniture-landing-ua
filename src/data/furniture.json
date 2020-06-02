@@ -10,13 +10,7 @@
             { "id": 5, "image": "dakota5.jpg" },
             { "id": 6, "image": "dakota6.jpg" },
             { "id": 7, "image": "dakota7.jpg" },
-            { "id": 8, "image": "dakota8.jpg" },
-            { "id": 9, "image": "dakota9.jpg" },
-            { "id": 10, "image": "dakota10.jpg" },
-            { "id": 11, "image": "dakota11.jpg" },
-            { "id": 12, "image": "dakota12.jpg" },
-            { "id": 13, "image": "dakota13.jpg" },
-            { "id": 14, "image": "dakota14.jpg" }
+            { "id": 8, "image": "dakota8.jpg" }
         ],
         "couchSize": [
             { "value": 0, "price": 13400, "label": "80х190 см" },
@@ -89,13 +83,7 @@
             { "id": 7, "image": "emilia7.jpg" },
             { "id": 8, "image": "emilia8.jpg" },
             { "id": 9, "image": "emilia9.jpg" },
-            { "id": 10, "image": "emilia10.jpg" },
-            { "id": 11, "image": "emilia11.jpg" },
-            { "id": 12, "image": "emilia12.jpg" },
-            { "id": 13, "image": "emilia13.jpg" },
-            { "id": 14, "image": "emilia14.jpg" },
-            { "id": 15, "image": "emilia15.jpg" },
-            { "id": 16, "image": "emilia16.jpg" }
+            { "id": 10, "image": "emilia10.jpg" }
         ],
         "couchSize": [
             { "value": 0, "price": 14900, "label": "140х190 см" },
@@ -140,7 +128,7 @@
         "niche_for_things": true,
         "construction": "каркас из ДСП, деревянного бруса и фанерного листа",
         "mechanism": "подъёмный механизм с газо-масляными амортизаторами",
-        "additionally": "мебельные стразы вместо пуговиц - 2000 грн",
+        "additionally": "мебельные стразы вместо пуговиц - 1900 грн",
         "price": 14900
     },
     {
@@ -150,18 +138,13 @@
             { "id": 1, "image": "bridget1.jpg" },
             { "id": 2, "image": "bridget2.jpg" },
             { "id": 3, "image": "bridget3.jpg" },
+            { "id": 4, "image": "bridget4.jpg" },
             { "id": 5, "image": "bridget5.jpg" },
             { "id": 6, "image": "bridget6.jpg" },
             { "id": 7, "image": "bridget7.jpg" },
             { "id": 8, "image": "bridget8.jpg" },
             { "id": 9, "image": "bridget9.jpg" },
-            { "id": 10, "image": "bridget10.jpg" },
-            { "id": 11, "image": "bridget11.jpg" },
-            { "id": 12, "image": "bridget12.jpg" },
-            { "id": 13, "image": "bridget13.jpg" },
-            { "id": 14, "image": "bridget14.jpg" },
-            { "id": 15, "image": "bridget15.jpg" },
-            { "id": 16, "image": "bridget16.jpg" }
+            { "id": 10, "image": "bridget10.jpg" }
         ],
         "couchSize": [
             { "value": 0, "price": 18000, "label": "140х190 см" },
@@ -205,8 +188,8 @@
         "mattress_base": "ортопедическая рамка",
         "niche_for_things": false,
         "construction": "каркас из ДСП, деревянного бруса и фанерного листа",
-        "mechanism": null,
-        "additionally": "подъемный механизм с масляными амортизаторами, ниша для вещей со съемными частями - 2300 грн",
+        "mechanism": "подъёмный механизм с газо-масляными амортизаторами",
+        "additionally": "подъемный механизм с газо-масляными амортизаторами, ниша для вещей со съемными частями - 2600 грн",
         "price": 18000
     }
 ]

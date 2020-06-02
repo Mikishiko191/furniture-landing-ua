@@ -207,7 +207,6 @@ const MainForm = ({ isModal, children, data, couchModel, setIsOpen }) => {
         formik.values.mattressSize,
         couchModel,
     ])
-
     return (
         <div className="main-form">
             <form

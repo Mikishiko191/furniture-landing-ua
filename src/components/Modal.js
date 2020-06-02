@@ -60,6 +60,7 @@ const ModalComponent = ({ modalIsOpen, onHandelCloseModal, setIsOpen }) => {
                         price
                         couchSize {
                             value
+                            price
                             label
                         }
                         mattress {
